@@ -1,10 +1,22 @@
 // Consts
-
+const mainNav = document.getElementById('mainNav')
 const openMainNav = document.getElementById('openMainNav')
 const mainNavList = document.getElementById('mainNavList')
 const closeMainNav = document.getElementById('closeMainNav')
 const mainNavListItems = document.getElementsByClassName('mainNavListItem')
 
+// Change nav background color on scroll
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 50) {
+        mainNav.style.background = "#000000"
+        mainNav.style.boxShadow = "0px 1px 3px 1px rgba(0, 0, 0, 0.31)"
+    } else {
+        mainNav.style.background = "transparent"
+        mainNav.style.boxShadow = "unset"
+    }
+})
+
+// Event listeners
 openMainNav.addEventListener('click', () => {
     mainNavList.style.left = "0px"
 })
@@ -13,6 +25,7 @@ closeMainNav.addEventListener('click', () => {
     mainNavList.style.left = "-100vw"
 })
 
+// Hover effect on nav items
 for (let item of mainNavListItems) {
     item.addEventListener('mouseenter', (e) => {
         e.target.classList.add("onHover")

@@ -11,6 +11,7 @@
             <span class="line line1"></span>
             <span class="line line2"></span>
         </button>
+        <hr>
         <li class="mainNavListItem">
             <a href="/">
                 accueil

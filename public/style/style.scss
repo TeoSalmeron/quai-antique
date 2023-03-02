@@ -32,12 +32,11 @@ $color2: #d2b05b;
 // Main navigation bar
 #mainNav {
   width: 100%;
-  background: black;
+  background: transparent;
   height: 70px;
   display: flex;
   position: fixed;
-  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.31);
-  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.31);
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   #toggleNav {
     height: 100%;
@@ -80,7 +79,7 @@ $color2: #d2b05b;
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    padding: 100px 20px 0px;
+    padding: 90px 20px 0px;
     transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     -webkit-box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.21);
     box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.21);
@@ -119,6 +118,11 @@ $color2: #d2b05b;
       }
     }
 
+    hr {
+      margin-bottom: 37.5px;
+      border: 1px solid black;
+    }
+
     li {
       height: 75px;
 
@@ -131,8 +135,8 @@ $color2: #d2b05b;
         text-transform: uppercase;
         color: inherit;
         letter-spacing: -1px;
-        font-weight: 700;
-        font-size: 26px;
+        font-weight: 600;
+        font-size: 22px;
         transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
         display: flex;
         align-items: center;
@@ -144,6 +148,7 @@ $color2: #d2b05b;
 // Home header
 #homeHeader {
   width: 100%;
+  min-height: 700px;
   height: auto;
   padding: 100px 8vw;
   background: url("../img/bg.jpg");
@@ -157,7 +162,7 @@ $color2: #d2b05b;
 
   h1 {
     font-family: $font3;
-    font-size: 50px;
+    font-size: clamp(55px, 8vw, 65px);
     color: $color2;
     margin-bottom: 40px;
   }
@@ -166,8 +171,9 @@ $color2: #d2b05b;
     font-family: $font2;
     color: #fff;
     text-align: justify;
-    font-size: 18px;
+    font-size: clamp(18px, 5vw, 22px);
     margin-bottom: 40px;
+    max-width: 500px;
   }
 
   a {
