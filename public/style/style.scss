@@ -9,7 +9,7 @@ $font3: "Cinzel Decorative", cursive;
 // Colors
 $color0: #fff;
 $color1: #2e334a;
-$color2: #c8b27a;
+$color2: #d2b05b;
 
 // Reset stylesheet
 * {
@@ -80,7 +80,7 @@ $color2: #c8b27a;
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    padding: 150px 20px 0px;
+    padding: 100px 20px 0px;
     transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     -webkit-box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.21);
     box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.21);
@@ -138,5 +138,43 @@ $color2: #c8b27a;
         align-items: center;
       }
     }
+  }
+}
+
+// Home header
+#homeHeader {
+  width: 100%;
+  height: auto;
+  padding: 100px 8vw;
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  h1 {
+    font-family: $font3;
+    font-size: 50px;
+    color: $color2;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-family: $font2;
+    color: #fff;
+    text-align: justify;
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    color: #fff;
+    border: 3px solid #fff;
+    font-family: $font1;
+    padding: 10px 20px;
+    text-transform: uppercase;
   }
 }
