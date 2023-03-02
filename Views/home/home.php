@@ -16,3 +16,14 @@ require_once ROOT . '/Views/templates/nav.php';
         Faire une réservation
     </a>
 </header>
+
+<main id="homeMain">
+    <div id="homeMainBox1">
+        <h2>Du producteur au consommateur</h2>
+        <br>
+        <p>Notre but, vous faire passer un moment mémorable. Et pour cela, nous mettons un point d'honneur sur la qualité de nos produits. En collaboration directe avec nos producteurs locaux, ayez la garantie d'avoir des produits frais et savoureux dans votre assiette.</p>
+    </div>
+    <div id="homeMainBox2">
+        <a href="/notre-carte">Menu</a>
+    </div>
+</main>

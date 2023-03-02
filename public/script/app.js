@@ -22,11 +22,29 @@ window.addEventListener('scroll', () => {
 
 // Event listeners
 openMainNav.addEventListener('click', () => {
+    // Display nav list
     mainNavList.style.left = "0px"
+
+    // Disable scroll
+    document.body.style.height = "100%"
+    document.body.style.overflow = "hidden"
+
+    // Remove nav bar
+    mainNav.style.background = "unset"
+    mainNav.style.boxShadow = "unset"
 })
 
 closeMainNav.addEventListener('click', () => {
+    // Remove navbar list
     mainNavList.style.left = "-100vw"
+
+    // Enable scroll
+    document.body.style.height = "unset"
+    document.body.style.overflow = "unset"
+
+    // Display nav bar
+    mainNav.style.background = "#000000"
+    mainNav.style.boxShadow = "0px 1px 3px 1px rgba(0, 0, 0, 0.31)"
 })
 
 // Hover effect on nav items

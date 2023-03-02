@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +22,7 @@
   display: flex;
   position: fixed;
   transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 555;
 }
 #mainNav #toggleNav {
   height: 100%;
@@ -78,7 +79,7 @@
 }
 #mainNav #mainNavList button .line {
   width: 90%;
-  height: 2px;
+  height: 1px;
   background: #000;
   position: relative;
   top: 20px;
@@ -95,7 +96,6 @@
 }
 #mainNav #mainNavList hr {
   margin-bottom: 37.5px;
-  border: 1px solid black;
 }
 #mainNav #mainNavList li {
   height: 75px;
@@ -109,7 +109,7 @@
   color: inherit;
   letter-spacing: -1px;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   display: flex;
   align-items: center;
@@ -126,27 +126,95 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
 }
 #homeHeader h1 {
   font-family: "Cinzel Decorative", cursive;
   font-size: clamp(55px, 8vw, 65px);
   color: #d2b05b;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 #homeHeader p {
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   color: #fff;
   text-align: justify;
-  font-size: clamp(18px, 5vw, 22px);
+  font-size: 18px;
   margin-bottom: 40px;
   max-width: 500px;
 }
 #homeHeader a {
   color: #fff;
   border: 3px solid #fff;
-  font-family: "Raleway", sans-serif;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 600;
   padding: 10px 20px;
   text-transform: uppercase;
+}
+
+#homeMain {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+#homeMain #homeMainBox1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  padding: 40px 8vw;
+}
+#homeMain #homeMainBox1 h2 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+#homeMain #homeMainBox1 p {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+#homeMain #homeMainBox2 {
+  height: 400px;
+  background: url("../img/bg2.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#homeMain #homeMainBox2 a {
+  align-self: center;
+  width: 100px;
+  color: #fff;
+  border: 3px solid #fff;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1000px) {
+  #homeMain {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  #homeMain #homeMainBox1 {
+    height: 400px;
+    padding: 20px;
+    width: 50%;
+  }
+  #homeMain #homeMainBox1 h2 {
+    margin-bottom: unset;
+  }
+  #homeMainBox2 {
+    width: 50%;
+  }
 }/*# sourceMappingURL=style.css.map */
