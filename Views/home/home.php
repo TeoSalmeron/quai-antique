@@ -1,3 +1,1 @@
-<?php
-
-echo "Page d'accueil";
+<h1><?= $restaurant["name"] ?></h1>
