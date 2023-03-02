@@ -14,7 +14,7 @@ class Db extends PDO
 
     private function __construct()
     {
-        if ($_SERVER["SERVER_NAME"] === "ecf-quai-antique.fr") {
+        if ($_SERVER["SERVER_NAME"] !== "quai-antique.local") {
             $host = "ecfquaaadmin.mysql.db";
             $user = "ecfquaaadmin";
             $dbname = "ecfquaaadmin";
