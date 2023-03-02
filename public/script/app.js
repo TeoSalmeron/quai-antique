@@ -5,6 +5,10 @@ const mainNavList = document.getElementById('mainNavList')
 const closeMainNav = document.getElementById('closeMainNav')
 const mainNavListItems = document.getElementsByClassName('mainNavListItem')
 
+ScrollReveal().reveal("#homeMainTitle", {duration: 1800})
+ScrollReveal().reveal("#homeP1", {duration: 1800, delay: 300})
+ScrollReveal().reveal("#homeLink1", {duration: 1800, delay: 600})
+
 // Change nav background color on scroll
 window.addEventListener('scroll', () => {
     if(window.scrollY > 50) {
