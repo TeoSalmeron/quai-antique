@@ -1,1 +1,3 @@
-<h1><?= $restaurant["name"] ?></h1>
+<?php
+
+require_once ROOT . '/Views/templates/nav.php';
