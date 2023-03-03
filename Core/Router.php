@@ -39,6 +39,7 @@ class Router
                 $controller .= ucfirst($c);
             }
 
+
             // Check if controller exists
             if (!file_exists(ROOT . '/Controllers/' . $controller . 'Controller.php')) {
                 http_response_code(404);
