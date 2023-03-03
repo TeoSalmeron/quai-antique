@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Controllers\Controller;
 use App\Models\AllergenModel;
+use App\Controllers\Controller;
 
-class CreerUnCompteController extends Controller
+class SignUpController extends Controller
 {
     public function index()
     {
@@ -16,5 +16,11 @@ class CreerUnCompteController extends Controller
             "title" => "Le Quai Antique - Créer un compte",
             "allergens" => $allergens
         ]);
+    }
+
+    public function form()
+    {
+        require_once ROOT . '/Controllers/functions/process_create_account_form.php';
+        process_create_account_form();
     }
 }

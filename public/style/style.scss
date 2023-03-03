@@ -263,7 +263,7 @@ $color2: #d2b05b;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 8vh;
+  padding: 100px 8vw;
 
   h1 {
     text-align: center;
@@ -307,6 +307,12 @@ $color2: #d2b05b;
     margin-bottom: 50px;
     // color: $color2;
   }
+  #createAccountError {
+    color: rgb(177, 0, 0);
+    font-family: $font1;
+    margin-bottom: 20px;
+    align-self: flex-start;
+  }
 
   form {
     width: 100%;
@@ -317,6 +323,8 @@ $color2: #d2b05b;
       padding: 15px 0px;
 
       input {
+        width: 100%;
+        max-width: 350px;
         padding: 5px 0px;
         font-size: 18px;
         font-family: $font2;
@@ -365,6 +373,10 @@ $color2: #d2b05b;
       flex-direction: column;
       .item {
         padding: 10px 0px;
+        input {
+          width: unset;
+          max-width: unset;
+        }
       }
       label {
         font-family: $font2;

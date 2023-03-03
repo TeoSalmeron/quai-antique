@@ -18,12 +18,12 @@
             </a>
         </li>
         <li class="mainNavListItem">
-            <a href="/notre-carte">
+            <a href="/menu">
                 notre carte
             </a>
         </li>
         <li class="mainNavListItem">
-            <a href="/reserver-une-table">
+            <a href="/book-table">
                 réserver une table
             </a>
         </li>
@@ -31,16 +31,16 @@
         if (!isset($_SESSION['auth'])) {
         ?>
             <li class="mainNavListItem">
-                <a href="/se-connecter">se connecter</a>
+                <a href="/sign-in">se connecter</a>
             </li>
             <li class="mainNavListItem">
-                <a href="/creer-un-compte">créer un compte</a>
+                <a href="/sign-up">créer un compte</a>
             </li>
         <?php
         } else {
         ?>
             <li class="mainNavListItem">
-                <a href="/deconnexion">se déconnecter</a>
+                <a href="/sign-out">se déconnecter</a>
             </li>
         <?php
         }

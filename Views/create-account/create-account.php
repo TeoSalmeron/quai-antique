@@ -14,7 +14,16 @@ require_once ROOT . '/Views/templates/nav.php';
 
 <main id="create-account-main">
     <h2 class="sequenced">S'inscrire</h2>
-    <form action="" method="post" id="createAccountForm" class="sequenced">
+    <?php
+    if (isset($_SESSION["create_account_error"]) && !empty($_SESSION["create_account_error"])) {
+    ?>
+        <p id="createAccountError" class="sequenced">
+            /!\ <?= $_SESSION["create_account_error"] ?> /!\
+        </p>
+    <?php
+    }
+    ?>
+    <form action="/sign-up/form" method="post" id="createAccountForm" class="sequenced">
         <div class="form_box">
             <input type="text" name="last_name" id="userLastName" placeholder="Nom de famille" required>
         </div>
@@ -23,6 +32,12 @@ require_once ROOT . '/Views/templates/nav.php';
         </div>
         <div class="form_box">
             <input type="text" name="email" id="userEmail" placeholder="E-mail" required>
+        </div>
+        <div class="form_box">
+            <input type="password" name="password" id="userPassword" placeholder="Mot de passe" required>
+        </div>
+        <div class="form_box">
+            <input type="password" name="confirm_password" id="userConfirmPassword" placeholder="Confirmation du mot de passe" required>
         </div>
         <div class="form_box">
             <input type="phone" name="phone" id="userPhone" placeholder="Numéro de téléphone" required>
