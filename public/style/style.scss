@@ -111,7 +111,6 @@ $color2: #d2b05b;
         height: 1px;
         background: #000;
         position: relative;
-        top: 20px;
       }
 
       .line1 {
@@ -121,6 +120,7 @@ $color2: #d2b05b;
 
       .line2 {
         transform: rotate(45deg);
+        top: 21px;
       }
 
       &:hover {

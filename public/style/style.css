@@ -87,7 +87,6 @@
   height: 1px;
   background: #000;
   position: relative;
-  top: 20px;
 }
 #mainNav #mainNavList button .line1 {
   transform: rotate(-45deg);
@@ -95,6 +94,7 @@
 }
 #mainNav #mainNavList button .line2 {
   transform: rotate(45deg);
+  top: 21px;
 }
 #mainNav #mainNavList button:hover {
   cursor: pointer;
