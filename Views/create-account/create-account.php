@@ -15,40 +15,56 @@ require_once ROOT . '/Views/templates/nav.php';
 <main id="create-account-main">
     <h2 class="sequenced">S'inscrire</h2>
     <form action="" method="post" id="createAccountForm" class="sequenced">
-        <input type="text" name="last_name" id="userLastName" placeholder="Nom de famille" required>
-        <input type="text" name="first_name" id="userFirstName" placeholder="Prénom" required>
-        <input type="text" name="email" id="userEmail" placeholder="E-mail" required>
-        <input type="text" name="phone" id="userPhone" placeholder="Numéro de téléphone" required>
-        <small>Format : 00.00.00.00.00</small>
-        <select name="default_nb_guest" id="userDefaultNbGuest" required placeholder="Nombres de couverts par défaut">
-            <option value="" disabled selected>Nombres de couverts par défaut</option>
-            <?php
-            for ($i = 1; $i < 15; $i++) {
-            ?>
-                <option value="<?= $i ?>"><?= $i ?></option>
-            <?php
-            }
-            ?>
-        </select>
         <div class="form_box">
-            <label for="prompt_allergy">Avez-vous des allergies à signaler ?</label>
+            <input type="text" name="last_name" id="userLastName" placeholder="Nom de famille" required>
+        </div>
+        <div class="form_box">
+            <input type="text" name="first_name" id="userFirstName" placeholder="Prénom" required>
+        </div>
+        <div class="form_box">
+            <input type="text" name="email" id="userEmail" placeholder="E-mail" required>
+        </div>
+        <div class="form_box">
+            <input type="phone" name="phone" id="userPhone" placeholder="Numéro de téléphone" required>
             <br>
-            <input type="radio" name="prompt_allergy" id="confirmAllergy" value="1">
-            <label for="confirmAllergy" class="no_border">Oui</label>
-            <input type="radio" name="prompt_allergy" id="noAllergy" value="0" checked>
-            <label for="noAllergy" class="no_border">Non</label>
+            <small>Format : 01 02 03 04 05</small>
+        </div>
+        <div class="form_box">
+            <select name="default_nb_guest" id="userDefaultNbGuest" required placeholder="Nombres de couverts par défaut">
+                <option value="" disabled selected>Nombres de couverts par défaut</option>
+                <?php
+                for ($i = 1; $i < 15; $i++) {
+                ?>
+                    <option value="<?= $i ?>"><?= $i ?></option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form_box form_box_allergies">
+            <label for="prompt_allergy">Avez-vous des allergies à signaler ?</label>
+            <div class="item">
+                <input type="radio" name="prompt_allergy" id="confirmAllergy" value="1">
+                <label for="confirmAllergy" class="no_border">Oui</label>
+                <input type="radio" name="prompt_allergy" id="noAllergy" value="0" checked>
+                <label for="noAllergy" class="no_border">Non</label>
+            </div>
         </div>
         <div id="form_allergies">
+            <p>Veuillez sélectionner toutes vos allergies</p>
             <?php
             foreach ($allergens as $a) {
             ?>
-                <div class="form_allergies_box">
+                <div class="form_allergies_item">
                     <input type="checkbox" name="allergies" id="<?= "allergy_" . $a["id"] ?>" value="<?= $a["id"] ?>">
                     <label for="<?= "allergy_" . $a["id"] ?>"><?= ucfirst($a["name"]) ?></label>
                 </div>
             <?php
             }
             ?>
+        </div>
+        <div class="form_buttons">
+            <button type="submit">Soumettre</button>
         </div>
     </form>
 </main>

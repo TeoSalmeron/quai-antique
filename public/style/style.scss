@@ -305,6 +305,7 @@ $color2: #d2b05b;
     font-family: $font3;
     font-size: 28px;
     margin-bottom: 50px;
+    // color: $color2;
   }
 
   form {
@@ -312,75 +313,102 @@ $color2: #d2b05b;
     display: flex;
     flex-direction: column;
 
-    input {
-      padding: 5px 0px;
-      font-size: 20px;
-      font-family: $font2;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      border-bottom: 1px solid lightgray;
-      font-weight: 500;
-      margin-bottom: 50px;
+    .form_box {
+      padding: 15px 0px;
 
-      &:focus,
-      &:active {
-        outline: none;
+      input {
+        padding: 5px 0px;
+        font-size: 18px;
+        font-family: $font2;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid lightgray;
+        font-weight: 500;
+
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+
+      .no_border {
+        border-bottom: unset;
+        margin-right: 40px;
+      }
+
+      select {
+        font-size: 18px;
+        color: #757575;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid lightgray;
+        font-family: $font2;
+        font-weight: 500;
+
+        &:active,
+        &:focus {
+          outline: none;
+        }
       }
     }
 
     small {
       color: gray;
       position: relative;
-      top: -45px;
       font-family: $font2;
     }
 
-    label {
-      color: #757575;
-      font-family: $font2;
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 10px;
-      border-bottom: 1px solid lightgray;
-      line-height: 50px;
-      padding-bottom: 5px;
-    }
-
-    select {
-      font-size: 20px;
-      color: #757575;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      border-bottom: 1px solid lightgray;
-      font-family: $font2;
-      margin-bottom: 50px;
-      font-weight: 500;
-
-      &:active,
-      &:focus {
-        outline: none;
+    .form_box_allergies {
+      display: flex;
+      flex-direction: column;
+      .item {
+        padding: 10px 0px;
       }
-    }
-
-    .form_box > .no_border {
-      border-bottom: unset;
-      margin-right: 40px;
+      label {
+        font-family: $font2;
+        font-size: 18px;
+        color: #757575;
+        font-weight: 500;
+      }
     }
 
     #form_allergies {
       display: none;
       flex-direction: column;
 
-      .form_allergies_box {
+      p {
+        font-family: $font2;
+        color: #757575;
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .form_allergies_item {
+        padding: 5px 0px;
         input {
           margin-right: 10px;
         }
-
         label {
-          border-bottom: none;
+          font-family: $font2;
+          color: #757575;
         }
+      }
+    }
+
+    .form_buttons {
+      padding-top: 25px;
+      align-self: center;
+      button {
+        padding: 5px 10px;
+        border: 3px solid black;
+        font-family: $font4;
+        font-weight: 500;
+        font-size: 18px;
+        color: #fff;
+        background: #000;
       }
     }
   }
@@ -405,7 +433,6 @@ $color2: #d2b05b;
   #homeMainBox2 {
     width: 50%;
   }
-
 }
 
 /* ----------------------------------------------
