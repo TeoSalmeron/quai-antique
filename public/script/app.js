@@ -5,6 +5,8 @@ const mainNavList = document.getElementById('mainNavList')
 const closeMainNav = document.getElementById('closeMainNav')
 const mainNavListItems = document.getElementsByClassName('mainNavListItem')
 const confirmAllergy = document.getElementById('confirmAllergy')
+const noAllergy = document.getElementById('noAllergy')
+const listAllergies = document.getElementById('form_allergies')
 
 // ScrollReveals
 
@@ -62,8 +64,17 @@ ScrollReveal().reveal(".sequenced", { interval: 300, duration: 2500})
         })
     }
 
-    confirmAllergy.addEventListener('change', () => {
+    // Toggle allergies list
+
+    confirmAllergy.addEventListener('input', () => {
         if(confirmAllergy.checked) {
-            alert('hey')
+            listAllergies.style.display = "flex"
+        }
+    })
+
+    // Remove allergies list
+    noAllergy.addEventListener('input', () => {
+        if(noAllergy.checked) {
+            listAllergies.style.display = "none"
         }
     })

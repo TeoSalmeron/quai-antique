@@ -309,11 +309,21 @@
   border-bottom: unset;
   margin-right: 40px;
 }
+#create-account-main form #form_allergies {
+  display: none;
+  flex-direction: column;
+}
+#create-account-main form #form_allergies .form_allergies_box input {
+  margin-right: 10px;
+}
+#create-account-main form #form_allergies .form_allergies_box label {
+  border-bottom: none;
+}
 
 @media screen and (min-width: 1000px) {
   #homeMain {
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   #homeMain #homeMainBox1 {
     height: 400px;

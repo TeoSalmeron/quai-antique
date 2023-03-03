@@ -368,13 +368,28 @@ $color2: #d2b05b;
       border-bottom: unset;
       margin-right: 40px;
     }
+
+    #form_allergies {
+      display: none;
+      flex-direction: column;
+
+      .form_allergies_box {
+        input {
+          margin-right: 10px;
+        }
+
+        label {
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
 
 @media screen and (min-width: 1000px) {
   #homeMain {
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 
     #homeMainBox1 {
       height: 400px;
@@ -390,6 +405,7 @@ $color2: #d2b05b;
   #homeMainBox2 {
     width: 50%;
   }
+
 }
 
 /* ----------------------------------------------
