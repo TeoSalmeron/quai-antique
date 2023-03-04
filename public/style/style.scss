@@ -301,6 +301,12 @@ $color2: #d2b05b;
   align-items: center;
   padding: 50px 8vw;
 
+  #passwordRules {
+    align-self: flex-start;
+    font-family: $font1;
+    margin-bottom: 30px;
+  }
+
   h2 {
     font-family: $font3;
     font-size: 28px;
@@ -327,7 +333,7 @@ $color2: #d2b05b;
         max-width: 350px;
         padding: 5px 0px;
         font-size: 18px;
-        font-family: $font2;
+        font-family: $font1;
         border-top: none;
         border-left: none;
         border-right: none;
@@ -352,7 +358,7 @@ $color2: #d2b05b;
         border-left: none;
         border-right: none;
         border-bottom: 1px solid lightgray;
-        font-family: $font2;
+        font-family: $font1;
         font-weight: 500;
 
         &:active,
@@ -365,7 +371,7 @@ $color2: #d2b05b;
     small {
       color: gray;
       position: relative;
-      font-family: $font2;
+      font-family: $font1;
     }
 
     .form_box_allergies {
@@ -379,7 +385,7 @@ $color2: #d2b05b;
         }
       }
       label {
-        font-family: $font2;
+        font-family: $font1;
         font-size: 18px;
         color: #757575;
         font-weight: 500;
@@ -391,7 +397,7 @@ $color2: #d2b05b;
       flex-direction: column;
 
       p {
-        font-family: $font2;
+        font-family: $font1;
         color: #757575;
         font-weight: 500;
         font-size: 18px;
@@ -404,7 +410,7 @@ $color2: #d2b05b;
           margin-right: 10px;
         }
         label {
-          font-family: $font2;
+          font-family: $font1;
           color: #757575;
         }
       }

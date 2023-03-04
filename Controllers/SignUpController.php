@@ -12,7 +12,7 @@ class SignUpController extends Controller
         $model = new AllergenModel();
         $allergens = $model->findAll();
 
-        $this->render('create-account/create-account', [
+        $this->render('sign-up/sign-up', [
             "title" => "Le Quai Antique - Créer un compte",
             "allergens" => $allergens
         ]);
@@ -20,7 +20,7 @@ class SignUpController extends Controller
 
     public function form()
     {
-        require_once ROOT . '/Controllers/functions/process_create_account_form.php';
-        process_create_account_form();
+        require_once ROOT . '/Controllers/functions/process_sign_up_form.php';
+        process_sign_up_form();
     }
 }

@@ -251,6 +251,11 @@
   align-items: center;
   padding: 50px 8vw;
 }
+#create-account-main #passwordRules {
+  align-self: flex-start;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 30px;
+}
 #create-account-main h2 {
   font-family: "Cinzel Decorative", cursive;
   font-size: 28px;
@@ -275,7 +280,7 @@
   max-width: 350px;
   padding: 5px 0px;
   font-size: 18px;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -296,7 +301,7 @@
   border-left: none;
   border-right: none;
   border-bottom: 1px solid lightgray;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
 }
 #create-account-main form .form_box select:active, #create-account-main form .form_box select:focus {
@@ -305,7 +310,7 @@
 #create-account-main form small {
   color: gray;
   position: relative;
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
 }
 #create-account-main form .form_box_allergies {
   display: flex;
@@ -319,7 +324,7 @@
   max-width: unset;
 }
 #create-account-main form .form_box_allergies label {
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   font-size: 18px;
   color: #757575;
   font-weight: 500;
@@ -329,7 +334,7 @@
   flex-direction: column;
 }
 #create-account-main form #form_allergies p {
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   color: #757575;
   font-weight: 500;
   font-size: 18px;
@@ -342,7 +347,7 @@
   margin-right: 10px;
 }
 #create-account-main form #form_allergies .form_allergies_item label {
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   color: #757575;
 }
 #create-account-main form .form_buttons {

@@ -14,13 +14,16 @@ require_once ROOT . '/Views/templates/nav.php';
 
 <main id="create-account-main">
     <h2 class="sequenced">S'inscrire</h2>
+    <p id="passwordRules">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial</p>
     <?php
-    if (isset($_SESSION["create_account_error"]) && !empty($_SESSION["create_account_error"])) {
+    if (isset($_SESSION["sign_up_error"]) && !empty($_SESSION["sign_up_error"])) {
     ?>
         <p id="createAccountError" class="sequenced">
-            /!\ <?= $_SESSION["create_account_error"] ?> /!\
+            /!\ <?= $_SESSION["sign_up_error"] ?> /!\
+
         </p>
     <?php
+        unset($_SESSION["sign_up_error"]);
     }
     ?>
     <form action="/sign-up/form" method="post" id="createAccountForm" class="sequenced">
@@ -42,7 +45,7 @@ require_once ROOT . '/Views/templates/nav.php';
         <div class="form_box">
             <input type="phone" name="phone" id="userPhone" placeholder="Numéro de téléphone" required>
             <br>
-            <small>Format : 01 02 03 04 05</small>
+            <small>Format : 0102030405</small>
         </div>
         <div class="form_box">
             <select name="default_nb_guest" id="userDefaultNbGuest" required placeholder="Nombres de couverts par défaut">
@@ -71,8 +74,8 @@ require_once ROOT . '/Views/templates/nav.php';
             foreach ($allergens as $a) {
             ?>
                 <div class="form_allergies_item">
-                    <input type="checkbox" name="allergies" id="<?= "allergy_" . $a["id"] ?>" value="<?= $a["id"] ?>">
-                    <label for="<?= "allergy_" . $a["id"] ?>"><?= ucfirst($a["name"]) ?></label>
+                    <input type="checkbox" name="allergies" id="<?= $a["id"] ?>" value="<?= $a["id"] ?>">
+                    <label for="<?= $a["id"] ?>"><?= ucfirst($a["name"]) ?></label>
                 </div>
             <?php
             }
