@@ -7,6 +7,7 @@ const mainNavListItems = document.getElementsByClassName('mainNavListItem')
 const confirmAllergy = document.getElementById('confirmAllergy')
 const noAllergy = document.getElementById('noAllergy')
 const listAllergies = document.getElementById('form_allergies')
+const createAccountError = document.getElementById("createAccountError")
 
 // ScrollReveals
 

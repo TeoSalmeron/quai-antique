@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Models\AllergenModel;
 use App\Controllers\Controller;
+use App\Models\AllergenModel;
 
 class SignUpController extends Controller
 {

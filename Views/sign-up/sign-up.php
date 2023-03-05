@@ -8,22 +8,29 @@ require_once ROOT . '/Views/templates/nav.php';
     <h1 class="sequenced">
         Pourquoi se créer un compte chez nous ?
     </h1>
-    <p class="sequenced">Afin de faciliter vos futures réservations, vous pouvez vous créer un compte sur notre plateforme. Nous enregistrerons vos informations et les remplirons automatique lors de votre prochaine réservation.</p>
+    <p class="sequenced">Afin de faciliter vos futures réservations, vous pouvez vous créer un compte sur notre plateforme. Nous enregistrerons vos informations et les remplirons automatiquement lors de votre prochaine réservation.</p>
     <img src="img/arrow-down.png" alt="Arrow Down" class="slide-top sequenced">
 </header>
 
 <main id="create-account-main">
     <h2 class="sequenced">S'inscrire</h2>
-    <p id="passwordRules">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial</p>
+    <p id="passwordRules" class="sequenced">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial</p>
     <?php
     if (isset($_SESSION["sign_up_error"]) && !empty($_SESSION["sign_up_error"])) {
     ?>
-        <p id="createAccountError" class="sequenced">
+        <p class="sequenced sign_up_info">
             /!\ <?= $_SESSION["sign_up_error"] ?> /!\
 
         </p>
     <?php
         unset($_SESSION["sign_up_error"]);
+    } elseif (isset($_SESSION["sign_up_success"]) && !empty($_SESSION["sign_up_success"])) {
+    ?>
+        <p class="sequenced sign_up_info" style="color:green !important">
+            <?= $_SESSION["sign_up_success"] ?>
+        </p>
+    <?php
+        unset($_SESSION["sign_up_success"]);
     }
     ?>
     <form action="/sign-up/form" method="post" id="createAccountForm" class="sequenced">
@@ -71,10 +78,11 @@ require_once ROOT . '/Views/templates/nav.php';
         <div id="form_allergies">
             <p>Veuillez sélectionner toutes vos allergies</p>
             <?php
+            // For each allergens, display input
             foreach ($allergens as $a) {
             ?>
                 <div class="form_allergies_item">
-                    <input type="checkbox" name="allergies" id="<?= $a["id"] ?>" value="<?= $a["id"] ?>">
+                    <input type="checkbox" name="allergies[]" id="<?= $a["id"] ?>" value="<?= $a["id"] ?>">
                     <label for="<?= $a["id"] ?>"><?= ucfirst($a["name"]) ?></label>
                 </div>
             <?php

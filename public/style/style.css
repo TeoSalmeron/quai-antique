@@ -261,7 +261,7 @@
   font-size: 28px;
   margin-bottom: 50px;
 }
-#create-account-main #createAccountError {
+#create-account-main .sign_up_info {
   color: rgb(177, 0, 0);
   font-family: "Raleway", sans-serif;
   margin-bottom: 20px;
