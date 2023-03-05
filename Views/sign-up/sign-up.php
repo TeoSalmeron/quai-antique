@@ -4,7 +4,7 @@ require_once ROOT . '/Views/templates/nav.php';
 
 ?>
 
-<header id="create-account-header">
+<header id="sign-up-header">
     <h1 class="sequenced">
         Pourquoi se créer un compte chez nous ?
     </h1>
@@ -12,7 +12,7 @@ require_once ROOT . '/Views/templates/nav.php';
     <img src="img/arrow-down.png" alt="Arrow Down" class="slide-top sequenced">
 </header>
 
-<main id="create-account-main">
+<main id="sign-up-main">
     <h2 class="sequenced">S'inscrire</h2>
     <p id="passwordRules" class="sequenced">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial</p>
     <?php
