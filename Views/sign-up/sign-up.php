@@ -13,7 +13,7 @@ require_once ROOT . '/Views/templates/nav.php';
 </header>
 
 <main id="sign-up-main">
-    <h2 class="sequenced">S'inscrire</h2>
+    <h2 class="sequenced main-title">S'inscrire</h2>
     <p id="passwordRules" class="sequenced">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial</p>
     <?php
     if (isset($_SESSION["sign_up_error"]) && !empty($_SESSION["sign_up_error"])) {
