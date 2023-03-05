@@ -17,6 +17,7 @@ require_once ROOT . '/Views/templates/nav.php';
         <p id="signInError"> <?= $_SESSION["sign_in_error"] ?></p>
     <?php
     }
+        unset($_SESSION["sign_in_error"]);
     ?>
     <form action="/sign-in/form" method="POST">
         <input type="email" placeholder="E-mail" name="email" id="email">
