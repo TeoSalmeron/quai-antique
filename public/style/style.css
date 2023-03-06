@@ -412,10 +412,22 @@
   font-size: 28px;
   margin-bottom: 40px;
 }
+#sign-in-main p {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+#sign-in-main #signInError {
+  color: rgb(225, 0, 0);
+}
+#sign-in-main #signInSuccess {
+  color: green;
+}
 #sign-in-main form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
 }
 #sign-in-main form input {
   width: 100%;

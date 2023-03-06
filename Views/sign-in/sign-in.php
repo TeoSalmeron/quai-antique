@@ -15,9 +15,14 @@ require_once ROOT . '/Views/templates/nav.php';
     if (isset($_SESSION["sign_in_error"]) && !empty($_SESSION["sign_in_error"])) {
     ?>
         <p id="signInError"> <?= $_SESSION["sign_in_error"] ?></p>
-    <?php
-    }
+        <?php
         unset($_SESSION["sign_in_error"]);
+    } elseif(isset($_SESSION["sign_in_success"]) && !empty($_SESSION["sign_in_success"])) {
+        ?>
+        <p id="signInSuccess"><?= $_SESSION["sign_in_success"] ?></p>
+        <?php
+        unset($_SESSION["sign_in_success"]);
+    }
     ?>
     <form action="/sign-in/form" method="POST">
         <input type="email" placeholder="E-mail" name="email" id="email">
