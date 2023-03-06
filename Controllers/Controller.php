@@ -10,7 +10,7 @@ abstract class Controller
      * @param string $file
      * @param array $data
      */
-    public function render(string $file, array $data = [])
+    public function render(string $file, array $data = [], array $script = null)
     {
         // Get datas and extract them into variables
         extract($data);
@@ -20,8 +20,14 @@ abstract class Controller
 
         require_once ROOT . '/Views/' . $file . '.php';
 
-        $content = ob_get_clean();
 
+        if (isset($script) && !is_null($script)) {
+            foreach ($script as $s) {
+                require_once ROOT . '/public/script/' . $s . '.html';
+            }
+        }
+
+        $content = ob_get_clean();
         // End output buffer
 
         // Generate template

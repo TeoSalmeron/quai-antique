@@ -15,7 +15,7 @@ class SignUpController extends Controller
         $this->render('sign-up/sign-up', [
             "title" => "Le Quai Antique - Créer un compte",
             "allergens" => $allergens
-        ]);
+        ], ["scrollreveal", "nav"]);
     }
 
     public function form()

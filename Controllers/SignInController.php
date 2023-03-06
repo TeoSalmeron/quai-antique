@@ -10,7 +10,7 @@ class SignInController extends Controller
     {
         $this->render('sign-in/sign-in', [
             "title" => "Le Quai Antique - Se connecter"
-        ]);
+        ], ["scrollreveal", "nav"]);
     }
 
     public function form()

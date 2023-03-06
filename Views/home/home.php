@@ -18,19 +18,19 @@ require_once ROOT . '/Views/templates/nav.php';
 
 <main id="homeMain">
     <div id="homeMainBox1">
-        <h2>Du producteur au consommateur</h2>
-        <br>
-        <p>Notre but, vous faire passer un moment mémorable. Et pour cela, nous mettons un point d'honneur sur la qualité de nos produits. En collaboration directe avec nos producteurs locaux, ayez la garantie d'avoir des produits frais et savoureux dans votre assiette.</p>
+        <h2 class="sequenced">Du producteur au consommateur</h2>
+        <br class="sequenced">
+        <p class="sequenced">Notre but, vous faire passer un moment mémorable. Et pour cela, nous mettons un point d'honneur sur la qualité de nos produits. En collaboration directe avec nos producteurs locaux, ayez la garantie d'avoir des produits frais et savoureux dans votre assiette.</p>
     </div>
     <div id="homeMainBox2">
-        <a href="/notre-carte">Menu</a>
+        <a href="/notre-carte" class="sequenced">Menu</a>
     </div>
     <div id="homeMainImages">
-        <h2>Nos créations...</h2>
+        <h2 class="sequenced">Nos créations...</h2>
         <?php
         foreach ($images as $i) {
         ?>
-            <div class="image_box">
+            <div class="image_box sequenced">
                 <p><?= $i["title"] ?></p>
                 <img src="<?= $i["path"] ?>" alt="<?= $i["title"] ?>">
             </div>

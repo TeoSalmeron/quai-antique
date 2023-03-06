@@ -1,20 +1,9 @@
-// Consts
-const mainNav = document.getElementById('mainNav')
-const openMainNav = document.getElementById('openMainNav')
-const mainNavList = document.getElementById('mainNavList')
-const closeMainNav = document.getElementById('closeMainNav')
-const mainNavListItems = document.getElementsByClassName('mainNavListItem')
-const confirmAllergy = document.getElementById('confirmAllergy')
-const noAllergy = document.getElementById('noAllergy')
-const listAllergies = document.getElementById('form_allergies')
-const createAccountError = document.getElementById("createAccountError")
-const imgBoxes = document.getElementsByClassName("image_box")
-
-// ScrollReveals
-
-ScrollReveal().reveal(".sequenced", { interval: 300, duration: 2500})
-
-// Event listeners
+<script>
+    const mainNav = document.getElementById('mainNav')
+    const openMainNav = document.getElementById('openMainNav')
+    const mainNavList = document.getElementById('mainNavList')
+    const closeMainNav = document.getElementById('closeMainNav')
+    const mainNavListItems = document.getElementsByClassName('mainNavListItem')
 
     // Toggle nav bar
 
@@ -65,21 +54,4 @@ ScrollReveal().reveal(".sequenced", { interval: 300, duration: 2500})
             }
         })
     }
-
-    // Toggle allergies list
-
-    confirmAllergy.addEventListener('input', () => {
-        if(confirmAllergy.checked) {
-            listAllergies.style.display = "flex"
-        }
-    })
-
-    // Remove allergies list
-    noAllergy.addEventListener('input', () => {
-        if(noAllergy.checked) {
-            listAllergies.style.display = "none"
-        }
-    })
-
-    // Display home images title
-
+</script>

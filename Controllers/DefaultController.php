@@ -20,6 +20,6 @@ class DefaultController extends Controller
             "title" => "Le Quai Antique",
             "restaurant" => $restaurant,
             "images" => $images
-        ]);
+        ], ["scrollreveal", "nav"]);
     }
 }

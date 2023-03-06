@@ -14,7 +14,6 @@
     <div class="container">
         <?= $content ?>
     </div>
-    <script src="script/app.js"></script>
 </body>
 
 </html>
