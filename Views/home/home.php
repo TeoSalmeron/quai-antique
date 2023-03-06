@@ -25,4 +25,17 @@ require_once ROOT . '/Views/templates/nav.php';
     <div id="homeMainBox2">
         <a href="/notre-carte">Menu</a>
     </div>
+    <div id="homeMainImages">
+        <h2>Nos créations...</h2>
+        <?php
+        foreach ($images as $i) {
+        ?>
+            <div class="image_box">
+                <p><?= $i["title"] ?></p>
+                <img src="<?= $i["path"] ?>" alt="<?= $i["title"] ?>">
+            </div>
+        <?php
+        }
+        ?>
+    </div>
 </main>

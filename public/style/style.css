@@ -240,6 +240,43 @@
   padding: 10px 20px;
   text-transform: uppercase;
 }
+#homeMain #homeMainImages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-width: 1000px;
+  background: #fff;
+  margin: auto;
+  align-items: center;
+  padding: 40px 8vw;
+}
+#homeMain #homeMainImages h2 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+#homeMain #homeMainImages .image_box {
+  width: 90%;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+#homeMain #homeMainImages .image_box img {
+  width: 100%;
+  margin-bottom: 40px;
+}
+#homeMain #homeMainImages .image_box p {
+  top: 4vw;
+  left: 4vw;
+  font-size: clamp(16px, 5vw, 25px);
+  position: absolute;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  background: #000;
+  padding: 5px;
+}
 
 #sign-up-header {
   width: 100%;
@@ -490,6 +527,22 @@
   font-style: italic;
 }
 
+#admin-pannel {
+  padding: 5vw;
+}
+#admin-pannel #manageRestaurant {
+  display: flex;
+}
+#admin-pannel #manageMenu {
+  display: none;
+}
+#admin-pannel #manageImage {
+  display: none;
+}
+#admin-pannel #manageImage form img {
+  width: 250px;
+}
+
 @media screen and (min-width: 1000px) {
   #homeMain {
     flex-direction: row;
@@ -505,6 +558,9 @@
   }
   #homeMainBox2 {
     width: 50%;
+  }
+  #homeMainImages .image_box p {
+    display: none;
   }
 }
 /* ----------------------------------------------

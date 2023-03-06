@@ -8,6 +8,7 @@ const confirmAllergy = document.getElementById('confirmAllergy')
 const noAllergy = document.getElementById('noAllergy')
 const listAllergies = document.getElementById('form_allergies')
 const createAccountError = document.getElementById("createAccountError")
+const imgBoxes = document.getElementsByClassName("image_box")
 
 // ScrollReveals
 
@@ -79,3 +80,6 @@ ScrollReveal().reveal(".sequenced", { interval: 300, duration: 2500})
             listAllergies.style.display = "none"
         }
     })
+
+    // Display home images title
+

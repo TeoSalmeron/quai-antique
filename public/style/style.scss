@@ -286,6 +286,48 @@ $color2: #d2b05b;
       text-transform: uppercase;
     }
   }
+
+  #homeMainImages {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-width: 1000px;
+    background: #fff;
+    margin: auto;
+    align-items: center;
+    padding: 40px 8vw;
+
+    h2 {
+      font-family: $font3;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .image_box {
+      width: 90%;
+      position: relative;
+      height: auto;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      p {
+        top: 4vw;
+        left: 4vw;
+        font-size: clamp(16px, 5vw, 25px);
+        position: absolute;
+        font-family: $font1;
+        color: #fff;
+        background: #000;
+        padding: 5px;
+      }
+    }
+  }
 }
 
 // Sign up page
@@ -573,6 +615,30 @@ $color2: #d2b05b;
     }
   }
 }
+
+// Administration pannel
+
+#admin-pannel {
+  padding: 5vw;
+  #manageRestaurant {
+    display: flex;
+  }
+
+  #manageMenu {
+    display: none;
+  }
+
+  #manageImage {
+    display: none;
+
+    form {
+      img {
+        width: 250px;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1000px) {
   #homeMain {
     flex-direction: row;
@@ -591,6 +657,14 @@ $color2: #d2b05b;
 
   #homeMainBox2 {
     width: 50%;
+  }
+
+  #homeMainImages {
+    .image_box {
+      p {
+        display: none;
+      }
+    }
   }
 }
 
