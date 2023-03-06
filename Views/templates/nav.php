@@ -28,6 +28,15 @@
             </a>
         </li>
         <?php
+        // If user is administrator, add "administration" link
+        if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] == true) {
+            ?>
+                <li class="mainNavListItem">
+                    <a href="/admin">administration</a>
+                </li>
+            <?php
+        }
+        // If user is not logged, add "connect" and "create account" link
         if (!isset($_SESSION['auth'])) {
         ?>
             <li class="mainNavListItem">

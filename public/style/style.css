@@ -538,6 +538,7 @@
 }
 #admin-pannel #manageImage {
   display: none;
+  flex-direction: column;
 }
 #admin-pannel #manageImage form img {
   width: 250px;

@@ -45,7 +45,7 @@ function process_sign_in_form()
                     } else {
                         // Success
                         $_SESSION["customer_id"] = $customer["id"];
-                        var_dump($_SESSION["customer_id"]);
+                        $_SESSION["auth"] = true;
                         header('Location: /profile');
                         die();
                     }
@@ -63,10 +63,13 @@ function process_sign_in_form()
                         // Password is correct
                         $_SESSION["admin_email"] = $email;
                         $_SESSION["can_access"] = true;
+                        $_SESSION["auth"] = true;
                         header('Location: /admin/verification');
                         die();
                     }
                 } else {
+                    $_SESSION["auth"] = true;
+                    $_SESSION["is_admin"] = true;
                     $_SESSION["can_access"] = true;
                     header('Location: /admin');
                     die();

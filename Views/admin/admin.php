@@ -1,4 +1,5 @@
 <main id="admin-pannel">
+    <a href="/">Accueil</a>
     <h1>Bienvenue sur le panneau d'administration</h1>
     <label for="action">Sélectionnez l'action que vous souhaitez effectuer</label>
     <select name="action" id="action">
@@ -9,7 +10,10 @@
     <div id="manageRestaurant">
         Restaurant
     </div>
+    <!-- Insert, delete or update images -->
     <div id="manageImage">
+        <h2>Gérer les images</h2>
+        <p>Vous pouvez supprimer, ajouter ou modifier les informations d'une image à partir de ce volet</p>
         <form action="/admin/update_image" method="POST">
             <?php
             foreach ($images as $i) {
