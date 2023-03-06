@@ -19,6 +19,41 @@
   animation: slide-top 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate backwards;
 }
 
+.form_input {
+  width: 100%;
+  max-width: 350px;
+  padding: 5px 0px;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid lightgray;
+  font-weight: 500;
+}
+.form_input:focus, .form_input:active {
+  outline: none;
+}
+
+.form_box {
+  padding: 15px 0px;
+  width: 100%;
+}
+
+.form_buttons {
+  padding-top: 25px;
+  align-self: center;
+}
+.form_buttons button {
+  padding: 5px 10px;
+  border: 3px solid black;
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  background: #000;
+}
+
 #mainNav {
   width: 100%;
   background: #000;
@@ -272,29 +307,11 @@
   display: flex;
   flex-direction: column;
 }
-#sign-up-main form .form_box {
-  padding: 15px 0px;
-}
-#sign-up-main form .form_box input {
-  width: 100%;
-  max-width: 350px;
-  padding: 5px 0px;
-  font-size: 18px;
-  font-family: "Raleway", sans-serif;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid lightgray;
-  font-weight: 500;
-}
-#sign-up-main form .form_box input:focus, #sign-up-main form .form_box input:active {
-  outline: none;
-}
-#sign-up-main form .form_box .no_border {
+#sign-up-main form .no_border {
   border-bottom: unset;
   margin-right: 40px;
 }
-#sign-up-main form .form_box select {
+#sign-up-main form select {
   font-size: 18px;
   color: #757575;
   border-top: none;
@@ -304,7 +321,7 @@
   font-family: "Raleway", sans-serif;
   font-weight: 500;
 }
-#sign-up-main form .form_box select:active, #sign-up-main form .form_box select:focus {
+#sign-up-main form select:active, #sign-up-main form select:focus {
   outline: none;
 }
 #sign-up-main form small {
@@ -350,23 +367,10 @@
   font-family: "Raleway", sans-serif;
   color: #757575;
 }
-#sign-up-main form .form_buttons {
-  padding-top: 25px;
-  align-self: center;
-}
-#sign-up-main form .form_buttons button {
-  padding: 5px 10px;
-  border: 3px solid black;
-  font-family: "Cinzel", serif;
-  font-weight: 500;
-  font-size: 18px;
-  color: #fff;
-  background: #000;
-}
 
 #sign-in-header {
   width: 100%;
-  min-height: 700px;
+  min-height: 400px;
   background: url("../img/bg3.jpg");
   background-position: center;
   background-size: cover;
@@ -411,6 +415,7 @@
   font-family: "Cinzel Decorative", cursive;
   font-size: 28px;
   margin-bottom: 40px;
+  text-align: center;
 }
 #sign-in-main p {
   font-family: "Raleway", sans-serif;
@@ -429,40 +434,60 @@
   width: 100%;
   align-items: center;
 }
-#sign-in-main form input {
-  width: 100%;
-  max-width: 350px;
-  padding: 5px 0px;
-  font-size: 18px;
-  font-family: "Raleway", sans-serif;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid lightgray;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
-#sign-in-main form input:focus, #sign-in-main form input:active {
-  outline: none;
-}
-#sign-in-main form button {
-  padding: 5px 10px;
-  border: 3px solid black;
-  font-family: "Cinzel", serif;
-  font-weight: 500;
-  font-size: 18px;
-  color: #fff;
-  background: #000;
-  width: 200px;
-  margin-bottom: 40px;
-  align-self: center;
+#sign-in-main form .form_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #sign-in-main form a {
+  position: relative;
+  top: 40px;
   font-family: "Raleway", sans-serif;
   text-decoration: underline;
   color: #d2b05b;
   font-weight: 500;
   margin-bottom: 20px;
+}
+
+#admin-verification {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 6vw;
+}
+#admin-verification h1 {
+  font-size: 45px;
+  color: #d2b05b;
+  font-family: "Cinzel Decorative", cursive;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#admin-verification h2 {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+#admin-verification p {
+  font-family: "Raleway", sans-serif;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+#admin-verification form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#admin-verification form small {
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+#admin-verification form p {
+  align-self: flex-start;
+  color: red;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
 }
 
 @media screen and (min-width: 1000px) {

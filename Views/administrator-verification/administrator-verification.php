@@ -1,2 +1,0 @@
-<h2>Confirmez votre compte</h2>
-<p>C'est la première fois que vous vous connectez, nous vous invitons donc à changer votre mot de passe pour vous approprier le compte administrateur. Notez bien vos identifiants !</p>

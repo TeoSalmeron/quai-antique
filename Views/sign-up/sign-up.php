@@ -14,7 +14,7 @@ require_once ROOT . '/Views/templates/nav.php';
 
 <main id="sign-up-main">
     <h2 class="sequenced main-title">S'inscrire</h2>
-    <p id="passwordRules" class="sequenced">Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial</p>
+    <p id="passwordRules" class="sequenced">Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial</p>
     <?php
     if (isset($_SESSION["sign_up_error"]) && !empty($_SESSION["sign_up_error"])) {
     ?>
@@ -35,22 +35,22 @@ require_once ROOT . '/Views/templates/nav.php';
     ?>
     <form action="/sign-up/form" method="post" id="createAccountForm" class="sequenced">
         <div class="form_box">
-            <input type="text" name="last_name" id="userLastName" placeholder="Nom de famille" required>
+            <input class="form_input" type="text" name="last_name" id="userLastName" placeholder="Nom de famille" required>
         </div>
         <div class="form_box">
-            <input type="text" name="first_name" id="userFirstName" placeholder="Prénom" required>
+            <input class="form_input" type="text" name="first_name" id="userFirstName" placeholder="Prénom" required>
         </div>
         <div class="form_box">
-            <input type="text" name="email" id="userEmail" placeholder="E-mail" required>
+            <input class="form_input" type="text" name="email" id="userEmail" placeholder="E-mail" required>
         </div>
         <div class="form_box">
-            <input type="password" name="password" id="userPassword" placeholder="Mot de passe" required>
+            <input class="form_input" type="password" name="password" id="userPassword" placeholder="Mot de passe" required>
         </div>
         <div class="form_box">
-            <input type="password" name="confirm_password" id="userConfirmPassword" placeholder="Confirmation du mot de passe" required>
+            <input class="form_input" type="password" name="confirm_password" id="userConfirmPassword" placeholder="Confirmation du mot de passe" required>
         </div>
         <div class="form_box">
-            <input type="phone" name="phone" id="userPhone" placeholder="Numéro de téléphone" required>
+            <input class="form_input" type="phone" name="phone" id="userPhone" placeholder="Numéro de téléphone" required>
             <br>
             <small>Format : 0102030405</small>
         </div>

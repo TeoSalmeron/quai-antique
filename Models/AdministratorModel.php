@@ -6,9 +6,12 @@ use App\Models\Model;
 
 class AdministratorModel extends Model
 {
+    protected int $id;
     protected string $email;
     protected string $password;
     protected int $manage;
+    protected int $confirmed;
+
 
     public function __construct()
     {
@@ -71,6 +74,46 @@ class AdministratorModel extends Model
     public function setManage($manage)
     {
         $this->manage = $manage;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of confirmed
+     */
+    public function getConfirmed()
+    {
+        return $this->confirmed;
+    }
+
+    /**
+     * Set the value of confirmed
+     *
+     * @return  self
+     */
+    public function setConfirmed($confirmed)
+    {
+        $this->confirmed = $confirmed;
 
         return $this;
     }

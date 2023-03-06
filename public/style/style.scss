@@ -37,6 +37,42 @@ $color2: #d2b05b;
     backwards;
 }
 
+.form_input {
+  width: 100%;
+  max-width: 350px;
+  padding: 5px 0px;
+  font-size: 18px;
+  font-family: $font1;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid lightgray;
+  font-weight: 500;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.form_box {
+  padding: 15px 0px;
+  width: 100%;
+}
+
+.form_buttons {
+  padding-top: 25px;
+  align-self: center;
+  button {
+    padding: 5px 10px;
+    border: 3px solid black;
+    font-family: $font4;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    background: #000;
+  }
+}
 // Main navigation bar
 #mainNav {
   width: 100%;
@@ -325,46 +361,24 @@ $color2: #d2b05b;
     display: flex;
     flex-direction: column;
 
-    .form_box {
-      padding: 15px 0px;
+    .no_border {
+      border-bottom: unset;
+      margin-right: 40px;
+    }
 
-      input {
-        width: 100%;
-        max-width: 350px;
-        padding: 5px 0px;
-        font-size: 18px;
-        font-family: $font1;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: 1px solid lightgray;
-        font-weight: 500;
+    select {
+      font-size: 18px;
+      color: #757575;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid lightgray;
+      font-family: $font1;
+      font-weight: 500;
 
-        &:focus,
-        &:active {
-          outline: none;
-        }
-      }
-
-      .no_border {
-        border-bottom: unset;
-        margin-right: 40px;
-      }
-
-      select {
-        font-size: 18px;
-        color: #757575;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: 1px solid lightgray;
-        font-family: $font1;
-        font-weight: 500;
-
-        &:active,
-        &:focus {
-          outline: none;
-        }
+      &:active,
+      &:focus {
+        outline: none;
       }
     }
 
@@ -415,20 +429,6 @@ $color2: #d2b05b;
         }
       }
     }
-
-    .form_buttons {
-      padding-top: 25px;
-      align-self: center;
-      button {
-        padding: 5px 10px;
-        border: 3px solid black;
-        font-family: $font4;
-        font-weight: 500;
-        font-size: 18px;
-        color: #fff;
-        background: #000;
-      }
-    }
   }
 }
 
@@ -436,7 +436,7 @@ $color2: #d2b05b;
 
 #sign-in-header {
   width: 100%;
-  min-height: 700px;
+  min-height: 400px;
   background: url("../img/bg3.jpg");
   background-position: center;
   background-size: cover;
@@ -445,6 +445,7 @@ $color2: #d2b05b;
   align-items: center;
   justify-content: center;
   padding: 100px 8vw;
+
   h1 {
     text-align: center;
     font-family: $font3;
@@ -453,6 +454,7 @@ $color2: #d2b05b;
     margin-bottom: 20px;
     max-width: 490px;
   }
+
   p {
     font-family: $font1;
     color: #fff;
@@ -482,6 +484,7 @@ $color2: #d2b05b;
     font-family: $font3;
     font-size: 28px;
     margin-bottom: 40px;
+    text-align: center;
   }
 
   p {
@@ -504,39 +507,15 @@ $color2: #d2b05b;
     width: 100%;
     align-items: center;
 
-    input {
-      width: 100%;
-      max-width: 350px;
-      padding: 5px 0px;
-      font-size: 18px;
-      font-family: $font1;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      border-bottom: 1px solid lightgray;
-      font-weight: 500;
-      margin-bottom: 40px;
-
-      &:focus,
-      &:active {
-        outline: none;
-      }
-    }
-
-    button {
-      padding: 5px 10px;
-      border: 3px solid black;
-      font-family: $font4;
-      font-weight: 500;
-      font-size: 18px;
-      color: #fff;
-      background: #000;
-      width: 200px;
-      margin-bottom: 40px;
-      align-self: center;
+    .form_box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     a {
+      position: relative;
+      top: 40px;
       font-family: $font1;
       text-decoration: underline;
       color: $color2;
@@ -546,6 +525,54 @@ $color2: #d2b05b;
   }
 }
 
+// Administration confirm account
+
+#admin-verification {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 6vw;
+
+  h1 {
+    font-size: 45px;
+    color: $color2;
+    font-family: $font3;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: $font1;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family: $font1;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    small {
+      font-family: $font1;
+      font-style: italic;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+
+    p {
+      align-self: flex-start;
+      color: red;
+      font-size: 14px;
+      font-family: $font1;
+      font-style: italic;
+    }
+  }
+}
 @media screen and (min-width: 1000px) {
   #homeMain {
     flex-direction: row;

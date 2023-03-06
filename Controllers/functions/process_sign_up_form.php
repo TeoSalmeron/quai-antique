@@ -20,9 +20,10 @@ function process_sign_up_form()
         $default_nb_guest = (int)$_POST["default_nb_guest"];
         $allergies = $_POST["allergies"];
         // Check if user already exists
-        $user_exists = $user_model->findBy(["email" => $email]);
+        $user_exists_email = $user_model->findBy(["email" => $email])[0];
+        $user_exists_phone = $user_model->findBy(["phone" => $phone])[0];
         // If user exists = error
-        if ($user_exists[0] != null) {
+        if ($user_exists_email != null || $user_exists_phone != null) {
             $_SESSION["sign_up_error"] = "Vous avez déjà créé un compte";
             header('Location: /sign-up');
             die();
