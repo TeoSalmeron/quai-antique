@@ -19,6 +19,9 @@
         <li id="adminNavItem5" class="admin_nav_item">
             <a href="/">Retour à l'accueil</a>
         </li>
+        <li id="adminNavItem6" class="admin_nav_item">
+            <a href="/sign-out">Déconnexion</a>
+        </li>
     </ul>
 </nav>
 

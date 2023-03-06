@@ -603,6 +603,9 @@
 #adminNav #adminNavList #adminNavItem5 {
   transition-delay: 0.4s;
 }
+#adminNav #adminNavList #adminNavItem6 {
+  transition-delay: 0.5s;
+}
 
 #restaurantInfo,
 #manageDish,
