@@ -327,6 +327,7 @@
   align-self: flex-start;
   font-family: "Raleway", sans-serif;
   margin-bottom: 30px;
+  font-style: italic;
 }
 #sign-up-main h2 {
   font-family: "Cinzel Decorative", cursive;
@@ -490,7 +491,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 100px 6vw;
+  padding: 50px 6vw;
 }
 #admin-verification h1 {
   font-size: 45px;

@@ -383,6 +383,7 @@ $color2: #d2b05b;
     align-self: flex-start;
     font-family: $font1;
     margin-bottom: 30px;
+    font-style: italic;
   }
 
   h2 {
@@ -573,7 +574,7 @@ $color2: #d2b05b;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 100px 6vw;
+  padding: 50px 6vw;
 
   h1 {
     font-size: 45px;

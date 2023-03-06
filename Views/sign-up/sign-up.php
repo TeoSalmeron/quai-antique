@@ -14,14 +14,14 @@ require_once ROOT . '/Views/templates/nav.php';
 
 <main id="sign-up-main">
     <h2 class="sequenced main-title">S'inscrire</h2>
-    <p id="passwordRules" class="sequenced">Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial</p>
+    <small id="passwordRules" class="sequenced">Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial</small>
     <?php
     if (isset($_SESSION["sign_up_error"]) && !empty($_SESSION["sign_up_error"])) {
     ?>
-        <p class="sequenced sign_up_info">
+        <small class="sequenced sign_up_info">
             /!\ <?= $_SESSION["sign_up_error"] ?> /!\
 
-        </p>
+        </small>
     <?php
         unset($_SESSION["sign_up_error"]);
     } elseif (isset($_SESSION["sign_up_success"]) && !empty($_SESSION["sign_up_success"])) {
