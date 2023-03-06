@@ -172,7 +172,7 @@
 #homeHeader h1 {
   font-family: "Cinzel Decorative", cursive;
   font-size: clamp(55px, 8vw, 65px);
-  color: #d2b05b;
+  color: #b69239;
   margin-bottom: 20px;
 }
 #homeHeader p {
@@ -213,6 +213,7 @@
   font-family: "Cinzel Decorative", cursive;
   font-size: 28px;
   margin-bottom: 20px;
+  text-align: center;
 }
 #homeMain #homeMainBox1 p {
   font-family: "Raleway", sans-serif;
@@ -294,7 +295,7 @@
   text-align: center;
   font-family: "Cinzel Decorative", cursive;
   font-size: clamp(35px, 8vw, 45px);
-  color: #d2b05b;
+  color: #b69239;
   margin-bottom: 20px;
   max-width: 490px;
 }
@@ -422,7 +423,7 @@
   text-align: center;
   font-family: "Cinzel Decorative", cursive;
   font-size: clamp(35px, 8vw, 45px);
-  color: #d2b05b;
+  color: #b69239;
   margin-bottom: 20px;
   max-width: 490px;
 }
@@ -482,7 +483,7 @@
   top: 40px;
   font-family: "Raleway", sans-serif;
   text-decoration: underline;
-  color: #d2b05b;
+  color: #b69239;
   font-weight: 500;
   margin-bottom: 20px;
 }
@@ -495,7 +496,7 @@
 }
 #admin-verification h1 {
   font-size: 45px;
-  color: #d2b05b;
+  color: #b69239;
   font-family: "Cinzel Decorative", cursive;
   text-align: center;
   margin-bottom: 20px;
@@ -528,21 +529,110 @@
   font-style: italic;
 }
 
-#admin-pannel {
-  padding: 5vw;
-}
-#admin-pannel #manageRestaurant {
+#adminNav {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  background: #060a1d;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 55;
 }
-#admin-pannel #manageMenu {
-  display: none;
+#adminNav button {
+  background: transparent;
+  border: none;
 }
-#admin-pannel #manageImage {
+#adminNav button img {
+  position: relative;
+  width: 50px;
+  filter: invert(1);
+}
+#adminNav h1 {
+  color: #fff;
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 18px;
+}
+#adminNav #adminNavList {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  max-width: 800px;
+}
+#adminNav #adminNavList .admin_nav_item {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #060a1d;
+  position: relative;
+  left: -100%;
+  border-top: 1px solid #fff;
+  transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#adminNav #adminNavList .admin_nav_item a {
+  display: block;
+}
+#adminNav #adminNavList .admin_nav_item button,
+#adminNav #adminNavList .admin_nav_item a {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#adminNav #adminNavList .admin_nav_item button:hover,
+#adminNav #adminNavList .admin_nav_item a:hover {
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: lightgray;
+}
+#adminNav #adminNavList #adminNavItem2 {
+  transition-delay: 0.1s;
+}
+#adminNav #adminNavList #adminNavItem3 {
+  transition-delay: 0.2s;
+}
+#adminNav #adminNavList #adminNavItem4 {
+  transition-delay: 0.3s;
+}
+#adminNav #adminNavList #adminNavItem5 {
+  transition-delay: 0.4s;
+}
+
+#restaurantInfo,
+#manageDish,
+#manageMenu,
+#manageImage {
+  padding: 90px 5vw 100px;
+  width: 100%;
+  min-height: 100vh;
   display: none;
   flex-direction: column;
 }
-#admin-pannel #manageImage form img {
-  width: 250px;
+#restaurantInfo h2,
+#manageDish h2,
+#manageMenu h2,
+#manageImage h2 {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+#restaurantInfo p,
+#manageDish p,
+#manageMenu p,
+#manageImage p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+
+#restaurantInfo {
+  display: flex;
 }
 
 @media screen and (min-width: 1000px) {

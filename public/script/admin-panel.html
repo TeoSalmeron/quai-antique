@@ -1,0 +1,82 @@
+<script>
+    const adminNav = document.getElementById('adminNav')
+    const toggleAdminNav = document.getElementById("toggleAdminNav")
+    const toggleAdminNavImg = document.getElementById("toggleAdminNavImg")
+    const adminNavItems = document.getElementsByClassName("admin_nav_item")
+    const toggleRestaurantInfo = document.getElementById("toggleRestaurantInfo")
+    const sectionRestaurantInfo = document.getElementById("restaurantInfo")
+    const toggleManageDish = document.getElementById('toggleManageDish')
+    const sectionManageDish = document.getElementById('manageDish')
+    const toggleManageMenu = document.getElementById('toggleManageMenu')
+    const sectionManageMenu = document.getElementById('manageMenu')
+    const toggleManageImage = document.getElementById('toggleManageImage')
+    const sectionManageImage = document.getElementById('manageImage')
+    const sections = [sectionRestaurantInfo, sectionManageDish, sectionManageMenu, sectionManageImage]
+    const sectionsButtons = [toggleRestaurantInfo, toggleManageDish, toggleManageMenu, toggleManageImage]
+
+    function closeNav() {
+        toggleAdminNavImg.src = "../img/menu.png"
+        toggleAdminNavImg.style.width = "50px"
+        toggleAdminNavImg.style.left = "0px"
+        toggleAdminNavImg.style.bottom = "0px"
+        for (let item of adminNavItems) {
+            item.style.left = "-100%"
+        }
+    }
+
+    function openNav() {
+        toggleAdminNavImg.src = "../img/close.png"
+        toggleAdminNavImg.style.width = "33px"
+        toggleAdminNavImg.style.left = "5px"
+        toggleAdminNavImg.style.bottom = "2.5px"
+        for (let item of adminNavItems) {
+            item.style.left = "0px"
+        }
+    }
+    // Toggle navbar
+    toggleAdminNav.addEventListener('click', () => {
+        adminNav.classList.toggle("is_active")
+        if(adminNav.classList.contains("is_active")) {
+            openNav()
+        } else {
+            closeNav()
+        }
+    })
+
+    // Navbar actions
+    toggleRestaurantInfo.addEventListener('click', () => {
+        closeNav()
+        adminNav.classList.remove("is_active")
+        sectionManageDish.style.display = "none"
+        sectionManageMenu.style.display = "none"
+        sectionManageImage.style.display = "none"
+        sectionRestaurantInfo.style.display = "flex"
+    })
+
+    toggleManageDish.addEventListener('click', () => {
+        closeNav()
+        adminNav.classList.remove("is_active")
+        sectionManageMenu.style.display = "none"
+        sectionManageImage.style.display = "none"
+        sectionRestaurantInfo.style.display = "none"
+        sectionManageDish.style.display = "flex"
+    })
+
+    toggleManageMenu.addEventListener('click', () => {
+        closeNav()
+        adminNav.classList.remove("is_active")
+        sectionManageDish.style.display = "none"
+        sectionManageImage.style.display = "none"
+        sectionRestaurantInfo.style.display = "none"
+        sectionManageMenu.style.display = "flex"
+    })
+
+    toggleManageImage.addEventListener('click', () => {
+        closeNav()
+        adminNav.classList.remove("is_active")
+        sectionManageDish.style.display = "none"
+        sectionManageMenu.style.display = "none"
+        sectionRestaurantInfo.style.display = "none"
+        sectionManageImage.style.display = "flex"
+    })
+</script>

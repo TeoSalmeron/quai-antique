@@ -24,13 +24,14 @@ class AdminController extends Controller
         $dishes = $dish_model->findAll();
         $menu_model = new MenuModel;
         $menus = $menu_model->findAll();
-        $this->render("admin/admin", [
+        $this->render("admin-panel/admin-panel", [
             "title" => "Le Quai Antique - Panneau d'administation",
             "restaurant" => $restaurant,
             "images" => $images,
             "dishes" => $dishes,
-            "menus" => $menus
-        ]);
+            "menus" => $menus,
+            "admin" => $_SESSION["admin"]
+        ], ["admin-panel"]);
     }
 
     public function verification()

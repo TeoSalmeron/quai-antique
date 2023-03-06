@@ -9,8 +9,8 @@ $font4: "Cinzel", serif;
 
 // Colors
 $color0: #fff;
-$color1: #2e334a;
-$color2: #d2b05b;
+$color1: #060a1d;
+$color2: #b69239;
 
 // Reset stylesheet
 * {
@@ -254,7 +254,7 @@ $color2: #d2b05b;
       font-family: $font3;
       font-size: 28px;
       margin-bottom: 20px;
-      // text-align: center;
+      text-align: center;
     }
 
     p {
@@ -619,26 +619,117 @@ $color2: #d2b05b;
 
 // Administration pannel
 
-#admin-pannel {
-  padding: 5vw;
-  #manageRestaurant {
-    display: flex;
-  }
+#adminNav {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  background: $color1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 55;
 
-  #manageMenu {
-    display: none;
-  }
+  button {
+    background: transparent;
+    border: none;
 
-  #manageImage {
-    display: none;
-    flex-direction: column;
-
-    form {
-      img {
-        width: 250px;
-      }
+    img {
+      position: relative;
+      width: 50px;
+      filter: invert(1);
     }
   }
+
+  h1 {
+    color: $color0;
+    font-family: $font3;
+    font-size: 18px;
+  }
+
+  #adminNavList {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    max-width: 800px;
+
+    .admin_nav_item {
+      height: 70px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color1;
+      position: relative;
+      left: -100%;
+      border-top: 1px solid $color0;
+      transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+      a {
+        display: block;
+      }
+
+      button,
+      a {
+        color: $color0;
+        font-family: $font1;
+        font-size: 16px;
+        font-weight: 600;
+        transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &:hover {
+          cursor: pointer;
+          letter-spacing: 1px;
+          color: lightgray;
+        }
+      }
+    }
+
+    #adminNavItem2 {
+      transition-delay: 0.1s;
+    }
+
+    #adminNavItem3 {
+      transition-delay: 0.2s;
+    }
+
+    #adminNavItem4 {
+      transition-delay: 0.3s;
+    }
+
+    #adminNavItem5 {
+      transition-delay: 0.4s;
+    }
+  }
+}
+
+#restaurantInfo,
+#manageDish,
+#manageMenu,
+#manageImage {
+  padding: 90px 5vw 100px;
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+
+  h2 {
+    font-family: $font1;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  p {
+    font-family: $font1;
+    font-size: 16px;
+  }
+}
+
+#restaurantInfo {
+  display: flex;
 }
 
 @media screen and (min-width: 1000px) {

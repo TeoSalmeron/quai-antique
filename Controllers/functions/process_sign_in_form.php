@@ -68,6 +68,7 @@ function process_sign_in_form()
                         die();
                     }
                 } else {
+                    $_SESSION["admin"] = $administrator;
                     $_SESSION["auth"] = true;
                     $_SESSION["is_admin"] = true;
                     $_SESSION["can_access"] = true;
