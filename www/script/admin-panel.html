@@ -1,5 +1,12 @@
 <script>
+    class Button {
+        constructor(button, relatedBox) {
+            this.button = document.getElementById(button)
+            this.relatedBox = document.getElementById(relatedBox)
+        }
+    }
     const adminNav = document.getElementById('adminNav')
+    const adminNavList = document.getElementById("adminNavList")
     const toggleAdminNav = document.getElementById("toggleAdminNav")
     const toggleAdminNavImg = document.getElementById("toggleAdminNavImg")
     const adminNavItems = document.getElementsByClassName("admin_nav_item")
@@ -13,8 +20,16 @@
     const sectionManageImage = document.getElementById('manageImage')
     const sections = [sectionRestaurantInfo, sectionManageDish, sectionManageMenu, sectionManageImage]
     const sectionsButtons = [toggleRestaurantInfo, toggleManageDish, toggleManageMenu, toggleManageImage]
+    const editRestaurantInfoBtn1 = new Button("edit1", "editBox1")
+    const editRestaurantInfoBtn2 = new Button("edit2", "editBox2")
+    const editRestaurantInfoBtn3 = new Button("edit3", "editBox3")
+    const editRestaurantInfoBtn4 = new Button("edit4", "editBox4")
+    const editRestaurantInfoBtn5 = new Button("edit5", "editBox5") 
+    const editRestaurantInfoBtn6 = new Button("edit6", "editBox6")
+    const editRestaurantInfoButtons = [editRestaurantInfoBtn1, editRestaurantInfoBtn2, editRestaurantInfoBtn3, editRestaurantInfoBtn4, editRestaurantInfoBtn5, editRestaurantInfoBtn6 ]
 
     function closeNav() {
+        adminNavList.style.left = "-100vw"
         toggleAdminNavImg.src = "../img/menu.png"
         toggleAdminNavImg.style.width = "50px"
         toggleAdminNavImg.style.left = "0px"
@@ -25,6 +40,7 @@
     }
 
     function openNav() {
+        adminNavList.style.left = "0px"
         toggleAdminNavImg.src = "../img/close.png"
         toggleAdminNavImg.style.width = "33px"
         toggleAdminNavImg.style.left = "5px"
@@ -72,6 +88,7 @@
     })
 
     toggleManageImage.addEventListener('click', () => {
+        
         closeNav()
         adminNav.classList.remove("is_active")
         sectionManageDish.style.display = "none"
@@ -79,4 +96,18 @@
         sectionRestaurantInfo.style.display = "none"
         sectionManageImage.style.display = "flex"
     })
+
+    // RESTAURANT INFORMATIONS
+
+    // Toggle edit div
+    for (let item of editRestaurantInfoButtons) {
+        item.button.addEventListener('click', (e) => {
+            e.preventDefault()
+            item.relatedBox.classList.toggle("visible-flex")
+        })
+    }
+    
+    // Check if "max_capacity" is a number
+    
+
 </script>

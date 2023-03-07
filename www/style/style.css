@@ -15,6 +15,10 @@
   overflow-x: hidden;
 }
 
+.visible-flex {
+  display: flex !important;
+}
+
 .slide-top {
   animation: slide-top 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate backwards;
 }
@@ -558,7 +562,7 @@
 #adminNav #adminNavList {
   position: absolute;
   top: 70px;
-  left: 0;
+  left: -100vw;
   width: 100%;
   max-width: 800px;
 }
@@ -637,9 +641,77 @@
 #restaurantInfo {
   display: flex;
 }
+#restaurantInfo h2 {
+  font-family: "Cinzel Decorative", cursive;
+}
 #restaurantInfo p {
   text-align: justify;
   margin-bottom: 20px;
+}
+#restaurantInfo fieldset {
+  width: 100%;
+  padding: 20px 5vw;
+}
+#restaurantInfo fieldset legend {
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+}
+#restaurantInfo fieldset .form_item {
+  border-bottom: 1px solid black;
+  padding: 10px 0px;
+}
+#restaurantInfo fieldset .form_item h3 {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+#restaurantInfo fieldset .form_item p {
+  color: #060a1d;
+  font-size: 18px;
+}
+#restaurantInfo fieldset .form_item .edit_restaurant_info {
+  padding: 5px 10px;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  background: #060a1d;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+#restaurantInfo fieldset .form_item .edit_restaurant_info:hover {
+  cursor: pointer;
+}
+#restaurantInfo fieldset .form_item .edit_box {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#restaurantInfo fieldset .form_item .edit_box .edit_box_btn {
+  padding: 5px 10px;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  margin: 10px 0px;
+}
+#restaurantInfo fieldset .form_item .edit_box .edit_box_btn:hover {
+  cursor: pointer;
+}
+#restaurantInfo fieldset .form_item .edit_box input {
+  margin: 10px 0px;
+}
+#restaurantInfo fieldset .form_item .edit_box select {
+  margin: 10px 0px;
+  padding: 5px 10px;
+  font-family: "Raleway", sans-serif;
+}
+#restaurantInfo fieldset .form_item .edit_box .success {
+  background: darkgreen !important;
+}
+#restaurantInfo fieldset .form_item .edit_box .cancel {
+  background: darkred !important;
+}
+#restaurantInfo fieldset .form_item_borderless {
+  border-bottom: unset !important;
 }
 
 @media screen and (min-width: 1000px) {
