@@ -23,7 +23,7 @@ abstract class Controller
 
         if (isset($script) && !is_null($script)) {
             foreach ($script as $s) {
-                require_once ROOT . '/public/script/' . $s . '.html';
+                require_once ROOT . '/www/script/' . $s . '.html';
             }
         }
 

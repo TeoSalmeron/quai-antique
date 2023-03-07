@@ -47,6 +47,7 @@ class AdminController extends Controller
 
     public function register_admin()
     {
+        check_rights();
         require_once ROOT . '/Controllers/functions/process_register_admin_form.php';
         process_register_admin_form();
     }
