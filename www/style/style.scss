@@ -734,6 +734,11 @@ $color2: #b69239;
 
 #restaurantInfo {
   display: flex;
+
+  p {
+    text-align: justify;
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (min-width: 1000px) {

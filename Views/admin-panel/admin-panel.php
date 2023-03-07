@@ -28,6 +28,33 @@
 <section id="restaurantInfo">
     <h2>Informations du restaurant</h2>
     <p>Dans cette section, vous pouvez modifier les horaires d'ouvertures et de service du restaurant, sa capacité d'accueil et son jour de fermeture.</p>
+    <fieldset>
+        <legend>Informations du restaurant</legend>
+        <div class="fieldset_item">
+            <h3>Heure de début du service du midi</h3>
+            <p><?= $restaurant["noon_service_start"]?></p>
+        </div>
+        <div class="fieldset_item">
+            <h3>Heure de fin du service du midi</h3>
+            <p><?= $restaurant["noon_service_end"]?></p>
+        </div>
+        <div class="fieldset_item">
+            <h3>Heure de début du service du soir</h3>
+            <p><?=$restaurant["evening_service_start"]?></p>
+        </div>
+        <div class="fieldset_item">
+            <h3>Heure de fin du service du soir</h3>
+            <p><?=$restaurant["evening_service_end"]?></p>
+        </div>
+        <div class="fieldset_item">
+            <h3>Capacité maximale</h3>
+            <p><?=$restaurant["max_capacity"]?> couverts</p>
+        </div>
+        <div class="fieldset_item">
+            <h3>Jour de fermeture</h3>
+            <p><?= ucfirst($day_close) ?></p>
+        </div>
+    </fieldset>
 </section>
 
 <section id="manageDish">

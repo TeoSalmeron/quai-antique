@@ -9,6 +9,7 @@ use App\Models\MenuModel;
 use App\Models\RestaurantModel;
 
 require_once ROOT . '/Controllers/functions/check_rights.php';
+require_once ROOT . '/Controllers/functions/define_day_close.php';
 
 class AdminController extends Controller
 {
@@ -27,6 +28,7 @@ class AdminController extends Controller
         $this->render("admin-panel/admin-panel", [
             "title" => "Le Quai Antique - Panneau d'administation",
             "restaurant" => $restaurant,
+            "day_close" => define_day_close($restaurant["day_close"]),
             "images" => $images,
             "dishes" => $dishes,
             "menus" => $menus,
