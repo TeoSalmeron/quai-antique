@@ -39,3 +39,7 @@ require_once ROOT . '/Views/templates/nav.php';
         ?>
     </div>
 </main>
+
+<?php
+    require_once ROOT . '/Views/templates/footer.php';
+?>

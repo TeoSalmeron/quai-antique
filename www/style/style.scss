@@ -766,6 +766,15 @@ $color2: #b69239;
         margin-bottom: 20px;
       }
 
+      small {
+        font-size: 14px;
+        font-family: $font1;
+        color: red;
+        font-style: italic;
+        margin-bottom: 20px;
+        display: block;
+      }
+
       p {
         color: $color1;
         font-size: 18px;
@@ -823,6 +832,27 @@ $color2: #b69239;
     .form_item_borderless {
       border-bottom: unset !important;
     }
+  }
+}
+
+footer {
+  width: 100%;
+  background: #000;
+  min-height: 300px;
+  padding: 40px 5vw;
+  color: $color0;
+  font-family: $font1;
+
+  h3 {
+    font-family: $font3;
+    color: $color2;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 20px;
   }
 }
 

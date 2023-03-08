@@ -29,7 +29,6 @@
     const editRestaurantInfoButtons = [editRestaurantInfoBtn1, editRestaurantInfoBtn2, editRestaurantInfoBtn3, editRestaurantInfoBtn4, editRestaurantInfoBtn5, editRestaurantInfoBtn6 ]
 
     function closeNav() {
-        adminNavList.style.left = "-100vw"
         toggleAdminNavImg.src = "../img/menu.png"
         toggleAdminNavImg.style.width = "50px"
         toggleAdminNavImg.style.left = "0px"
@@ -37,6 +36,9 @@
         for (let item of adminNavItems) {
             item.style.left = "-100%"
         }
+        setTimeout(() => {
+            adminNavList.style.left = "-100vw"
+        }, 2000);
     }
 
     function openNav() {

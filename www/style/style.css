@@ -664,6 +664,14 @@
   font-family: "Raleway", sans-serif;
   margin-bottom: 20px;
 }
+#restaurantInfo fieldset .form_item small {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  color: red;
+  font-style: italic;
+  margin-bottom: 20px;
+  display: block;
+}
 #restaurantInfo fieldset .form_item p {
   color: #060a1d;
   font-size: 18px;
@@ -712,6 +720,25 @@
 }
 #restaurantInfo fieldset .form_item_borderless {
   border-bottom: unset !important;
+}
+
+footer {
+  width: 100%;
+  background: #000;
+  min-height: 300px;
+  padding: 40px 5vw;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+}
+footer h3 {
+  font-family: "Cinzel Decorative", cursive;
+  color: #b69239;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+footer p {
+  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 1000px) {

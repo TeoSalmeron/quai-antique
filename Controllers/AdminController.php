@@ -53,4 +53,12 @@ class AdminController extends Controller
         require_once ROOT . '/Controllers/functions/process_register_admin_form.php';
         process_register_admin_form();
     }
+
+    public function process_edit_restaurant_info_form()
+    {
+        check_rights();
+        require_once ROOT . '/Controllers/functions/process_edit_restaurant_info_form.php';
+        $restaurant_model = new RestaurantModel;
+        process_edit_restaurant_info_form($restaurant_model);
+    }
 }

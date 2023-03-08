@@ -30,8 +30,16 @@
     <p>Dans cette section, vous pouvez modifier les horaires d'ouvertures et de service du restaurant, sa capacité d'accueil et son jour de fermeture.</p>
     <fieldset>
         <legend>Informations du restaurant</legend>
-        <form class="form_item" method="post" action="">
+        <form class="form_item" method="post" action="admin/process_edit_restaurant_info_form">
             <h3>Heure de début du service du midi</h3>
+            <?php
+            if (isset($_SESSION["noon_service_start_error"])) {
+            ?>
+                <small> <?= $_SESSION["noon_service_start_error"] ?></small>
+            <?php
+                unset($_SESSION["noon_service_start_error"]);
+            }
+            ?>
             <p><?= $restaurant["noon_service_start"] ?></p>
             <button class="edit_restaurant_info" id="edit1">Modifier</button>
             <div class="edit_box" id="editBox1">
@@ -42,8 +50,16 @@
                 </div>
             </div>
         </form>
-        <form class="form_item" method="post" action="">
+        <form class="form_item" method="post" action="admin/process_edit_restaurant_info_form">
             <h3>Heure de fin du service du midi</h3>
+            <?php
+            if (isset($_SESSION["noon_service_end_error"])) {
+            ?>
+                <small> <?= $_SESSION["noon_service_end_error"] ?></small>
+            <?php
+                unset($_SESSION["noon_service_end_error"]);
+            }
+            ?>
             <p><?= $restaurant["noon_service_end"] ?></p>
             <button class="edit_restaurant_info" id="edit2">Modifier</button>
             <div class="edit_box" id="editBox2">
@@ -54,8 +70,16 @@
                 </div>
             </div>
         </form>
-        <form class="form_item" method="post" action="">
+        <form class="form_item" method="post" action="admin/process_edit_restaurant_info_form">
             <h3>Heure de début du service du soir</h3>
+            <?php
+            if (isset($_SESSION["evening_service_start_error"])) {
+            ?>
+                <small> <?= $_SESSION["evening_service_start_error"] ?></small>
+            <?php
+                unset($_SESSION["evening_service_start_error"]);
+            }
+            ?>
             <p><?= $restaurant["evening_service_start"] ?></p>
             <button class="edit_restaurant_info" id="edit3">Modifier</button>
             <div class="edit_box" id="editBox3">
@@ -66,8 +90,16 @@
                 </div>
             </div>
         </form>
-        <form class="form_item" method="post" action="">
+        <form class="form_item" method="post" action="admin/process_edit_restaurant_info_form">
             <h3>Heure de fin du service du soir</h3>
+            <?php
+            if (isset($_SESSION["evening_service_end_error"])) {
+            ?>
+                <small> <?= $_SESSION["evening_service_end_error"] ?></small>
+            <?php
+                unset($_SESSION["evening_service_end_error"]);
+            }
+            ?>
             <p><?= $restaurant["evening_service_end"] ?></p>
             <button class="edit_restaurant_info" id="edit4">Modifier</button>
             <div class="edit_box" id="editBox4">
@@ -78,8 +110,16 @@
                 </div>
             </div>
         </form>
-        <form class="form_item" method="post" action="">
+        <form class="form_item" method="post" action="admin/process_edit_restaurant_info_form">
             <h3>Capacité maximale</h3>
+            <?php
+            if (isset($_SESSION["max_capacity_error"])) {
+            ?>
+                <small> <?= $_SESSION["max_capacity_error"] ?></small>
+            <?php
+                unset($_SESSION["max_capacity_error"]);
+            }
+            ?>
             <p><?= $restaurant["max_capacity"] ?> couverts</p>
             <button class="edit_restaurant_info" id="edit5">Modifier</button>
             <div class="edit_box" id="editBox5">
@@ -90,13 +130,14 @@
                 </div>
             </div>
         </form>
-        <form class="form_item form_item_borderless" method="post" action="">
+        <form class="form_item form_item_borderless" method="post" action="admin/process_edit_restaurant_info_form">
             <h3>Jour de fermeture</h3>
             <p><?= ucfirst($day_close) ?></p>
             <button class="edit_restaurant_info" id="edit6">Modifier</button>
             <div class="edit_box" id="editBox6">
                 <select name="day_close" id="day_close">
-                    <option value="0">Dimanche</option>
+                    <option value="" selected disabled>Choisir un jour de la semaine</option>
+                    <option value="7">Dimanche</option>
                     <option value="1">Luni</option>
                     <option value="2">Mardi</option>
                     <option value="3">Mercredi</option>

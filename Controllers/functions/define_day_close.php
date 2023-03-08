@@ -1,10 +1,8 @@
 <?php
 
-function define_day_close($item) {
-    switch($item) {
-        case 0:
-            return "dimanche";
-            break;
+function define_day_close($item)
+{
+    switch ($item) {
         case 1:
             return "lundi";
             break;
@@ -14,14 +12,17 @@ function define_day_close($item) {
         case 3:
             return "mercredi";
             break;
-        case 4: 
+        case 4:
             return "jeudi";
             break;
-        case 5: 
+        case 5:
             return "vendredi";
             break;
-        case 6: 
+        case 6:
             return "samedi";
+            break;
+        case 7:
+            return "dimanche";
             break;
         default:
             break;
