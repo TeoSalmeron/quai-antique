@@ -43,14 +43,14 @@
                 if(!item2.classList.contains("onHover")) {
                     item2.style.color = "lightgray"
                 } else {
-                    item2.style.color = "black"
+                    item2.style.color = "#00020b";
                 }
             }
         })
         item.addEventListener('mouseleave', (e) => {
             e.target.classList.remove("onHover")
             for(let item2 of mainNavListItems) {
-                item2.style.color = "black"
+                item2.style.color = "#00020b"
             }
         })
     }

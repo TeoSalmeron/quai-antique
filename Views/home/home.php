@@ -22,7 +22,7 @@ require_once ROOT . '/Views/templates/nav.php';
         <br class="sequenced">
         <p class="sequenced">Notre but, vous faire passer un moment mémorable. Et pour cela, nous mettons un point d'honneur sur la qualité de nos produits. En collaboration directe avec nos producteurs locaux, ayez la garantie d'avoir des produits frais et savoureux dans votre assiette.</p>
     </div>
-    <div id="homeMainBox2">
+    <div id="homeMainBox2" class="sequenced">
         <a href="/notre-carte" class="sequenced">Menu</a>
     </div>
     <div id="homeMainImages">
@@ -41,5 +41,5 @@ require_once ROOT . '/Views/templates/nav.php';
 </main>
 
 <?php
-    require_once ROOT . '/Views/templates/footer.php';
+require_once ROOT . '/Views/templates/footer.php';
 ?>
