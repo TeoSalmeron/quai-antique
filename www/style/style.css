@@ -60,7 +60,7 @@
 
 #mainNav {
   width: 100%;
-  background: #000;
+  background: #00020b;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.31);
   height: 70px;
   display: flex;
@@ -200,6 +200,7 @@
 }
 
 #homeMain {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   width: 100%;
   background: #fff;
   margin: auto;
@@ -216,7 +217,7 @@
 }
 #homeMain #homeMainBox1 h2 {
   font-family: "Cinzel Decorative", cursive;
-  font-size: 28px;
+  font-size: 35px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -236,11 +237,10 @@
 }
 #homeMain #homeMainBox2 a {
   align-self: center;
-  width: 100px;
   color: #fff;
   border: 3px solid #fff;
   font-family: "Playfair Display", serif;
-  font-size: 18px;
+  font-size: clamp(18px, 6vw, 26px);
   font-weight: 600;
   padding: 10px 20px;
   text-transform: uppercase;
@@ -258,7 +258,7 @@
 }
 #homeMain #homeMainImages h2 {
   font-family: "Cinzel Decorative", cursive;
-  font-size: 28px;
+  font-size: 35px;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -273,8 +273,8 @@
   margin-bottom: 40px;
 }
 #homeMain #homeMainImages .image_box p {
-  top: 4vw;
-  left: 4vw;
+  top: 15px;
+  left: 15px;
   font-size: clamp(16px, 5vw, 25px);
   position: absolute;
   font-family: "Raleway", sans-serif;
@@ -321,6 +321,8 @@
 
 #sign-up-main {
   width: 100%;
+  margin: auto;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   min-height: 700px;
   background: #fff;
   display: flex;
@@ -336,7 +338,7 @@
 }
 #sign-up-main h2 {
   font-family: "Cinzel Decorative", cursive;
-  font-size: 28px;
+  font-size: 35px;
   margin-bottom: 50px;
 }
 #sign-up-main .sign_up_info {
@@ -411,52 +413,19 @@
   color: #757575;
 }
 
-#sign-in-header {
-  width: 100%;
-  min-height: 400px;
-  background: url("../img/bg3.jpg");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 8vw;
-}
-#sign-in-header h1 {
-  text-align: center;
-  font-family: "Cinzel Decorative", cursive;
-  font-size: clamp(35px, 8vw, 45px);
-  color: #d29b3d;
-  margin-bottom: 20px;
-  max-width: 490px;
-}
-#sign-in-header p {
-  font-family: "Raleway", sans-serif;
-  color: #fff;
-  text-align: justify;
-  font-size: 18px;
-  margin-bottom: 40px;
-  max-width: 500px;
-}
-#sign-in-header img {
-  width: 40px;
-  height: 40px;
-  filter: invert(1);
-  position: relative;
-  top: 50px;
-}
-
 #sign-in-main {
   display: flex;
   width: 100%;
+  background: #fff;
+  margin: auto;
   flex-direction: column;
   align-items: center;
-  padding: 50px 8vw;
+  padding: 150px 8vw 100px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
 }
-#sign-in-main h2 {
+#sign-in-main h1 {
   font-family: "Cinzel Decorative", cursive;
-  font-size: 28px;
+  font-size: 35px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -636,25 +605,21 @@
 #manageImage p {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 #restaurantInfo {
   display: flex;
-}
-#restaurantInfo h2 {
-  font-family: "Cinzel Decorative", cursive;
-}
-#restaurantInfo p {
-  text-align: justify;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 #restaurantInfo fieldset {
   width: 100%;
   padding: 20px 5vw;
-}
-#restaurantInfo fieldset legend {
-  font-weight: bold;
-  font-family: "Raleway", sans-serif;
+  border: 1px solid #00020b;
+  max-width: 650px;
+  background: #fff;
 }
 #restaurantInfo fieldset .form_item {
   border-bottom: 1px solid black;
@@ -722,6 +687,99 @@
   border-bottom: unset !important;
 }
 
+#manageImage {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+#manageImage .button {
+  padding: 10px;
+  background: #00020b;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+#manageImage .button:hover {
+  cursor: pointer;
+}
+#manageImage fieldset {
+  background: #fff;
+  width: 100%;
+  padding: 20px 5vw;
+  margin-bottom: 20px;
+  max-width: 650px;
+}
+#manageImage fieldset legend {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+#manageImage fieldset #imageError,
+#manageImage fieldset #imageSuccess {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: start;
+}
+#manageImage fieldset #imageError {
+  color: rgb(255, 0, 0);
+}
+#manageImage fieldset #imageSuccess {
+  color: green;
+}
+#manageImage fieldset form label,
+#manageImage fieldset form input,
+#manageImage fieldset form small {
+  font-family: "Raleway", sans-serif;
+}
+#manageImage fieldset form input[type=text] {
+  font-size: 16px;
+  padding: 3px;
+}
+#manageImage fieldset form input[type=text]:focus, #manageImage fieldset form input[type=text]:active {
+  outline: none;
+}
+#manageImage fieldset form label {
+  margin-right: 10px;
+}
+#manageImage fieldset form .form_buttons button {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+#manageImage #deleteImageBox .image_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #00020b;
+  padding-bottom: 20px;
+}
+#manageImage #deleteImageBox .image_box h4 {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+#manageImage #deleteImageBox .image_box img {
+  width: 300px;
+  margin-bottom: 20px;
+}
+#manageImage #deleteImageBox .image_box img:hover {
+  cursor: default;
+}
+#manageImage #deleteImageBox .image_box input {
+  display: none;
+}
+#manageImage #deleteImageBox .image_box button {
+  font-size: 16px;
+  padding: 10px;
+  font-family: "Raleway", sans-serif;
+  background-color: darkred;
+  color: #fff;
+  border: none;
+}
+#manageImage #deleteImageBox .image_box button:hover {
+  cursor: pointer;
+}
+
 footer {
   width: 100%;
   background: #00020b;
@@ -754,23 +812,15 @@ footer iframe {
   max-width: 500px;
 }
 
-@media screen and (min-width: 1000px) {
-  #homeMain {
-    flex-direction: row;
-    flex-wrap: wrap;
+@media screen and (min-width: 1100px) {
+  .container {
+    background: url("../img/bg.svg");
+    background-size: cover;
   }
-  #homeMain #homeMainBox1 {
-    height: 400px;
-    width: 50%;
-  }
-  #homeMain #homeMainBox1 h2 {
-    margin-bottom: unset;
-  }
-  #homeMainBox2 {
-    width: 50%;
-  }
-  #homeMainImages .image_box p {
-    display: none;
+  #homeMain,
+  #sign-in-main,
+  #sign-up-main {
+    max-width: 950px;
   }
 }
 /* ----------------------------------------------

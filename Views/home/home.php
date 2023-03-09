@@ -30,9 +30,9 @@ require_once ROOT . '/Views/templates/nav.php';
         <?php
         foreach ($images as $i) {
         ?>
-            <div class="image_box sequenced">
+            <div class="image_box">
                 <p><?= $i["title"] ?></p>
-                <img src="<?= $i["path"] ?>" alt="<?= $i["title"] ?>">
+                <img src="<?= "img/" . $i["name"] ?>" alt="<?= $i["title"] ?>">
             </div>
         <?php
         }

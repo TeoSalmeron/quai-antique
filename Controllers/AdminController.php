@@ -61,4 +61,20 @@ class AdminController extends Controller
         $restaurant_model = new RestaurantModel;
         process_edit_restaurant_info_form($restaurant_model);
     }
+
+    public function process_add_image_form()
+    {
+        check_rights();
+        $image_model = new ImageModel;
+        require_once ROOT . '/Controllers/functions/process_add_image_form.php';
+        process_add_image_form("image", $image_model);
+    }
+
+    public function process_delete_image_form()
+    {
+        check_rights();
+        $image_model = new ImageModel;
+        require_once ROOT . '/Controllers/functions/process_delete_image_form.php';
+        process_delete_image_form($image_model);
+    }
 }

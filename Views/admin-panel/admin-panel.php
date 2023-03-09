@@ -29,7 +29,6 @@
     <h2>Informations du restaurant</h2>
     <p>Dans cette section, vous pouvez modifier les horaires d'ouvertures et de service du restaurant, sa capacité d'accueil et son jour de fermeture.</p>
     <fieldset>
-        <legend>Informations du restaurant</legend>
         <form class="form_item" method="post" action="admin/process_edit_restaurant_info_form">
             <h3>Heure de début du service du midi</h3>
             <?php
@@ -163,5 +162,58 @@
 </section>
 
 <section id="manageImage">
-    Section manage image
+    <h2>Gestion des images</h2>
+    <p>Ici, vous pourrez gérer les images de présentation sur la page d'accueil. Vous pouvez ajouter des images, en supprimer et modifier leur titre.</p>
+    <fieldset id="addImageFieldset">
+        <legend>Ajouter une image</legend>
+        <p>Si votre est image est trop lourde, tentez de la compresser en allant sur ce <a href="https://www.iloveimg.com/fr/compresser-image" target="_blank">lien</a> et suivez les instructions à l'écran.</p>
+        <?php
+        if (isset($_SESSION["image_error"]) && !empty($_SESSION["image_error"])) {
+        ?>
+            <p id="imageError"> <?= $_SESSION["image_error"] ?> </p>
+        <?php
+        } elseif (isset($_SESSION["image_success"]) && !empty($_SESSION["image_success"])) {
+        ?>
+            <p id="imageSuccess"> <?= $_SESSION["image_success"] ?> </p>
+        <?php
+        }
+        unset($_SESSION["image_success"]);
+        unset($_SESSION["image_error"]);
+        ?>
+        <form action="/admin/process_add_image_form" method="POST" id="addImageForm" enctype="multipart/form-data">
+            <label for="title">Titre de l'image :</label>
+            <input type="text" name="title" id="title">
+            <br>
+            <br>
+            <label for="file">Fichier :</label>
+            <input type="file" name="image" id="image">
+            <br>
+            <small>Le fichier doit être au format jpeg, jpg ou png</small>
+            <br>
+            <small>Poids limite de 4 MO</small>
+            <br>
+            <small>Le format paysage est priviligié</small>
+            <div class="form_buttons">
+                <button type="submit">Valider</button>
+                <button type="reset">Réinitialiser</button>
+            </div>
+        </form>
+    </fieldset>
+    <fieldset id="deleteImageBox">
+        <legend>Supprimer une image</legend>
+        <p></p>
+        <?php
+        foreach ($images as $image) {
+        ?>
+            <form class="image_box" action="/admin/process_delete_image_form" method="POST">
+                <h4><?= $image["title"] ?></h4>
+                <img src="<?= "img/" . $image["name"] ?>" alt="<?= $image["title"] ?>">
+                <input type="checkbox" name="delete_image[]" value="<?= $image["id"] ?>" checked>
+                <input type="checkbox" name="delete_image[]" value="<?= $image["name"] ?>" checked>
+                <button type="submit">Supprimer</button>
+            </form>
+        <?php
+        }
+        ?>
+    </fieldset>
 </section>

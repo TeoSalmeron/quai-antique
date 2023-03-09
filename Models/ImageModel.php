@@ -7,7 +7,7 @@ use App\Models\Model;
 class ImageModel extends Model
 {
     protected int $id;
-    protected string $path;
+    protected string $name;
     protected string $title;
     protected int $id_restaurant;
 
@@ -39,9 +39,9 @@ class ImageModel extends Model
     /**
      * Get the value of path
      */
-    public function getPath()
+    public function getName()
     {
-        return $this->path;
+        return $this->name;
     }
 
     /**
@@ -49,9 +49,9 @@ class ImageModel extends Model
      *
      * @return  self
      */
-    public function setPath($path)
+    public function setName($name)
     {
-        $this->path = $path;
+        $this->name = $name;
 
         return $this;
     }

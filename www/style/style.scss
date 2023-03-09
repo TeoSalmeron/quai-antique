@@ -80,7 +80,7 @@ $color2: #d29b3d;
 // Main navigation bar
 #mainNav {
   width: 100%;
-  background: #000;
+  background: $color1;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.31);
   height: 70px;
   display: flex;
@@ -241,6 +241,8 @@ $color2: #d29b3d;
 
 // Home main section
 #homeMain {
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   width: 100%;
   background: #fff;
   margin: auto;
@@ -257,7 +259,7 @@ $color2: #d29b3d;
 
     h2 {
       font-family: $font3;
-      font-size: 28px;
+      font-size: 35px;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -280,11 +282,10 @@ $color2: #d29b3d;
 
     a {
       align-self: center;
-      width: 100px;
       color: #fff;
       border: 3px solid #fff;
       font-family: $font2;
-      font-size: 18px;
+      font-size: clamp(18px, 6vw, 26px);
       font-weight: 600;
       padding: 10px 20px;
       text-transform: uppercase;
@@ -304,7 +305,7 @@ $color2: #d29b3d;
 
     h2 {
       font-family: $font3;
-      font-size: 28px;
+      font-size: 35px;
       text-align: center;
       margin-bottom: 40px;
     }
@@ -321,8 +322,8 @@ $color2: #d29b3d;
       }
 
       p {
-        top: 4vw;
-        left: 4vw;
+        top: 15px;
+        left: 15px;
         font-size: clamp(16px, 5vw, 25px);
         position: absolute;
         font-family: $font1;
@@ -376,6 +377,9 @@ $color2: #d29b3d;
 
 #sign-up-main {
   width: 100%;
+  margin: auto;
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   min-height: 700px;
   background: #fff;
   display: flex;
@@ -392,7 +396,7 @@ $color2: #d29b3d;
 
   h2 {
     font-family: $font3;
-    font-size: 28px;
+    font-size: 35px;
     margin-bottom: 50px;
     // color: $color2;
   }
@@ -481,55 +485,20 @@ $color2: #d29b3d;
 
 // Sign in page
 
-#sign-in-header {
-  width: 100%;
-  min-height: 400px;
-  background: url("../img/bg3.jpg");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 8vw;
-
-  h1 {
-    text-align: center;
-    font-family: $font3;
-    font-size: clamp(35px, 8vw, 45px);
-    color: $color2;
-    margin-bottom: 20px;
-    max-width: 490px;
-  }
-
-  p {
-    font-family: $font1;
-    color: #fff;
-    text-align: justify;
-    font-size: 18px;
-    margin-bottom: 40px;
-    max-width: 500px;
-  }
-
-  img {
-    width: 40px;
-    height: 40px;
-    filter: invert(1);
-    position: relative;
-    top: 50px;
-  }
-}
-
 #sign-in-main {
   display: flex;
   width: 100%;
+  background: $color0;
+  margin: auto;
   flex-direction: column;
   align-items: center;
-  padding: 50px 8vw;
+  padding: 150px 8vw 100px;
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
 
-  h2 {
+  h1 {
     font-family: $font3;
-    font-size: 28px;
+    font-size: 35px;
     margin-bottom: 40px;
     text-align: center;
   }
@@ -733,29 +702,22 @@ $color2: #d29b3d;
   p {
     font-family: $font1;
     font-size: 16px;
+    text-align: justify;
+    margin-bottom: 20px;
   }
 }
 
 #restaurantInfo {
   display: flex;
-
-  h2 {
-    font-family: $font3;
-  }
-
-  p {
-    text-align: justify;
-    margin-bottom: 20px;
-  }
+  flex-direction: column;
+  align-items: center;
 
   fieldset {
     width: 100%;
     padding: 20px 5vw;
-
-    legend {
-      font-weight: bold;
-      font-family: $font1;
-    }
+    border: 1px solid $color1;
+    max-width: 650px;
+    background: $color0;
 
     .form_item {
       border-bottom: 1px solid black;
@@ -835,6 +797,125 @@ $color2: #d29b3d;
   }
 }
 
+#manageImage {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  .button {
+    padding: 10px;
+    background: $color1;
+    border: none;
+    font-family: $font1;
+    font-size: 16px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  fieldset {
+    background: $color0;
+    width: 100%;
+    padding: 20px 5vw;
+    margin-bottom: 20px;
+    max-width: 650px;
+
+    legend {
+      font-family: $font1;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    #imageError,
+    #imageSuccess {
+      font-size: 15px;
+      font-weight: 500;
+      text-align: start;
+    }
+
+    #imageError {
+      color: rgb(255, 0, 0);
+    }
+
+    #imageSuccess {
+      color: green;
+    }
+
+    form {
+      label,
+      input,
+      small {
+        font-family: $font1;
+      }
+
+      input[type="text"] {
+        font-size: 16px;
+        padding: 3px;
+
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+
+      label {
+        margin-right: 10px;
+      }
+
+      .form_buttons {
+        button {
+          font-family: $font1;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  #deleteImageBox {
+    .image_box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $color1;
+      padding-bottom: 20px;
+
+      h4 {
+        font-family: $font1;
+        margin-bottom: 20px;
+      }
+
+      img {
+        width: 300px;
+        margin-bottom: 20px;
+
+        &:hover {
+          cursor: default;
+        }
+      }
+
+      input {
+        display: none;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 10px;
+        font-family: $font1;
+        background-color: darkred;
+        color: $color0;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+// Footer
+
 footer {
   width: 100%;
   background: $color1;
@@ -869,31 +950,15 @@ footer {
   }
 }
 
-@media screen and (min-width: 1000px) {
-  #homeMain {
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    #homeMainBox1 {
-      height: 400px;
-      width: 50%;
-
-      h2 {
-        margin-bottom: unset;
-      }
-    }
+@media screen and (min-width: 1100px) {
+  .container {
+    background: url("../img/bg.svg");
+    background-size: cover;
   }
-
-  #homeMainBox2 {
-    width: 50%;
-  }
-
-  #homeMainImages {
-    .image_box {
-      p {
-        display: none;
-      }
-    }
+  #homeMain,
+  #sign-in-main,
+  #sign-up-main {
+    max-width: 950px;
   }
 }
 
