@@ -53,8 +53,9 @@ function process_sign_in_form()
             } else {
                 // If admin is not confirmed
                 if ($administrator["confirmed"] == 0) {
+                    $hashed_admin_password = password_hash($administrator["password"], PASSWORD_BCRYPT);
                     // Check if password is correct
-                    if ($password !== $administrator["password"]) {
+                    if (!password_verify($password, $hashed_admin_password)) {
                         // Password is not correct
                         $_SESSION["sign_in_error"] = "Mot de passe invalide";
                         header('Location: /sign-in');
@@ -63,17 +64,25 @@ function process_sign_in_form()
                         // Password is correct
                         $_SESSION["admin_email"] = $email;
                         $_SESSION["can_access"] = true;
-                        $_SESSION["auth"] = true;
                         header('Location: /admin/verification');
                         die();
                     }
                 } else {
-                    $_SESSION["admin"] = $administrator;
-                    $_SESSION["auth"] = true;
-                    $_SESSION["is_admin"] = true;
-                    $_SESSION["can_access"] = true;
-                    header('Location: /admin');
-                    die();
+                    // If admin is confirmed
+                    if (!password_verify($password, $administrator["password"])) {
+                        // Password is not correct
+                        $_SESSION["sign_in_error"] = "Mot de passe invalide";
+                        header('Location: /sign-in');
+                        die();
+                    } else {
+                        // Redirect to administration pannel
+                        $_SESSION["admin"] = $administrator;
+                        $_SESSION["auth"] = true;
+                        $_SESSION["is_admin"] = true;
+                        $_SESSION["can_access"] = true;
+                        header('Location: /admin');
+                        die();
+                    }
                 }
             }
         }

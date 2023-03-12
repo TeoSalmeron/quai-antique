@@ -435,7 +435,8 @@
   align-self: flex-start;
 }
 #sign-in-main #signInError {
-  color: rgb(225, 0, 0);
+  align-self: center;
+  color: rgb(235, 0, 0);
 }
 #sign-in-main #signInSuccess {
   color: green;
@@ -813,10 +814,6 @@ footer iframe {
 }
 
 @media screen and (min-width: 1100px) {
-  .container {
-    background: url("../img/bg.svg");
-    background-size: cover;
-  }
   #homeMain,
   #sign-in-main,
   #sign-up-main {

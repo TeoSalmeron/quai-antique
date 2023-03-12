@@ -510,7 +510,8 @@ $color2: #d29b3d;
   }
 
   #signInError {
-    color: rgb(225, 0, 0);
+    align-self: center;
+    color: rgb(235, 0, 0);
   }
 
   #signInSuccess {
@@ -951,10 +952,6 @@ footer {
 }
 
 @media screen and (min-width: 1100px) {
-  .container {
-    background: url("../img/bg.svg");
-    background-size: cover;
-  }
   #homeMain,
   #sign-in-main,
   #sign-up-main {

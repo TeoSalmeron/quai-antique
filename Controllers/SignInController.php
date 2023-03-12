@@ -11,6 +11,8 @@ class SignInController extends Controller
 {
     public function index()
     {
+        require_once ROOT . '/Controllers/functions/is_user_logged.php';
+        is_user_logged();
         $restaurant_model = new RestaurantModel;
         $restaurant = $restaurant_model->find(1);
         $restaurant_model->setNoon_service_start($restaurant["noon_service_start"])
