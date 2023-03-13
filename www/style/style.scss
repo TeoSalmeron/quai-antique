@@ -946,16 +946,18 @@ align-items: center;
   #addMenu {
     font-family: $font1;
     padding: 20px 3vw;
-    height: 750px;
+    height: auto;
     max-width: 750px;
     width: 100%;
 
     #addMenuSuccess {
       color: green;
+      margin-bottom: 20px;
     }
 
     #addMenuError {
       color: red;
+      margin-bottom: 20px;
     }
 
     legend {
@@ -971,6 +973,7 @@ align-items: center;
 
     input, textarea, button {
       font-family: $font1;
+      margin-bottom: 20px;
     }
 
     input {
@@ -986,9 +989,15 @@ align-items: center;
     textarea {
       padding: 5px;
     }
+    
+    label {
+      margin-bottom: 10px;
+    }
 
     small {
       font-size: 14px;
+      font-style: italic;
+      margin-bottom: 20px;
     }
 
     button {

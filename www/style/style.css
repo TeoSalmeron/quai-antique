@@ -811,15 +811,17 @@
 #manageMenu #addMenu {
   font-family: "Raleway", sans-serif;
   padding: 20px 3vw;
-  height: 750px;
+  height: auto;
   max-width: 750px;
   width: 100%;
 }
 #manageMenu #addMenu #addMenuSuccess {
   color: green;
+  margin-bottom: 20px;
 }
 #manageMenu #addMenu #addMenuError {
   color: red;
+  margin-bottom: 20px;
 }
 #manageMenu #addMenu legend {
   font-weight: 600;
@@ -832,6 +834,7 @@
 }
 #manageMenu #addMenu input, #manageMenu #addMenu textarea, #manageMenu #addMenu button {
   font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
 }
 #manageMenu #addMenu input {
   padding: 5px;
@@ -844,8 +847,13 @@
 #manageMenu #addMenu textarea {
   padding: 5px;
 }
+#manageMenu #addMenu label {
+  margin-bottom: 10px;
+}
 #manageMenu #addMenu small {
   font-size: 14px;
+  font-style: italic;
+  margin-bottom: 20px;
 }
 #manageMenu #addMenu button {
   font-size: 16px;
