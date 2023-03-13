@@ -162,21 +162,22 @@
     <p>Dans cette section, vous pourrez ajouter de nouvelles formules, en supprimer ou les modifier.</p>
     <fieldset id="addMenu">
         <?php
-            if(isset($_SESSION["add_menu_success"]) && !empty($_SESSION["add_menu_success"])) {
-                ?>
-                    <p id="addMenuSuccess">
-                        <?= $_SESSION["add_menu_success"] ?>
-                    </p>
-                <?php
-            } unset($_SESSION["add_menu_success"]);
-            if(isset($_SESSION["add_menu_error"]) && !empty($_SESSION["add_menu_error"])) {
-                ?>
-                    <p id="addMenuError">
-                        <?= $_SESSION["add_menu_error"] ?>
-                    </p>
-                <?php
-            } 
-            unset($_SESSION["add_menu_error"]);
+        if (isset($_SESSION["add_menu_success"]) && !empty($_SESSION["add_menu_success"])) {
+        ?>
+            <p id="addMenuSuccess">
+                <?= $_SESSION["add_menu_success"] ?>
+            </p>
+        <?php
+        }
+        unset($_SESSION["add_menu_success"]);
+        if (isset($_SESSION["add_menu_error"]) && !empty($_SESSION["add_menu_error"])) {
+        ?>
+            <p id="addMenuError">
+                <?= $_SESSION["add_menu_error"] ?>
+            </p>
+        <?php
+        }
+        unset($_SESSION["add_menu_error"]);
         ?>
         <legend>Ajouter une formule</legend>
         <form method="POST" action="/admin/process_add_menu_form">
@@ -202,6 +203,34 @@
             <br>
             <button type="submit">Valider</button>
         </form>
+    </fieldset>
+    <fieldset id="deleteMenu">
+        <legend>Supprimer une formule</legend>
+        <?php
+        if (isset($_SESSION["delete_menu_error"]) && !empty($_SESSION["delete_menu_error"])) {
+        ?>
+            <p id="deleteMenuError"><?= $_SESSION["delete_menu_error"] ?></p>
+        <?php
+        }
+        unset($_SESSION["delete_menu_error"]);
+        if (isset($_SESSION["delete_menu_success"]) && !empty($_SESSION["delete_menu_success"])) {
+        ?>
+            <p id="deleteMenuSuccess"><?= $_SESSION["delete_menu_success"] ?></p>
+        <?php
+        }
+        unset($_SESSION["delete_menu_success"]);
+        ?>
+        <?php
+        foreach ($menus as $m) {
+        ?>
+            <form action="/admin/process_delete_menu_form" method="post" class="form_item">
+                <label for="<?= $m["id"] ?>"><?= $m["name"] ?></label>
+                <input type="checkbox" name="id" id="<?= $m["id"] ?>" value="<?= $m["id"] ?>" checked style="display:none">
+                <button type="submit">Supprimer</button>
+            </form>
+        <?php
+        }
+        ?>
     </fieldset>
 </section>
 
@@ -267,12 +296,12 @@
                     <p id="editImageError"><?= $_SESSION["edit_image_error"] ?></p>
                 <?php
                 }
-                    unset($_SESSION["edit_image_error"]);
+                unset($_SESSION["edit_image_error"]);
                 ?>
                 <div class="form_item">
                     <label for="<?= $image["id"] ?>"><?= $image["title"] ?></label>
                     <input type="text" name="title" id="<?= $image["id"] ?>" placeholder="Modifier le titre">
-                    <input type="checkbox" name="id" checked value="<?=$image["id"]?>" style="display:none">
+                    <input type="checkbox" name="id" checked value="<?= $image["id"] ?>" style="display:none">
                     <button type="submit">Valider</button>
                 </div>
             </form>

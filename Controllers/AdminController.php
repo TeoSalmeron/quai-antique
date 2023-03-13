@@ -86,10 +86,19 @@ class AdminController extends Controller
         process_edit_image_form($image_model);
     }
 
-    public function process_add_menu_form() {
+    public function process_add_menu_form()
+    {
         check_rights();
         $menu_model = new MenuModel;
         require_once ROOT . '/Controllers/functions/process_add_menu_form.php';
         process_add_menu_form($menu_model);
+    }
+
+    public function process_delete_menu_form()
+    {
+        check_rights();
+        $menu_model = new MenuModel;
+        require_once ROOT . '/Controllers/functions/process_delete_menu_form.php';
+        process_delete_menu_form($menu_model);
     }
 }
