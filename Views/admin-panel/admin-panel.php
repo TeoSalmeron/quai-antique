@@ -158,7 +158,38 @@
 </section>
 
 <section id="manageMenu">
-    Section manage menu
+    <h2>Gestion des menus</h2>
+    <p>Dans cette section, vous pourrez ajouter de nouvelles formules, en supprimer ou les modifier.</p>
+    <fieldset id="addMenu">
+        <?php
+            if(isset($_SESSION["add_menu_error"]) && !empty($_SESSION["add_menu_error"])) {
+                ?>
+                    <p id="addMenuError">
+                        <?= $_SESSION["add_menu_error"] ?>
+                    </p>
+                <?php
+            } 
+            unset($_SESSION["add_menu_error"]);
+        ?>
+        <legend>Ajouter une formule</legend>
+        <form method="POST" action="/admin/process_add_menu_form">
+            <label for="name">Nom du menu</label>
+            <br>
+            <input type="text" name="name" id="name" required placeholder="Nom du menu">
+            <br>
+            <label for="description">Description</label>
+            <br>
+            <textarea name="description" id="description" cols="30" rows="10" required placeholder="Description du menu"></textarea>
+            <br>
+            <label for="price">Prix</label>
+            <br>
+            <input type="number" name="price" id="price" required min="0">
+            <br>
+            <small>Format : 11.00 ou 15.90</small>
+            <br>
+            <button type="submit">Valider</button>
+        </form>
+    </fieldset>
 </section>
 
 <section id="manageImage">

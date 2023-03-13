@@ -938,6 +938,63 @@ $color2: #d29b3d;
     }
   }
 }
+
+#manageMenu {
+display: flex;
+flex-direction: column;
+align-items: center;
+  #addMenu {
+    font-family: $font1;
+    padding: 20px 3vw;
+    height: 600px;
+    max-width: 750px;
+    width: 100%;
+
+    legend {
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+    }
+
+    input, textarea, button {
+      font-family: $font1;
+    }
+
+    input {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    input[type=number] {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    small {
+      font-size: 14px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px;
+      width: 100px;
+      background: green;
+      color: $color0;
+      border: none;
+      border-radius: 0px;
+      font-family: $font1;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
 // Footer
 
 footer {

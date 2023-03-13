@@ -803,6 +803,55 @@
   font-size: 16px;
 }
 
+#manageMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#manageMenu #addMenu {
+  font-family: "Raleway", sans-serif;
+  padding: 20px 3vw;
+  height: 600px;
+  max-width: 750px;
+  width: 100%;
+}
+#manageMenu #addMenu legend {
+  font-weight: 600;
+}
+#manageMenu #addMenu form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+#manageMenu #addMenu input, #manageMenu #addMenu textarea, #manageMenu #addMenu button {
+  font-family: "Raleway", sans-serif;
+}
+#manageMenu #addMenu input {
+  padding: 5px;
+  font-size: 16px;
+}
+#manageMenu #addMenu input[type=number] {
+  width: 100%;
+  max-width: 300px;
+}
+#manageMenu #addMenu small {
+  font-size: 14px;
+}
+#manageMenu #addMenu button {
+  font-size: 16px;
+  padding: 10px;
+  width: 100px;
+  background: green;
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+  font-family: "Raleway", sans-serif;
+}
+#manageMenu #addMenu button:hover {
+  cursor: pointer;
+}
+
 footer {
   width: 100%;
   background: #00020b;
