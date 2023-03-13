@@ -162,6 +162,13 @@
     <p>Dans cette section, vous pourrez ajouter de nouvelles formules, en supprimer ou les modifier.</p>
     <fieldset id="addMenu">
         <?php
+            if(isset($_SESSION["add_menu_success"]) && !empty($_SESSION["add_menu_success"])) {
+                ?>
+                    <p id="addMenuSuccess">
+                        <?= $_SESSION["add_menu_success"] ?>
+                    </p>
+                <?php
+            } unset($_SESSION["add_menu_success"]);
             if(isset($_SESSION["add_menu_error"]) && !empty($_SESSION["add_menu_error"])) {
                 ?>
                     <p id="addMenuError">
@@ -177,13 +184,19 @@
             <br>
             <input type="text" name="name" id="name" required placeholder="Nom du menu">
             <br>
+            <label for="schedule">Horaires</label>
+            <br>
+            <input type="text" name="schedule" id="schedule" required placeholder="Horaires du menu">
+            <br>
+            <small>Exemple : Du lundi au vendredi le midi</small>
+            <br>
             <label for="description">Description</label>
             <br>
             <textarea name="description" id="description" cols="30" rows="10" required placeholder="Description du menu"></textarea>
             <br>
             <label for="price">Prix</label>
             <br>
-            <input type="number" name="price" id="price" required min="0">
+            <input type="number" name="price" id="price" required min="0" step=".01">
             <br>
             <small>Format : 11.00 ou 15.90</small>
             <br>

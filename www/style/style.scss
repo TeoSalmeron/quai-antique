@@ -946,9 +946,17 @@ align-items: center;
   #addMenu {
     font-family: $font1;
     padding: 20px 3vw;
-    height: 600px;
+    height: 750px;
     max-width: 750px;
     width: 100%;
+
+    #addMenuSuccess {
+      color: green;
+    }
+
+    #addMenuError {
+      color: red;
+    }
 
     legend {
       font-weight: 600;
@@ -973,6 +981,10 @@ align-items: center;
     input[type=number] {
       width: 100%;
       max-width: 300px;
+    }
+
+    textarea {
+      padding: 5px;
     }
 
     small {

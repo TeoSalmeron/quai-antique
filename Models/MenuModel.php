@@ -8,6 +8,7 @@ class MenuModel extends Model
 {
     protected int $id;
     protected string $name;
+    protected string $schedule;
     protected string $description;
     protected float $price;
     protected int $id_restaurant;
@@ -55,6 +56,27 @@ class MenuModel extends Model
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * Set the value of schedule
+     * 
+     * @return self
+     */
+    public function setSchedule($schedule) {
+        $this->schedule = $schedule;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of schedule
+     * 
+     */
+
+    public function getSchedule()
+    {
+        return $this->schedule;
     }
 
     /**

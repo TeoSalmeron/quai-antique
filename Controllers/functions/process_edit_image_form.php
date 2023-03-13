@@ -1,6 +1,8 @@
 <?php
 
-function process_edit_image_form($image_model)
+use App\Models\ImageModel;
+
+function process_edit_image_form(ImageModel $image_model)
 {
     if ($_SERVER["REQUEST_METHOD"] !== "POST" || empty($_POST)) {
         http_response_code(404);

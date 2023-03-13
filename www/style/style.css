@@ -811,9 +811,15 @@
 #manageMenu #addMenu {
   font-family: "Raleway", sans-serif;
   padding: 20px 3vw;
-  height: 600px;
+  height: 750px;
   max-width: 750px;
   width: 100%;
+}
+#manageMenu #addMenu #addMenuSuccess {
+  color: green;
+}
+#manageMenu #addMenu #addMenuError {
+  color: red;
 }
 #manageMenu #addMenu legend {
   font-weight: 600;
@@ -834,6 +840,9 @@
 #manageMenu #addMenu input[type=number] {
   width: 100%;
   max-width: 300px;
+}
+#manageMenu #addMenu textarea {
+  padding: 5px;
 }
 #manageMenu #addMenu small {
   font-size: 14px;
