@@ -12,7 +12,7 @@ function process_delete_image_form(ImageModel $image_model)
         $name = htmlspecialchars(strip_tags(addslashes(trim($_POST["delete_image"][1]))));
         unlink(ROOT . '/www/img/' . $name);
         $image_model->delete($id);
-        header('Location: /admin');
+        header('Location: /admin?display=image');
         die();
     }
 }

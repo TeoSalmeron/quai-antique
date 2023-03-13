@@ -16,7 +16,7 @@ function process_edit_image_form($image_model)
             $image = $image_model->findBy(["id" => $_POST["id"]]);
             $image_model->setTitle($_POST["title"]);
             $image_model->update($_POST["id"]);
-            header('Location: /admin');
+            header('Location: /admin?display=image');
             die();
         }
     }

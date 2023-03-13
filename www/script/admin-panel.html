@@ -61,6 +61,40 @@
         }
     })
 
+    // Get current URL
+
+    function getCurrentUrl() {
+        return window.location.search
+    }
+
+    // Display section depending on URL
+    if(getCurrentUrl().includes("image")) {
+        sectionManageDish.style.display = "none"
+        sectionManageMenu.style.display = "none"
+        sectionRestaurantInfo.style.display = "none"
+        sectionManageImage.style.display = "flex"
+    } else if (getCurrentUrl().includes("info")) {
+        sectionManageDish.style.display = "none"
+        sectionManageMenu.style.display = "none"
+        sectionManageImage.style.display = "none"
+        sectionRestaurantInfo.style.display = "flex"
+    } else if (getCurrentUrl().includes("menu")) {
+        sectionManageDish.style.display = "none"
+        sectionManageImage.style.display = "none"
+        sectionRestaurantInfo.style.display = "none"
+        sectionManageMenu.style.display = "flex"
+    } else if (getCurrentUrl().includes("dish")) {
+        sectionManageMenu.style.display = "none"
+        sectionManageImage.style.display = "none"
+        sectionRestaurantInfo.style.display = "none"
+        sectionManageDish.style.display = "flex"
+    } else {
+        sectionManageDish.style.display = "none"
+        sectionManageMenu.style.display = "none"
+        sectionManageImage.style.display = "none"
+        sectionRestaurantInfo.style.display = "flex"
+    }
+
     // Navbar actions
     toggleRestaurantInfo.addEventListener('click', () => {
         closeNav()
@@ -113,8 +147,5 @@
             }
         })
     }
-    
-    // MANAGE IMAGE
-
 
 </script>
