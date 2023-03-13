@@ -137,7 +137,7 @@
                 <select name="day_close" id="day_close">
                     <option value="" selected disabled>Choisir un jour de la semaine</option>
                     <option value="7">Dimanche</option>
-                    <option value="1">Luni</option>
+                    <option value="1">Lundi</option>
                     <option value="2">Mardi</option>
                     <option value="3">Mercredi</option>
                     <option value="4">Jeudi</option>
@@ -227,6 +227,7 @@
                 <div class="form_item" id="adminImageBox">
                     <label for="<?= $image["id"] ?>"><?= $image["title"] ?></label>
                     <input type="text" name="title" id="<?= $image["id"] ?>" placeholder="Modifier le titre">
+                    <input type="checkbox" name="id" checked value="<?=$image["id"]?>" style="display:none">
                     <button type="submit">Valider</button>
                 </div>
             </form>

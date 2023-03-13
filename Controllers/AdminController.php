@@ -81,7 +81,8 @@ class AdminController extends Controller
     public function process_edit_image_form()
     {
         check_rights();
+        $image_model = new ImageModel;
         require_once ROOT . '/Controllers/functions/process_edit_image_form.php';
-        process_edit_image_form();
+        process_edit_image_form($image_model);
     }
 }
