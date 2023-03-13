@@ -819,7 +819,7 @@ $color2: #d29b3d;
     width: 100%;
     padding: 20px 5vw;
     margin-bottom: 20px;
-    max-width: 650px;
+    max-width: 850px;
 
     legend {
       font-family: $font1;
@@ -873,6 +873,7 @@ $color2: #d29b3d;
   }
 
   #deleteImageBox {
+    width: 100%;
     .image_box {
       width: 100%;
       display: flex;
@@ -915,20 +916,25 @@ $color2: #d29b3d;
     }
   }
 
-  #adminImageBox {
+  .form_item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    input {
-      justify-self: flex-start;
+    justify-content: space-evenly;
+    height: 150px;
+
+    label {
+      font-weight: 600;
+      font-size: 18px;
     }
+
     button {
       font-family: $font1;
       padding: 10px;
       background-color: green;
       border: none;
       color: #fff;
+      font-size: 16px;
     }
   }
 }

@@ -216,21 +216,23 @@
 
         foreach ($images as $image) {
         ?>
-            <form action="/admin/process_edit_image_form" method="post">
+            <form action="/admin/process_edit_image_form" method="post" class="edit_image">
                 <?php
                 if (isset($_SESSION["edit_image_error"]) && !empty($_SESSION["edit_image_error"])) {
                 ?>
                     <p id="editImageError"><?= $_SESSION["edit_image_error"] ?></p>
                 <?php
                 }
+                    unset($_SESSION["edit_image_error"]);
                 ?>
-                <div class="form_item" id="adminImageBox">
+                <div class="form_item">
                     <label for="<?= $image["id"] ?>"><?= $image["title"] ?></label>
                     <input type="text" name="title" id="<?= $image["id"] ?>" placeholder="Modifier le titre">
                     <input type="checkbox" name="id" checked value="<?=$image["id"]?>" style="display:none">
                     <button type="submit">Valider</button>
                 </div>
             </form>
+            <br>
         <?php
         }
         ?>

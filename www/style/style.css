@@ -708,7 +708,7 @@
   width: 100%;
   padding: 20px 5vw;
   margin-bottom: 20px;
-  max-width: 650px;
+  max-width: 850px;
 }
 #manageImage fieldset legend {
   font-family: "Raleway", sans-serif;
@@ -746,6 +746,9 @@
   font-family: "Raleway", sans-serif;
   font-size: 16px;
 }
+#manageImage #deleteImageBox {
+  width: 100%;
+}
 #manageImage #deleteImageBox .image_box {
   width: 100%;
   display: flex;
@@ -780,21 +783,24 @@
 #manageImage #deleteImageBox .image_box button:hover {
   cursor: pointer;
 }
-#manageImage #adminImageBox {
+#manageImage .form_item {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 150px;
 }
-#manageImage #adminImageBox input {
-  justify-self: flex-start;
+#manageImage .form_item label {
+  font-weight: 600;
+  font-size: 18px;
 }
-#manageImage #adminImageBox button {
+#manageImage .form_item button {
   font-family: "Raleway", sans-serif;
   padding: 10px;
   background-color: green;
   border: none;
   color: #fff;
+  font-size: 16px;
 }
 
 footer {
