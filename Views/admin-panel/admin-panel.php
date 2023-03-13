@@ -200,8 +200,7 @@
         </form>
     </fieldset>
     <fieldset id="deleteImageBox">
-        <legend>Supprimer une image</legend>
-        <p></p>
+        <legend>Supprimer une image ou modifier le titre d'une image</legend>
         <?php
         foreach ($images as $image) {
         ?>
@@ -214,6 +213,26 @@
             </form>
         <?php
         }
+
+        foreach ($images as $image) {
         ?>
+            <form action="/admin/process_edit_image_form" method="post">
+                <?php
+                if (isset($_SESSION["edit_image_error"]) && !empty($_SESSION["edit_image_error"])) {
+                ?>
+                    <p id="editImageError"><?= $_SESSION["edit_image_error"] ?></p>
+                <?php
+                }
+                ?>
+                <div class="form_item" id="adminImageBox">
+                    <label for="<?= $image["id"] ?>"><?= $image["title"] ?></label>
+                    <input type="text" name="title" id="<?= $image["id"] ?>" placeholder="Modifier le titre">
+                    <button type="submit">Valider</button>
+                </div>
+            </form>
+        <?php
+        }
+        ?>
+
     </fieldset>
 </section>

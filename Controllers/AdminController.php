@@ -77,4 +77,11 @@ class AdminController extends Controller
         require_once ROOT . '/Controllers/functions/process_delete_image_form.php';
         process_delete_image_form($image_model);
     }
+
+    public function process_edit_image_form()
+    {
+        check_rights();
+        require_once ROOT . '/Controllers/functions/process_edit_image_form.php';
+        process_edit_image_form();
+    }
 }

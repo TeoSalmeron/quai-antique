@@ -780,6 +780,22 @@
 #manageImage #deleteImageBox .image_box button:hover {
   cursor: pointer;
 }
+#manageImage #adminImageBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#manageImage #adminImageBox input {
+  justify-self: flex-start;
+}
+#manageImage #adminImageBox button {
+  font-family: "Raleway", sans-serif;
+  padding: 10px;
+  background-color: green;
+  border: none;
+  color: #fff;
+}
 
 footer {
   width: 100%;
