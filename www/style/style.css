@@ -248,12 +248,12 @@
 #homeMain #homeMainImages {
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   height: auto;
   max-width: 1000px;
   background: #fff;
   margin: auto;
-  align-items: center;
   padding: 40px 8vw;
 }
 #homeMain #homeMainImages h2 {
@@ -263,7 +263,6 @@
   margin-bottom: 40px;
 }
 #homeMain #homeMainImages .image_box {
-  width: 90%;
   position: relative;
   height: auto;
   overflow: hidden;
@@ -271,6 +270,7 @@
 #homeMain #homeMainImages .image_box img {
   width: 100%;
   margin-bottom: 40px;
+  max-width: 500px;
 }
 #homeMain #homeMainImages .image_box p {
   top: 15px;
@@ -489,13 +489,17 @@
   font-size: 18px;
 }
 
-.menuSections {
+#menuMain {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   padding: 20px 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: auto;
+  width: 100%;
 }
+
 .menuSections h2 {
   font-size: 35px;
   font-family: "Cinzel Decorative", cursive;
@@ -981,6 +985,106 @@
   cursor: pointer;
 }
 
+#manageDish {
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+}
+#manageDish #addDish,
+#manageDish #deleteDish {
+  width: 100%;
+  max-width: 850px;
+  padding: 40px 3vw;
+  margin-bottom: 20px;
+}
+#manageDish #addDish legend,
+#manageDish #deleteDish legend {
+  font-weight: 600;
+}
+#manageDish #addDish #addDishError,
+#manageDish #deleteDish #addDishError {
+  color: red;
+}
+#manageDish #addDish #addDishSuccess,
+#manageDish #deleteDish #addDishSuccess {
+  color: green;
+}
+#manageDish #addDish form,
+#manageDish #deleteDish form {
+  display: flex;
+  flex-direction: column;
+}
+#manageDish #addDish form label,
+#manageDish #addDish form input,
+#manageDish #addDish form textarea,
+#manageDish #addDish form select,
+#manageDish #deleteDish form label,
+#manageDish #deleteDish form input,
+#manageDish #deleteDish form textarea,
+#manageDish #deleteDish form select {
+  margin-bottom: 20px;
+}
+#manageDish #addDish form label,
+#manageDish #deleteDish form label {
+  font-weight: 600;
+}
+#manageDish #addDish form select,
+#manageDish #deleteDish form select {
+  max-width: 200px;
+}
+#manageDish #addDish form input,
+#manageDish #addDish form select,
+#manageDish #addDish form textarea,
+#manageDish #addDish form option,
+#manageDish #deleteDish form input,
+#manageDish #deleteDish form select,
+#manageDish #deleteDish form textarea,
+#manageDish #deleteDish form option {
+  padding: 5px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+#manageDish #addDish form input[type=number],
+#manageDish #deleteDish form input[type=number] {
+  width: 100%;
+  max-width: 200px;
+}
+#manageDish #addDish form button,
+#manageDish #deleteDish form button {
+  font-size: 16px;
+  border: none;
+  background-color: green;
+  font-family: "Raleway", sans-serif;
+  padding: 10px;
+  color: #fff;
+  width: 100px;
+}
+#manageDish #deleteDish #deleteDishError {
+  color: red;
+}
+#manageDish #deleteDish #deleteDishSuccess {
+  color: green;
+}
+#manageDish #deleteDish hr,
+#manageDish #deleteDish h3,
+#manageDish #deleteDish .form_item {
+  margin-bottom: 20px;
+}
+#manageDish #deleteDish .form_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#manageDish #deleteDish .form_item label {
+  margin-bottom: unset;
+}
+#manageDish #deleteDish .form_item button {
+  background: darkred;
+}
+#manageDish #deleteDish .form_item button:hover {
+  cursor: pointer;
+}
+
 footer {
   width: 100%;
   background: #00020b;
@@ -1014,6 +1118,7 @@ footer iframe {
 }
 
 @media screen and (min-width: 1100px) {
+  #menuMain,
   #homeMain,
   #sign-in-main,
   #sign-up-main {

@@ -154,7 +154,115 @@
 </section>
 
 <section id="manageDish">
-    Section manage dish
+    <h2>Gestion des plats</h2>
+    <p>Dans cette section, vous pourrez ajouter de nouveaux plats ou en supprimer.</p>
+    <fieldset id="addDish">
+        <?php
+        if (isset($_SESSION["add_dish_success"]) && !empty($_SESSION["add_dish_success"])) {
+        ?>
+            <p id="addDishSuccess">
+                <?= $_SESSION["add_dish_success"] ?>
+            </p>
+        <?php
+        }
+        unset($_SESSION["add_dish_success"]);
+        if (isset($_SESSION["add_dish_error"]) && !empty($_SESSION["add_dish_error"])) {
+        ?>
+            <p id="addDishError">
+                <?= $_SESSION["add_dish_error"] ?>
+            </p>
+        <?php
+        }
+        unset($_SESSION["add_dish_error"]);
+        ?>
+        <legend>Ajouter un plat</legend>
+        <form action="/admin/process_add_dish_form" method="POST">
+            <label for="name">Nom du plat</label>
+            <input type="text" name="name" id="name" required placeholder="Nom du plat">
+            <label for="description">Description du plat</label>
+            <textarea name="description" id="description" cols="30" rows="10" required placeholder="Description du plat"></textarea>
+            <label for="category">Catégorie</label>
+            <select name="category" id="category" required>
+                <option value="0" selected disabled>Choisir une catégorie</option>
+                <option value="1">Entrées</option>
+                <option value="2">Plats principaux</option>
+                <option value="3">Desserts</option>
+            </select>
+            <label for="price">Prix du plat</label>
+            <small>Format : 11.00</small>
+            <input type="number" name="price" id="price" step=".01" min="0">
+            <button type="submit">Valider</button>
+        </form>
+    </fieldset>
+    <fieldset id="deleteDish">
+        <legend>Supprimer un plat</legend>
+        <?php
+        if (isset($_SESSION["delete_dish_success"]) && !empty($_SESSION["delete_dish_success"])) {
+        ?>
+            <p id="deleteDishSuccess">
+                <?= $_SESSION["delete_dish_success"] ?>
+            </p>
+        <?php
+        }
+        unset($_SESSION["delete_dish_success"]);
+        if (isset($_SESSION["delete_dish_error"]) && !empty($_SESSION["delete_dish_error"])) {
+        ?>
+            <p id="deleteDishError">
+                <?= $_SESSION["delete_dish_error"] ?>
+            </p>
+        <?php
+        }
+        unset($_SESSION["delete_dish_error"]);
+        ?>
+        <!-- Starters -->
+        <h3>Entrées</h3>
+        <hr>
+        <form action="/admin/process_delete_dish_form" method="post">
+            <?php
+            foreach ($starters as $s) {
+            ?>
+                <div class="form_item">
+                    <label for="<?= $s["id"] ?>"><?= $s["name"] ?></label>
+                    <input type="checkbox" name="delete_dish" id="<?= $s["id"] ?>" value="<?= $s["id"] ?>" checked style="display:none">
+                    <button type="submit">Supprimer</button>
+                </div>
+            <?php
+            }
+            ?>
+        </form>
+        <!-- Main meals -->
+        <h3>Plats principaux</h3>
+        <hr>
+        <form action="/admin/process_delete_dish_form" method="post">
+            <?php
+            foreach ($main_meals as $m) {
+            ?>
+                <div class="form_item">
+                    <label for="<?= $m["id"] ?>"><?= $m["name"] ?></label>
+                    <input type="checkbox" name="delete_dish" id="<?= $m["id"] ?>" value="<?= $m["id"] ?>" checked style="display:none">
+                    <button type="submit">Supprimer</button>
+                </div>
+            <?php
+            }
+            ?>
+        </form>
+        <!-- Desserts -->
+        <h3>Desserts</h3>
+        <hr>
+        <form action="/admin/process_delete_dish_form" method="post">
+            <?php
+            foreach ($desserts as $d) {
+            ?>
+                <div class="form_item">
+                    <label for="<?= $d["id"] ?>"><?= $d["name"] ?></label>
+                    <input type="checkbox" name="delete_dish" id="<?= $d["id"] ?>" value="<?= $d["id"] ?>" checked style="display:none">
+                    <button type="submit">Supprimer</button>
+                </div>
+            <?php
+            }
+            ?>
+        </form>
+    </fieldset>
 </section>
 
 <section id="manageMenu">

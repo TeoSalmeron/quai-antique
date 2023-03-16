@@ -293,12 +293,12 @@ $color2: #d29b3d;
   #homeMainImages {
     width: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
     height: auto;
     max-width: 1000px;
     background: #fff;
     margin: auto;
-    align-items: center;
     padding: 40px 8vw;
 
     h2 {
@@ -309,7 +309,6 @@ $color2: #d29b3d;
     }
 
     .image_box {
-      width: 90%;
       position: relative;
       height: auto;
       overflow: hidden;
@@ -317,6 +316,7 @@ $color2: #d29b3d;
       img {
         width: 100%;
         margin-bottom: 40px;
+        max-width: 500px;
       }
 
       p {
@@ -571,13 +571,19 @@ $color2: #d29b3d;
   }
 }
 
-.menuSections {
+#menuMain {
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   padding: 20px 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: auto;
+  width: 100%;
+}
 
+.menuSections {
   h2 {
     font-size: 35px;
     font-family: $font3;
@@ -1144,6 +1150,109 @@ $color2: #d29b3d;
     }
   }
 }
+
+#manageDish {
+  align-items: center;
+  font-family: $font1;
+
+  #addDish,
+  #deleteDish {
+    width: 100%;
+    max-width: 850px;
+    padding: 40px 3vw;
+    margin-bottom: 20px;
+
+    legend {
+      font-weight: 600;
+    }
+
+    #addDishError {
+      color: red;
+    }
+
+    #addDishSuccess {
+      color: green;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label,
+      input,
+      textarea,
+      select {
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: 600;
+      }
+
+      select {
+        max-width: 200px;
+      }
+
+      input,
+      select,
+      textarea,
+      option {
+        padding: 5px;
+        font-family: $font1;
+        font-size: 16px;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        max-width: 200px;
+      }
+
+      button {
+        font-size: 16px;
+        border: none;
+        background-color: green;
+        font-family: $font1;
+        padding: 10px;
+        color: $color0;
+        width: 100px;
+      }
+    }
+  }
+
+  #deleteDish {
+    #deleteDishError {
+      color: red;
+    }
+
+    #deleteDishSuccess {
+      color: green;
+    }
+    hr,
+    h3,
+    .form_item {
+      margin-bottom: 20px;
+    }
+
+    .form_item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      label {
+        margin-bottom: unset;
+      }
+
+      button {
+        background: darkred;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
 // Footer
 
 footer {
@@ -1181,6 +1290,7 @@ footer {
 }
 
 @media screen and (min-width: 1100px) {
+  #menuMain,
   #homeMain,
   #sign-in-main,
   #sign-up-main {

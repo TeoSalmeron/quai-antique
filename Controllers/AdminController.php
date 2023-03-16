@@ -23,6 +23,9 @@ class AdminController extends Controller
         $images = $image_model->findAll();
         $dish_model = new DishModel;
         $dishes = $dish_model->findAll();
+        $starters = $dish_model->findBy(["id_category" => 1]);
+        $main_meals = $dish_model->findBy(["id_category" => 2]);
+        $desserts = $dish_model->findBy(["id_category" => 3]);
         $menu_model = new MenuModel;
         $menus = $menu_model->findAll();
         $this->render("admin-panel/admin-panel", [
@@ -31,6 +34,9 @@ class AdminController extends Controller
             "day_close" => define_day_close($restaurant["day_close"]),
             "images" => $images,
             "dishes" => $dishes,
+            "starters" => $starters,
+            "main_meals" => $main_meals,
+            "desserts" => $desserts,
             "menus" => $menus,
             "admin" => $_SESSION["admin"]
         ], ["admin-panel"]);
@@ -100,5 +106,21 @@ class AdminController extends Controller
         $menu_model = new MenuModel;
         require_once ROOT . '/Controllers/functions/process_delete_menu_form.php';
         process_delete_menu_form($menu_model);
+    }
+
+    public function process_add_dish_form()
+    {
+        check_rights();
+        $dish_model = new DishModel;
+        require_once ROOT . '/Controllers/functions/process_add_dish_form.php';
+        process_add_dish_form($dish_model);
+    }
+
+    public function process_delete_dish_form()
+    {
+        check_rights();
+        $dish_model = new DishModel;
+        require_once ROOT . '/Controllers/functions/process_delete_dish_form.php';
+        process_delete_dish_form($dish_model);
     }
 }
