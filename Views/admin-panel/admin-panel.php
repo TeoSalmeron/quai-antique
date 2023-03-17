@@ -29,6 +29,24 @@
     <h2>Informations du restaurant</h2>
     <p>Dans cette section, vous pouvez modifier les horaires d'ouvertures et de service du restaurant, sa capacité d'accueil et son jour de fermeture.</p>
     <fieldset>
+        <?php
+        if (isset($_SESSION["edit_info_success"]) && !empty($_SESSION["edit_info_success"])) {
+        ?>
+            <p id="editInfoSuccess">
+                <?= $_SESSION["edit_info_success"] ?>
+            </p>
+        <?php
+        }
+        unset($_SESSION["edit_info_success"]);
+        if (isset($_SESSION["edit_info_error"]) && !empty($_SESSION["edit_info_error"])) {
+        ?>
+            <p id="editInfoError">
+                <?= $_SESSION["edit_info_error"] ?>
+            </p>
+        <?php
+        }
+        unset($_SESSION["edit_info_error"]);
+        ?>
         <form class="form_item" method="post" action="admin/process_edit_restaurant_info_form">
             <h3>Heure de début du service du midi</h3>
             <?php

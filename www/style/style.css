@@ -697,6 +697,12 @@
   max-width: 650px;
   background: #fff;
 }
+#restaurantInfo fieldset #editInfoSuccess {
+  color: green;
+}
+#restaurantInfo fieldset #editInfoError {
+  color: red;
+}
 #restaurantInfo fieldset .form_item {
   border-bottom: 1px solid black;
   padding: 10px 0px;

@@ -27,10 +27,11 @@ function process_edit_restaurant_info_form(RestaurantModel $restaurant_model)
                 } else {
                     $restaurant_model->setNoon_service_start($time);
                     if (!$restaurant_model->update(1)) {
-                        $_SESSION["error"] = "Impossible de mettre à jour les données";
+                        $_SESSION["edit_info_error"] = "Impossible de mettre à jour les données";
                         header('Location: /admin');
                         die();
                     } else {
+                        $_SESSION["edit_info_success"] = "Mise à jour réussie";
                         header('Location: /admin');
                         die();
                     }
@@ -49,10 +50,11 @@ function process_edit_restaurant_info_form(RestaurantModel $restaurant_model)
                 } else {
                     $restaurant_model->setNoon_service_end($time);
                     if (!$restaurant_model->update(1)) {
-                        $_SESSION["error"] = "Impossible de mettre à jour les données";
+                        $_SESSION["edit_info_error"] = "Impossible de mettre à jour les données";
                         header('Location: /admin');
                         die();
                     } else {
+                        $_SESSION["edit_info_success"] = "Mise à jour réussie";
                         header('Location: /admin');
                         die();
                     }
@@ -71,10 +73,11 @@ function process_edit_restaurant_info_form(RestaurantModel $restaurant_model)
                 } else {
                     $restaurant_model->setEvening_service_start($time);
                     if (!$restaurant_model->update(1)) {
-                        $_SESSION["error"] = "Impossible de mettre à jour les données";
+                        $_SESSION["edit_info_error"] = "Impossible de mettre à jour les données";
                         header('Location: /admin');
                         die();
                     } else {
+                        $_SESSION["edit_info_success"] = "Mise à jour réussie";
                         header('Location: /admin');
                         die();
                     }
@@ -93,10 +96,11 @@ function process_edit_restaurant_info_form(RestaurantModel $restaurant_model)
                 } else {
                     $restaurant_model->setEvening_service_end($time);
                     if (!$restaurant_model->update(1)) {
-                        $_SESSION["error"] = "Impossible de mettre à jour les données";
+                        $_SESSION["edit_info_error"] = "Impossible de mettre à jour les données";
                         header('Location: /admin');
                         die();
                     } else {
+                        $_SESSION["edit_info_success"] = "Mise à jour réussie";
                         header('Location: /admin');
                         die();
                     }
@@ -113,10 +117,11 @@ function process_edit_restaurant_info_form(RestaurantModel $restaurant_model)
                 } else {
                     $restaurant_model->setMax_capacity($max_capacity);
                     if (!$restaurant_model->update(1)) {
-                        $_SESSION["error"] = "Impossible de mettre à jour les données";
+                        $_SESSION["edit_info_error"] = "Impossible de mettre à jour les données";
                         header('Location: /admin');
                         die();
                     } else {
+                        $_SESSION["edit_info_success"] = "Mise à jour réussie";
                         header('Location: /admin');
                         die();
                     }
@@ -133,10 +138,11 @@ function process_edit_restaurant_info_form(RestaurantModel $restaurant_model)
                 } else {
                     $restaurant_model->setDay_close($day_close);
                     if (!$restaurant_model->update(1)) {
-                        $_SESSION["error"] = "Impossible de mettre à jour les données";
+                        $_SESSION["edit_info_error"] = "Impossible de mettre à jour les données";
                         header('Location: /admin');
                         die();
                     } else {
+                        $_SESSION["edit_info_success"] = "Mise à jour réussie";
                         header('Location: /admin');
                         die();
                     }

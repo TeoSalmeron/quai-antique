@@ -805,6 +805,14 @@ $color2: #d29b3d;
     max-width: 650px;
     background: $color0;
 
+    #editInfoSuccess {
+      color: green;
+    }
+
+    #editInfoError {
+      color: red;
+    }
+
     .form_item {
       border-bottom: 1px solid black;
       padding: 10px 0px;
