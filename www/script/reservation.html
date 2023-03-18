@@ -1,0 +1,92 @@
+<script>
+    const promptServiceNoon = document.getElementById("prompt_service_noon")
+    const promptServiceEvening = document.getElementById("prompt_service_evening")
+    const serviceTimeNoon = document.getElementById("service_time_noon")
+    const serviceTimeEvening = document.getElementById("service_time_evening")
+    const promptAllergiesYes = document.getElementById("prompt_allergies_yes")
+    const promptAllergiesNo = document.getElementById("prompt_allergies_no")
+    const formAllergiesBox = document.getElementById("form_allergies_box")
+    const form = document.getElementById("reservationForm")
+    const firstName = document.getElementById("first_name")
+    const lastName = document.getElementById("last_name")
+    const email = document.getElementById("email")
+    const phone = document.getElementById("phone")
+    const nbGuest = document.getElementById("nb_guest")
+    const reservationDate = document.getElementById("reservationDate")
+    const noonTime = document.getElementById("reservation_time_noon")
+    const eveningTime = document.getElementById("reservation_time_evening")
+    const formAllergies = document.getElementsByClassName("allergies")
+    // Display noon or evening service time
+
+    promptServiceNoon.addEventListener('change', () => {
+        if(event.target.checked) {
+            serviceTimeEvening.style.display = "none"
+            serviceTimeNoon.style.display = "flex"
+        }
+    })
+
+    promptServiceEvening.addEventListener("change", () => {
+        if(event.target.checked) {
+            serviceTimeNoon.style.display = "none"
+            serviceTimeEvening.style.display = "flex"
+        }
+    })
+
+    // Display allergies
+    promptAllergiesYes.addEventListener("change", () => {
+        if(event.target.checked) {
+            formAllergiesBox.style.display = "block"
+        }
+    })
+
+    promptAllergiesNo.addEventListener("change", () => {
+        if(event.target.checked) {
+            formAllergiesBox.style.display = "none"
+        }
+    })
+
+
+    // Check if user exists, if exists, insert data into form
+
+    var xhr = new XMLHttpRequest()
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let user = this.response
+            if(user === null) {
+                return
+            } else {
+                console.log(this.response)
+                firstName.value = user.firstName
+                lastName.value = user.lastName
+                email.value = user.email
+                phone.value = user.phone
+                nbGuest.value = user.nbGuest
+                if(user.allergies.length !== 0) {
+                    promptAllergiesYes.checked = true
+                    formAllergiesBox.style.display = "block"
+                    let userAllergens = []
+                    for(let i = 0; i < user.allergies.length; i++) {
+                        userAllergens.push(user.allergies[i].allergen_id)
+                    }
+                    for (let a in userAllergens) {
+                        let allergenValue = parseInt(userAllergens[a])
+                        for (let b in formAllergies) {
+                            if(allergenValue == parseInt(formAllergies[b].value)) {
+                                formAllergies[b].checked = true
+                            }
+                        }
+                    }
+
+                }
+            }
+        } else if (this.readyState == 4) {
+            alert("Une erreur est survenue...")
+        }
+    }
+
+    xhr.open("POST", "/book-table/reservation_user_exists", true)
+    xhr.responseType = "json"
+    xhr.send()
+
+</script>

@@ -676,6 +676,97 @@ $color2: #d29b3d;
   }
 }
 
+// Reservation page
+
+#reservationMain {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  height: auto;
+  padding: 100px 5vw;
+  font-family: $font1;
+
+  h1 {
+    font-family: $font3;
+    align-self: center;
+    text-align: center;
+    font-size: 35px;
+    margin: 40px 0px;
+  }
+
+  p {
+    margin: 10px 0px;
+    font-weight: 500;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"] {
+      padding: 5px;
+      border: none;
+      border-bottom: 1px solid lightgray;
+      font-size: 16px;
+      font-family: $font1;
+      margin: 20px 0px;
+    }
+
+    input[type="date"] {
+      font-size: 16px;
+      margin: 20px 0px;
+    }
+
+    #service_time_noon,
+    #service_time_evening {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 10px 0px;
+    }
+
+    small {
+      font-size: 14px;
+      color: rgb(81, 81, 81);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    input[type="time"] {
+      width: 52px;
+    }
+
+    .prompt_box {
+      margin: 10px 0px;
+      display: flex;
+      justify-content: space-between;
+      width: 50px;
+    }
+
+    .form_allergies_box {
+      display: none;
+
+      .form_allergies_item {
+        margin: 10px 0px;
+      }
+    }
+
+    .form_buttons {
+      button {
+        transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        &:hover {
+          cursor: pointer;
+          scale: 1.1;
+        }
+      }
+    }
+  }
+}
+
 // Administration pannel
 
 #adminNav {
