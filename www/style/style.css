@@ -1,0 +1,1229 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Cinzel+Decorative:wght@400;700;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.visible-flex {
+  display: flex !important;
+}
+
+.slide-top {
+  animation: slide-top 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate backwards;
+}
+
+.form_input {
+  width: 100%;
+  max-width: 350px;
+  padding: 5px 0px;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid lightgray;
+  font-weight: 500;
+}
+.form_input:focus, .form_input:active {
+  outline: none;
+}
+
+.form_box {
+  padding: 15px 0px;
+  width: 100%;
+}
+
+.form_buttons {
+  padding-top: 25px;
+  align-self: center;
+}
+.form_buttons button {
+  padding: 5px 10px;
+  border: 3px solid #00020b;
+  font-family: "Cinzel Decorative", cursive;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  background: #00020b;
+}
+
+#mainNav {
+  width: 100%;
+  background: #00020b;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.31);
+  height: 70px;
+  display: flex;
+  position: fixed;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 555;
+}
+#mainNav #toggleNav {
+  height: 100%;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mainNav #toggleNav button {
+  background: transparent;
+  padding: 11px 7px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#mainNav #toggleNav button .line {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 15px;
+}
+#mainNav #toggleNav button:hover {
+  cursor: pointer;
+}
+#mainNav #mainNavList {
+  position: fixed;
+  left: -100vw;
+  top: 0;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 90px 20px 0px;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.21);
+}
+#mainNav #mainNavList button {
+  background: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+}
+#mainNav #mainNavList button .line {
+  width: 90%;
+  height: 2px;
+  background: #00020b;
+  position: relative;
+}
+#mainNav #mainNavList button .line1 {
+  transform: rotate(-45deg);
+  top: 22px;
+}
+#mainNav #mainNavList button .line2 {
+  transform: rotate(45deg);
+  top: 21px;
+}
+#mainNav #mainNavList button:hover {
+  cursor: pointer;
+}
+#mainNav #mainNavList hr {
+  margin-bottom: 37.5px;
+  background: #00020b;
+  border: 1px solid black;
+}
+#mainNav #mainNavList li {
+  height: 75px;
+}
+#mainNav #mainNavList li:hover {
+  cursor: pointer;
+}
+#mainNav #mainNavList li a {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  color: inherit;
+  letter-spacing: 0px;
+  font-weight: 700;
+  font-size: 20px;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: flex;
+  align-items: center;
+}
+
+#homeHeader {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 100px 8vw;
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#homeHeader h1 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: clamp(55px, 8vw, 65px);
+  color: #d29b3d;
+  margin-bottom: 20px;
+}
+#homeHeader p {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  text-align: justify;
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+#homeHeader a {
+  color: #fff;
+  border: 3px solid #fff;
+  font-family: "Bodoni Moda", serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+#homeMain {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  width: 100%;
+  background: #fff;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+#homeMain #homeMainBox1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 10vh 10vw;
+}
+#homeMain #homeMainBox1 h2 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: clamp(26px, 5vw, 36px);
+  margin-bottom: 20px;
+  text-align: center;
+}
+#homeMain #homeMainBox1 p {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  text-align: justify;
+  max-width: 600px;
+}
+#homeMain #homeMainBox2 {
+  height: 400px;
+  background: url("../img/bg2.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#homeMain #homeMainBox2 a {
+  align-self: center;
+  color: #fff;
+  border: 3px solid #fff;
+  font-family: "Bodoni Moda", serif;
+  font-size: clamp(18px, 6vw, 22px);
+  font-weight: 600;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+#homeMain #homeMainImages {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  max-width: 1000px;
+  background: #fff;
+  margin: auto;
+  padding: 40px 8vw;
+}
+#homeMain #homeMainImages h2 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: clamp(26px, 5vw, 36px);
+  text-align: center;
+  margin-bottom: 40px;
+}
+#homeMain #homeMainImages .image_box {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+#homeMain #homeMainImages .image_box img {
+  width: 100%;
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+#homeMain #homeMainImages .image_box p {
+  top: 15px;
+  left: 15px;
+  font-size: clamp(16px, 5vw, 21px);
+  position: absolute;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  background: #00020b;
+  padding: 5px;
+}
+
+#sign-up-header {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/bg3.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 8vw;
+}
+#sign-up-header h1 {
+  text-align: center;
+  font-family: "Cinzel Decorative", cursive;
+  font-size: clamp(35px, 8vw, 45px);
+  color: #d29b3d;
+  margin-bottom: 20px;
+  max-width: 490px;
+}
+#sign-up-header p {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  text-align: justify;
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+#sign-up-header img {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+  position: relative;
+  top: 50px;
+}
+
+#sign-up-main {
+  width: 100%;
+  margin: auto;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  min-height: 700px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 8vw;
+}
+#sign-up-main #passwordRules {
+  align-self: flex-start;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+#sign-up-main h2 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 35px;
+  margin-bottom: 50px;
+}
+#sign-up-main .sign_up_info {
+  color: rgb(177, 0, 0);
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+#sign-up-main form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#sign-up-main form .no_border {
+  border-bottom: unset;
+  margin-right: 40px;
+}
+#sign-up-main form select {
+  font-size: 18px;
+  color: #757575;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid lightgray;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+#sign-up-main form select:active, #sign-up-main form select:focus {
+  outline: none;
+}
+#sign-up-main form small {
+  color: gray;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+}
+#sign-up-main form .form_box_allergies {
+  display: flex;
+  flex-direction: column;
+}
+#sign-up-main form .form_box_allergies .item {
+  padding: 10px 0px;
+}
+#sign-up-main form .form_box_allergies .item input {
+  width: unset;
+  max-width: unset;
+}
+#sign-up-main form .form_box_allergies label {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: #757575;
+  font-weight: 500;
+}
+#sign-up-main form #form_allergies {
+  display: none;
+  flex-direction: column;
+}
+#sign-up-main form #form_allergies p {
+  font-family: "Raleway", sans-serif;
+  color: #757575;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+#sign-up-main form #form_allergies .form_allergies_item {
+  padding: 5px 0px;
+}
+#sign-up-main form #form_allergies .form_allergies_item input {
+  margin-right: 10px;
+}
+#sign-up-main form #form_allergies .form_allergies_item label {
+  font-family: "Raleway", sans-serif;
+  color: #757575;
+}
+
+#sign-in-main {
+  display: flex;
+  width: 100%;
+  background: #fff;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 8vw 100px;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+}
+#sign-in-main h1 {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 35px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+#sign-in-main p {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+#sign-in-main #signInError {
+  align-self: center;
+  color: rgb(235, 0, 0);
+}
+#sign-in-main #signInSuccess {
+  color: green;
+}
+#sign-in-main form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+#sign-in-main form .form_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sign-in-main form a {
+  position: relative;
+  top: 40px;
+  font-family: "Raleway", sans-serif;
+  text-decoration: underline;
+  color: #d29b3d;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+#menuHeader {
+  width: 100%;
+  height: 100vh;
+  padding: 100px 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  background: url("../img/bg4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#menuHeader h1 {
+  font-family: "Cinzel Decorative", cursive;
+  color: #d29b3d;
+  font-size: clamp(55px, 8vw, 65px);
+  margin-bottom: 20px;
+}
+#menuHeader p {
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+}
+
+#menuMain {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  padding: 20px 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+
+.menuSections h2 {
+  font-size: 35px;
+  font-family: "Cinzel Decorative", cursive;
+  color: #d29b3d;
+  margin: 20px 0px;
+}
+.menuSections .menu_item {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  padding: 20px 0px;
+}
+.menuSections .menu_item .name {
+  font-family: "Cinzel Decorative", cursive;
+  color: #00020b;
+  font-size: 24px;
+  margin: 5px 0px;
+}
+.menuSections .menu_item .description {
+  max-width: 400px;
+  margin: 5px 0px;
+}
+.menuSections .menu_item .schedule {
+  color: rgb(70, 70, 70);
+  margin: 5px 0px;
+}
+.menuSections hr {
+  width: 100%;
+  color: #00020b;
+  margin: 20px 0px;
+  max-width: 500px;
+}
+
+#admin-verification {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 6vw;
+}
+#admin-verification h1 {
+  font-size: 45px;
+  color: #d29b3d;
+  font-family: "Cinzel Decorative", cursive;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#admin-verification h2 {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+#admin-verification p {
+  font-family: "Raleway", sans-serif;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+#admin-verification form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#admin-verification form small {
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+#admin-verification form p {
+  align-self: flex-start;
+  color: red;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  font-style: italic;
+}
+
+#reservationMain {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  height: auto;
+  padding: 100px 5vw;
+  font-family: "Raleway", sans-serif;
+}
+#reservationMain h1 {
+  font-family: "Cinzel Decorative", cursive;
+  align-self: center;
+  text-align: center;
+  font-size: 35px;
+  margin: 40px 0px;
+}
+#reservationMain p {
+  margin: 10px 0px;
+  font-weight: 500;
+}
+#reservationMain form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#reservationMain form input[type=text],
+#reservationMain form input[type=email],
+#reservationMain form input[type=tel],
+#reservationMain form input[type=number] {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  margin: 20px 0px;
+}
+#reservationMain form input[type=date] {
+  font-size: 16px;
+  margin: 20px 0px;
+}
+#reservationMain form #service_time_noon,
+#reservationMain form #service_time_evening {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+#reservationMain form small {
+  font-size: 14px;
+  color: rgb(81, 81, 81);
+  margin-bottom: 10px;
+  font-style: italic;
+}
+#reservationMain form input[type=time] {
+  width: 52px;
+}
+#reservationMain form .prompt_box {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 50px;
+}
+#reservationMain form .form_allergies_box {
+  display: none;
+}
+#reservationMain form .form_allergies_box .form_allergies_item {
+  margin: 10px 0px;
+}
+#reservationMain form .form_buttons button {
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#reservationMain form .form_buttons button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+#adminNav {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  background: #00020b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 55;
+}
+#adminNav button {
+  background: transparent;
+  border: none;
+}
+#adminNav button img {
+  position: relative;
+  width: 50px;
+  filter: invert(1);
+}
+#adminNav h1 {
+  color: #fff;
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 18px;
+}
+#adminNav #adminNavList {
+  position: absolute;
+  top: 70px;
+  left: -100vw;
+  width: 100%;
+  max-width: 800px;
+}
+#adminNav #adminNavList .admin_nav_item {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00020b;
+  position: relative;
+  left: -100%;
+  border-top: 1px solid #fff;
+  transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#adminNav #adminNavList .admin_nav_item a {
+  display: block;
+}
+#adminNav #adminNavList .admin_nav_item button,
+#adminNav #adminNavList .admin_nav_item a {
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#adminNav #adminNavList .admin_nav_item button:hover,
+#adminNav #adminNavList .admin_nav_item a:hover {
+  cursor: pointer;
+  letter-spacing: 1px;
+  color: lightgray;
+}
+#adminNav #adminNavList #adminNavItem2 {
+  transition-delay: 0.1s;
+}
+#adminNav #adminNavList #adminNavItem3 {
+  transition-delay: 0.2s;
+}
+#adminNav #adminNavList #adminNavItem4 {
+  transition-delay: 0.3s;
+}
+#adminNav #adminNavList #adminNavItem5 {
+  transition-delay: 0.4s;
+}
+#adminNav #adminNavList #adminNavItem6 {
+  transition-delay: 0.5s;
+}
+
+#restaurantInfo,
+#manageDish,
+#manageMenu,
+#manageImage {
+  padding: 90px 5vw 100px;
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+}
+#restaurantInfo h2,
+#manageDish h2,
+#manageMenu h2,
+#manageImage h2 {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+#restaurantInfo p,
+#manageDish p,
+#manageMenu p,
+#manageImage p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+#restaurantInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#restaurantInfo fieldset {
+  width: 100%;
+  padding: 20px 5vw;
+  border: 1px solid #00020b;
+  max-width: 650px;
+  background: #fff;
+}
+#restaurantInfo fieldset #editInfoSuccess {
+  color: green;
+}
+#restaurantInfo fieldset #editInfoError {
+  color: red;
+}
+#restaurantInfo fieldset .form_item {
+  border-bottom: 1px solid black;
+  padding: 10px 0px;
+}
+#restaurantInfo fieldset .form_item h3 {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+#restaurantInfo fieldset .form_item small {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  color: red;
+  font-style: italic;
+  margin-bottom: 20px;
+  display: block;
+}
+#restaurantInfo fieldset .form_item p {
+  color: #00020b;
+  font-size: 18px;
+}
+#restaurantInfo fieldset .form_item .edit_restaurant_info {
+  padding: 5px 10px;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  background: #00020b;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+#restaurantInfo fieldset .form_item .edit_restaurant_info:hover {
+  cursor: pointer;
+}
+#restaurantInfo fieldset .form_item .edit_box {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#restaurantInfo fieldset .form_item .edit_box .edit_box_btn {
+  padding: 5px 10px;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  margin: 10px 0px;
+}
+#restaurantInfo fieldset .form_item .edit_box .edit_box_btn:hover {
+  cursor: pointer;
+}
+#restaurantInfo fieldset .form_item .edit_box input {
+  margin: 10px 0px;
+}
+#restaurantInfo fieldset .form_item .edit_box select {
+  margin: 10px 0px;
+  padding: 5px 10px;
+  font-family: "Raleway", sans-serif;
+}
+#restaurantInfo fieldset .form_item .edit_box .success {
+  background: darkgreen !important;
+}
+#restaurantInfo fieldset .form_item .edit_box .cancel {
+  background: darkred !important;
+}
+#restaurantInfo fieldset .form_item_borderless {
+  border-bottom: unset !important;
+}
+
+#manageImage {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+#manageImage .button {
+  padding: 10px;
+  background: #00020b;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+#manageImage .button:hover {
+  cursor: pointer;
+}
+#manageImage fieldset {
+  background: #fff;
+  width: 100%;
+  padding: 20px 5vw;
+  margin-bottom: 20px;
+  max-width: 850px;
+}
+#manageImage fieldset legend {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+#manageImage fieldset #imageError,
+#manageImage fieldset #imageSuccess {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: start;
+}
+#manageImage fieldset #imageError {
+  color: rgb(255, 0, 0);
+}
+#manageImage fieldset #imageSuccess {
+  color: green;
+}
+#manageImage fieldset form label,
+#manageImage fieldset form input,
+#manageImage fieldset form small {
+  font-family: "Raleway", sans-serif;
+}
+#manageImage fieldset form input[type=text] {
+  font-size: 16px;
+  padding: 3px;
+}
+#manageImage fieldset form input[type=text]:focus, #manageImage fieldset form input[type=text]:active {
+  outline: none;
+}
+#manageImage fieldset form label {
+  margin-right: 10px;
+}
+#manageImage fieldset form .form_buttons button {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+#manageImage #deleteImageBox {
+  width: 100%;
+}
+#manageImage #deleteImageBox .image_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #00020b;
+  padding-bottom: 20px;
+}
+#manageImage #deleteImageBox .image_box h4 {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+#manageImage #deleteImageBox .image_box img {
+  width: 300px;
+  margin-bottom: 20px;
+}
+#manageImage #deleteImageBox .image_box img:hover {
+  cursor: default;
+}
+#manageImage #deleteImageBox .image_box input {
+  display: none;
+}
+#manageImage #deleteImageBox .image_box button {
+  font-size: 16px;
+  padding: 10px;
+  font-family: "Raleway", sans-serif;
+  background-color: darkred;
+  color: #fff;
+  border: none;
+}
+#manageImage #deleteImageBox .image_box button:hover {
+  cursor: pointer;
+}
+#manageImage .form_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 150px;
+}
+#manageImage .form_item label {
+  font-weight: 600;
+  font-size: 18px;
+}
+#manageImage .form_item button {
+  font-family: "Raleway", sans-serif;
+  padding: 10px;
+  background-color: green;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+#manageMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#manageMenu #addMenu {
+  font-family: "Raleway", sans-serif;
+  padding: 20px 3vw;
+  height: auto;
+  max-width: 750px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#manageMenu #addMenu #addMenuSuccess {
+  color: green;
+  margin-bottom: 20px;
+}
+#manageMenu #addMenu #addMenuError {
+  color: red;
+  margin-bottom: 20px;
+}
+#manageMenu #addMenu legend {
+  font-weight: 600;
+}
+#manageMenu #addMenu form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+#manageMenu #addMenu input,
+#manageMenu #addMenu textarea,
+#manageMenu #addMenu button {
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 20px;
+}
+#manageMenu #addMenu input {
+  padding: 5px;
+  font-size: 16px;
+}
+#manageMenu #addMenu input[type=number] {
+  width: 100%;
+  max-width: 300px;
+}
+#manageMenu #addMenu textarea {
+  padding: 5px;
+}
+#manageMenu #addMenu label {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+#manageMenu #addMenu small {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+#manageMenu #addMenu button {
+  font-size: 16px;
+  padding: 10px;
+  width: 100px;
+  background: green;
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+  font-family: "Raleway", sans-serif;
+}
+#manageMenu #addMenu button:hover {
+  cursor: pointer;
+}
+#manageMenu #deleteMenu {
+  font-family: "Raleway", sans-serif;
+  padding: 20px 3vw;
+  height: auto;
+  max-width: 750px;
+  width: 100%;
+}
+#manageMenu #deleteMenu legend {
+  font-weight: 600;
+}
+#manageMenu #deleteMenu #deleteMenuError {
+  color: red;
+}
+#manageMenu #deleteMenu #deleteMenuSuccess {
+  color: green;
+}
+#manageMenu #deleteMenu .form_item {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#manageMenu #deleteMenu .form_item label {
+  font-weight: 500;
+}
+#manageMenu #deleteMenu .form_item button {
+  font-family: "Raleway", sans-serif;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 0px;
+  font-size: 16px;
+  background-color: darkred;
+}
+#manageMenu #deleteMenu .form_item button:hover {
+  cursor: pointer;
+}
+
+#manageDish {
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+}
+#manageDish #addDish,
+#manageDish #deleteDish {
+  width: 100%;
+  max-width: 850px;
+  padding: 40px 3vw;
+  margin-bottom: 20px;
+}
+#manageDish #addDish legend,
+#manageDish #deleteDish legend {
+  font-weight: 600;
+}
+#manageDish #addDish #addDishError,
+#manageDish #deleteDish #addDishError {
+  color: red;
+}
+#manageDish #addDish #addDishSuccess,
+#manageDish #deleteDish #addDishSuccess {
+  color: green;
+}
+#manageDish #addDish form,
+#manageDish #deleteDish form {
+  display: flex;
+  flex-direction: column;
+}
+#manageDish #addDish form label,
+#manageDish #addDish form input,
+#manageDish #addDish form textarea,
+#manageDish #addDish form select,
+#manageDish #deleteDish form label,
+#manageDish #deleteDish form input,
+#manageDish #deleteDish form textarea,
+#manageDish #deleteDish form select {
+  margin-bottom: 20px;
+}
+#manageDish #addDish form label,
+#manageDish #deleteDish form label {
+  font-weight: 600;
+}
+#manageDish #addDish form select,
+#manageDish #deleteDish form select {
+  max-width: 200px;
+}
+#manageDish #addDish form input,
+#manageDish #addDish form select,
+#manageDish #addDish form textarea,
+#manageDish #addDish form option,
+#manageDish #deleteDish form input,
+#manageDish #deleteDish form select,
+#manageDish #deleteDish form textarea,
+#manageDish #deleteDish form option {
+  padding: 5px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+}
+#manageDish #addDish form input[type=number],
+#manageDish #deleteDish form input[type=number] {
+  width: 100%;
+  max-width: 200px;
+}
+#manageDish #addDish form button,
+#manageDish #deleteDish form button {
+  font-size: 16px;
+  border: none;
+  background-color: green;
+  font-family: "Raleway", sans-serif;
+  padding: 10px;
+  color: #fff;
+  width: 100px;
+}
+#manageDish #deleteDish #deleteDishError {
+  color: red;
+}
+#manageDish #deleteDish #deleteDishSuccess {
+  color: green;
+}
+#manageDish #deleteDish hr,
+#manageDish #deleteDish h3,
+#manageDish #deleteDish .form_item {
+  margin-bottom: 20px;
+}
+#manageDish #deleteDish .form_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#manageDish #deleteDish .form_item label {
+  margin-bottom: unset;
+}
+#manageDish #deleteDish .form_item button {
+  background: darkred;
+}
+#manageDish #deleteDish .form_item button:hover {
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  background: #00020b;
+  min-height: 300px;
+  padding: 40px 5vw;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer h3 {
+  font-family: "Cinzel Decorative", cursive;
+  color: #d29b3d;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+footer fieldset {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  max-width: 400px;
+  margin-bottom: 20px;
+  border: none;
+}
+footer iframe {
+  max-width: 500px;
+}
+
+@media screen and (min-width: 1100px) {
+  #menuMain,
+  #homeMain,
+  #sign-in-main,
+  #sign-up-main {
+    max-width: 950px;
+  }
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2023-3-3 16:24:40
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}/*# sourceMappingURL=style.css.map */

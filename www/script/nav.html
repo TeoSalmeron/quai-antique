@@ -1,0 +1,49 @@
+<script>
+    const mainNav = document.getElementById('mainNav')
+    const openMainNav = document.getElementById('openMainNav')
+    const mainNavList = document.getElementById('mainNavList')
+    const closeMainNav = document.getElementById('closeMainNav')
+    const mainNavListItems = document.getElementsByClassName('mainNavListItem')
+
+    // Toggle nav bar
+
+    openMainNav.addEventListener('click', () => {
+        // Display nav list
+        mainNavList.style.left = "0px"
+
+        // Disable scroll
+        document.body.style.height = "100%"
+        document.body.style.overflow = "hidden"
+    })
+
+    // Close nav bar
+
+    closeMainNav.addEventListener('click', () => {
+        // Remove navbar list
+        mainNavList.style.left = "-100vw"
+
+        // Enable scroll
+        document.body.style.height = "unset"
+        document.body.style.overflow = "unset"
+    })
+
+    // Hover effect on nav items
+    for (let item of mainNavListItems) {
+        item.addEventListener('mouseenter', (e) => {
+            e.target.classList.add("onHover")
+            for(let item2 of mainNavListItems) {
+                if(!item2.classList.contains("onHover")) {
+                    item2.style.color = "lightgray"
+                } else {
+                    item2.style.color = "#00020b";
+                }
+            }
+        })
+        item.addEventListener('mouseleave', (e) => {
+            e.target.classList.remove("onHover")
+            for(let item2 of mainNavListItems) {
+                item2.style.color = "#00020b"
+            }
+        })
+    }
+</script>

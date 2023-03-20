@@ -1,0 +1,19 @@
+<script>
+    const confirmAllergy = document.getElementById('confirmAllergy')
+    const noAllergy = document.getElementById('noAllergy')
+    const listAllergies = document.getElementById('form_allergies')
+
+    // Toggle allergies list
+    confirmAllergy.addEventListener('input', () => {
+        if(confirmAllergy.checked) {
+            listAllergies.style.display = "flex"
+        }
+    })
+
+    // Remove allergies list
+    noAllergy.addEventListener('input', () => {
+        if(noAllergy.checked) {
+            listAllergies.style.display = "none"
+        }
+    })
+</script>
