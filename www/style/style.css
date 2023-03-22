@@ -595,8 +595,15 @@
   margin: 40px 0px;
 }
 #reservationMain p {
-  margin: 10px 0px;
+  margin: 20px 0px;
   font-weight: 500;
+  font-style: italic;
+}
+#reservationMain #reservationError {
+  color: red;
+}
+#reservationMain #reservationSuccess {
+  color: green;
 }
 #reservationMain form {
   display: flex;
@@ -630,9 +637,6 @@
   color: rgb(81, 81, 81);
   margin-bottom: 10px;
   font-style: italic;
-}
-#reservationMain form input[type=time] {
-  width: 52px;
 }
 #reservationMain form .prompt_box {
   margin: 10px 0px;

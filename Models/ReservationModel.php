@@ -8,8 +8,8 @@ use App\Models\Model;
 class ReservationModel extends Model
 {
     protected int $id;
-    protected DateTime $res_date;
-    protected DateTime $res_time;
+    protected $res_date;
+    protected $res_time;
     protected int $total_guest;
     protected string $booked_by;
 
@@ -116,5 +116,30 @@ class ReservationModel extends Model
         $this->booked_by = $booked_by;
 
         return $this;
+    }
+
+    public function has_user_booked($customer_id, $date, $service_start, $service_end)
+    {
+        $query = $this->request("SELECT * FROM $this->table WHERE booked_by = ? AND res_date = ? AND res_time BETWEEN ? AND ?", [$customer_id, $date, $service_start, $service_end])->fetch();
+        return $query;
+    }
+
+    public function is_service_full($max_capacity, $nb_guest, $date, $service_start, $service_end)
+    {
+        $query = $this->request("SELECT total_guest FROM $this->table WHERE res_date = ? AND res_time BETWEEN ? AND ?", [$date, $service_start, $service_end])->fetchAll();
+        if (!$query) {
+            return false;
+        } else {
+            $total = 0;
+            foreach ($query as $q) {
+                $total += $q["total_guest"];
+            }
+            $total += $nb_guest;
+            if ($total > $max_capacity) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 }

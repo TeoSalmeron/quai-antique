@@ -696,8 +696,17 @@ $color2: #d29b3d;
   }
 
   p {
-    margin: 10px 0px;
+    margin: 20px 0px;
     font-weight: 500;
+    font-style: italic;
+  }
+
+  #reservationError {
+    color: red;
+  }
+
+  #reservationSuccess {
+    color: green;
   }
 
   form {
@@ -735,10 +744,6 @@ $color2: #d29b3d;
       color: rgb(81, 81, 81);
       margin-bottom: 10px;
       font-style: italic;
-    }
-
-    input[type="time"] {
-      width: 52px;
     }
 
     .prompt_box {

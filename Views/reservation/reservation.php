@@ -9,6 +9,22 @@ require_once ROOT . '/Views/templates/nav.php';
     ?>
     <h1>Réserver une table</h1>
     <p>Pour réserver une table, remplissez ce formulaire</p>
+    <p id="reservationError">
+        <?php
+        if (isset($_SESSION["reservation_error"]) && !empty($_SESSION["reservation_error"])) {
+            echo $_SESSION["reservation_error"];
+        }
+        unset($_SESSION["reservation_error"]);
+        ?>
+    </p>
+    <p id="reservationSuccess">
+        <?php
+        if (isset($_SESSION["reservation_success"]) && !empty($_SESSION["reservation_success"])) {
+            echo $_SESSION["reservation_success"];
+        }
+        unset($_SESSION["reservation_success"]);
+        ?>
+    </p>
     <form action="/book-table/process_book_table" method="post" id="reservationForm">
         <input type="text" name="first_name" id="first_name" placeholder="Prénom">
         <input type="text" name="last_name" id="last_name" placeholder="Nom de famille">
@@ -16,7 +32,7 @@ require_once ROOT . '/Views/templates/nav.php';
         <input type="tel" name="phone" id="phone" placeholder="Numéro de téléphone">
         <small>Format : 0102030405</small>
         <input type="number" name="nb_guest" id="nb_guest" placeholder="Nombres de convives">
-        <input type="date" name="reservation_date" id="reservationDate">
+        <input type="date" name="reservation_date" id="reservationDate" value="<?= $today ?>">
         <p>Souhaitez-vous réserver pour le midi ou le soir ?</p>
         <div class="prompt_box">
             <input type="radio" name="prompt_service" id="prompt_service_noon" value="noon">
@@ -27,14 +43,30 @@ require_once ROOT . '/Views/templates/nav.php';
             <label for="prompt_service_evening">Soir</label>
         </div>
         <div id="service_time_noon">
-            <small>Vous pouvez réserver de <?= substr($restaurant["noon_service_start"], 0, 5) ?> à <?= substr($noon_service_end_form, 0, 5) ?> </small>
+            <small>Vous pouvez réserver de <?= substr($restaurant["noon_service_start"], 0, 5) ?> à <?= end($noon_times) ?> </small>
             <br>
-            <input type="time" name="reservation_time" id="reservation_time_noon" min="<?= $restaurant["noon_service_start"] ?>" max="<?= $noon_service_end_form ?>" step="900">
+            <select name="noon_time" id="noon_time">
+                <?php
+                foreach ($noon_times as $n) {
+                ?>
+                    <option value="<?= $n ?>"><?= $n ?></option>
+                <?php
+                }
+                ?>
+            </select>
         </div>
         <div id="service_time_evening">
-            <small>Vous pouvez réserver de <?= substr($restaurant["evening_service_start"], 0, 5) ?> à <?= substr($evening_service_end_form, 0, 5) ?> </small>
+            <small>Vous pouvez réserver de <?= substr($restaurant["evening_service_start"], 0, 5) ?> à <?= end($evening_times) ?> </small>
             <br>
-            <input type="time" name="reservation_time" id="reservation_time_evening" min="<?= $restaurant["evening_service_start"] ?>" max="<?= $evening_service_end_form ?>" step="900">
+            <select name="evening_time" id="evening_time">
+                <?php
+                foreach ($evening_times as $e) {
+                ?>
+                    <option value="<?= $e ?>"><?= $e ?></option>
+                <?php
+                }
+                ?>
+            </select>
         </div>
         <p>Avez-vous des allergies ?</p>
         <div class="prompt_box">

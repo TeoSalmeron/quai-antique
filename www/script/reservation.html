@@ -7,25 +7,24 @@
     const promptAllergiesNo = document.getElementById("prompt_allergies_no")
     const formAllergiesBox = document.getElementById("form_allergies_box")
     const form = document.getElementById("reservationForm")
+    const error = document.getElementById("reservationError")
     const firstName = document.getElementById("first_name")
     const lastName = document.getElementById("last_name")
     const email = document.getElementById("email")
     const phone = document.getElementById("phone")
     const nbGuest = document.getElementById("nb_guest")
     const reservationDate = document.getElementById("reservationDate")
-    const noonTime = document.getElementById("reservation_time_noon")
-    const eveningTime = document.getElementById("reservation_time_evening")
     const formAllergies = document.getElementsByClassName("allergies")
     // Display noon or evening service time
 
-    promptServiceNoon.addEventListener('change', () => {
+    promptServiceNoon.addEventListener("input", () => {
         if(event.target.checked) {
             serviceTimeEvening.style.display = "none"
             serviceTimeNoon.style.display = "flex"
         }
     })
 
-    promptServiceEvening.addEventListener("change", () => {
+    promptServiceEvening.addEventListener("input", () => {
         if(event.target.checked) {
             serviceTimeNoon.style.display = "none"
             serviceTimeEvening.style.display = "flex"
@@ -42,6 +41,9 @@
     promptAllergiesNo.addEventListener("change", () => {
         if(event.target.checked) {
             formAllergiesBox.style.display = "none"
+            for(let allergy of formAllergies){
+                allergy.checked = false
+            }
         }
     })
 
@@ -56,7 +58,6 @@
             if(user === null) {
                 return
             } else {
-                console.log(this.response)
                 firstName.value = user.firstName
                 lastName.value = user.lastName
                 email.value = user.email
@@ -88,5 +89,115 @@
     xhr.open("POST", "/book-table/reservation_user_exists", true)
     xhr.responseType = "json"
     xhr.send()
+
+    // Process reservation form
+
+    form.addEventListener("submit", (e) => {
+        // Check first name
+        if(firstName.value == "" || firstName.value == null) {
+            error.innerText = "Le prénom n'a pas été défini"
+            e.preventDefault()
+            return
+        }
+
+        // Check last name
+        if(lastName.value == "" || lastName.value == null) {
+            error.innerText = "Le nom de famille n'a pas été défini"
+            e.preventDefault()
+            return
+        }
+
+        // Check email
+        if(email.value == "" || email.value == null) {
+            error.innerText = "L'email n'a pas été défini"
+            e.preventDefault()
+            return
+        }
+
+        // Check phone number
+        if(phone.value == "" || phone.value == null) {
+            error.innerText = "Le numéro de téléphone n'a pas été défini"
+            e.preventDefault()
+            return
+        }
+
+        // Check nb guest
+        if(nbGuest.value == "" || nbGuest.value == 0 || nbGuest.value == null) {
+            error.innerText = "Le nombre de convives n'a pas été défini"
+            e.preventDefault()
+            return
+        }
+       
+        // Check if date is not empty
+        let formReservation = new Date(reservationDate.value)
+        if(reservationDate.value == null || reservationDate.value == "" || reservationDate.value == undefined) {
+            error.innerText = "Veuillez sélectionner une date" 
+            e.preventDefault()
+            return
+        }
+
+        // Check if date is not before today
+        let date = new Date()
+
+        let reservationTime = new Date(reservationDate.value)
+
+        if((reservationTime.getFullYear() === date.getFullYear()) && (reservationTime.getMonth() === date.getMonth()) && (reservationTime.getDate() === date.getDate())) {
+            reservationTime = reservationDate.value
+        } else if (reservationTime.getTime() < date.getTime()) {
+            error.innerText = "Veuillez sélectionner une date valide"
+            e.preventDefault()
+            return
+        } else {
+            reservationTime = reservationDate.value
+        }
+
+        // Check if user has not selected restaurant's closing day
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let dayClose = this.response
+                if(dayClose === 7) {
+                    dayClose = 0
+                }
+                if(dayClose == formReservation.getUTCDay()) {
+                    error.innerText = "Le restaurant est fermé ce jour là"
+                    e.preventDefault()
+                    return
+                }
+            } else if (this.readyState == 4) {
+                alert("Une erreur est survenue...")
+            }
+        }
+        xhr.open("POST", "/book-table/check_day_close", true)
+        xhr.responseType = "json"
+        xhr.send()
+
+        if(!promptServiceEvening.checked && !promptServiceNoon.checked) {
+            error.innerText = "Veuillez sélectionner une heure de réservation"
+            e.preventDefault()
+            return
+        }
+
+        // Check if allergies are set
+        if(!promptAllergiesYes.checked && !promptAllergiesNo.checked) {
+            error.innerText = "Veuillez indiquer si vous avez ou non des allergies"
+            e.preventDefault()
+            return
+        }
+
+        if(promptAllergiesYes.checked) {
+            let nbOfAllergies = 0
+            for(let allergy of formAllergies) {
+                if(allergy.checked) {
+                    nbOfAllergies++
+                }
+            }
+            if(nbOfAllergies === 0) {
+                error.innerText = 'Veuillez sélectionner vos allergies ou décochez la case "Oui" dans "Avez-vous des allergies?"'
+                e.preventDefault()
+                return
+            }
+        }
+
+    })
 
 </script>
