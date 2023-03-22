@@ -93,12 +93,6 @@
     // Process reservation form
 
     form.addEventListener("submit", (e) => {
-        // Check first name
-        if(firstName.value == "" || firstName.value == null) {
-            error.innerText = "Le prénom n'a pas été défini"
-            e.preventDefault()
-            return
-        }
 
         // Check last name
         if(lastName.value == "" || lastName.value == null) {
@@ -198,6 +192,26 @@
             }
         }
 
+        // var xhr2 = new XMLHttpRequest()
+        // xhr2.onreadystatechange = function() {
+        //     if(this.readyState == 4 && this.status == 200) {
+        //         console.log(this.response)
+        //         let response = this.response
+        //         if(response.error == 1) {
+        //             error.innerText = response.msg
+        //         } else {
+        //             error.innerText = response.msg
+        //             error.style.color = "green"
+        //         }
+        //     } else if (this.readyState == 4) {
+        //         alert("Une erreur est survenue...")
+        //     }
+        // }
+
+        // xhr2.open("POST", "/book-table/process_book_table", true)
+        // xhr2.responseType = "json"
+        // xhr2.send()
+        // e.preventDefault()
     })
 
 </script>

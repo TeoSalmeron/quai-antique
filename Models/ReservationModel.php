@@ -118,9 +118,9 @@ class ReservationModel extends Model
         return $this;
     }
 
-    public function has_user_booked($customer_id, $date, $service_start, $service_end)
+    public function has_user_booked($user_id, $date, $service_start, $service_end)
     {
-        $query = $this->request("SELECT * FROM $this->table WHERE booked_by = ? AND res_date = ? AND res_time BETWEEN ? AND ?", [$customer_id, $date, $service_start, $service_end])->fetch();
+        $query = $this->request("SELECT * FROM $this->table WHERE booked_by = ? AND res_date = ? AND res_time BETWEEN ? AND ?", [$user_id, $date, $service_start, $service_end])->fetch();
         return $query;
     }
 
