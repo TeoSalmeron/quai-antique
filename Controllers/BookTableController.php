@@ -80,7 +80,6 @@ class BookTableController extends Controller
     {
         $restaurant_model = new RestaurantModel;
         $restaurant = $restaurant_model->find(1);
-        require_once ROOT . '/Controllers/functions/define_day_close.php';
         echo json_encode($restaurant["day_close"]);
     }
 }

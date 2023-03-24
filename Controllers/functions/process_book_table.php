@@ -78,9 +78,8 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                         $email = htmlspecialchars(strip_tags(trim($_POST["email"])));
                                         $phone = htmlspecialchars(strip_tags(trim($_POST["phone"])));
                                         $nb_guest = htmlspecialchars(strip_tags(trim($_POST["nb_guest"])));
-                                        $reservation_time = htmlspecialchars(strip_tags(trim($_POST["reservation_time"])));
+                                        // If user is not connected, check if user already has an account
                                         if (!isset($_SESSION["auth"]) || $_SESSION["auth"] == false) {
-                                            // If user is not connected, check if user already has an account
                                             $user_model = new UsersModel();
                                             $user = $user_model->findBy(["email" => $_POST["email"]])[0];
                                             if (!$user) {
@@ -149,7 +148,7 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                                         } else {
                                                             // Successful booking
                                                             $reservation_model->setRes_date($reservation_date)
-                                                                ->setRes_time($_POST["evening_time"])
+                                                                ->setRes_time($_POST["noon_time"])
                                                                 ->setTotal_guest($nb_guest)
                                                                 ->setBooked_by($visitor_model->getId());
                                                             $reservation_model->create();
@@ -203,7 +202,7 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                                         } else {
                                                             // Successful booking
                                                             $reservation_model->setRes_date($reservation_date)
-                                                                ->setRes_time($_POST["evening_time"])
+                                                                ->setRes_time($_POST["noon_time"])
                                                                 ->setTotal_guest($nb_guest)
                                                                 ->setBooked_by($user["id"]);
                                                             $reservation_model->create();
@@ -258,7 +257,7 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                                     } else {
                                                         // Successful booking
                                                         $reservation_model->setRes_date($reservation_date)
-                                                            ->setRes_time($_POST["evening_time"])
+                                                            ->setRes_time($_POST["noon_time"])
                                                             ->setTotal_guest($nb_guest)
                                                             ->setBooked_by($_SESSION["customer_id"]);
                                                         $reservation_model->create();
