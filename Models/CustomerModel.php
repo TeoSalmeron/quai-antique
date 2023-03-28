@@ -8,6 +8,7 @@ class CustomerModel extends Model
 {
     protected string $id;
     protected string $password;
+    protected string $pw_token;
     protected int $default_nb_guest;
 
     public function __construct()
@@ -71,6 +72,26 @@ class CustomerModel extends Model
     public function setDefault_nb_guest($default_nb_guest)
     {
         $this->default_nb_guest = $default_nb_guest;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pw_token
+     */
+    public function getPw_token()
+    {
+        return $this->pw_token;
+    }
+
+    /**
+     * Set the value of pw_token
+     *
+     * @return  self
+     */
+    public function setPw_token($pw_token)
+    {
+        $this->pw_token = $pw_token;
 
         return $this;
     }
