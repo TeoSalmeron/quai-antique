@@ -105,7 +105,7 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                                         unset($users_allergen_model);
                                                     }
                                                 }
-                                                // Check if visitor has already booked a table at this slot
+                                                // Check if visitor has already booked a table at evening service
                                                 if ($slot === "evening") {
                                                     $has_user_booked = $reservation_model->has_user_booked($visitor_model->getId(), $reservation_date, $evening_service_start, $evening_service_end);
                                                     if ($has_user_booked !== false) {
@@ -132,6 +132,7 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                                         }
                                                     }
                                                 } else {
+                                                    // Check if visitor has already booked a table at noon service
                                                     $has_user_booked = $reservation_model->has_user_booked($visitor_model->getId(), $reservation_date, $noon_service_start, $noon_service_end);
                                                     if ($has_user_booked !== false) {
                                                         $_SESSION["reservation_error"] = "Vous avez déjà réservé une table à ce créneau";

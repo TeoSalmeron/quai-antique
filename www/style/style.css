@@ -1287,7 +1287,11 @@ footer h3 {
   color: #d29b3d;
   text-align: center;
   font-size: 28px;
-  margin-bottom: 20px;
+  margin: 40px 0px;
+}
+footer .no_margin {
+  margin: 0;
+  margin-top: 40px;
 }
 footer fieldset {
   width: 100%;
@@ -1301,6 +1305,51 @@ footer fieldset {
 }
 footer iframe {
   max-width: 500px;
+}
+footer .contact_item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 40px auto;
+}
+footer .contact_item img {
+  width: 40px;
+  margin-right: 20px;
+  filter: invert(1);
+}
+footer .contact_item a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+}
+footer .contact_item a:hover {
+  cursor: pointer;
+}
+footer a {
+  margin: 10px 0px;
+}
+footer p {
+  margin: 5px 0px;
+}
+
+#legalNoticesMain {
+  width: 100%;
+  padding: 150px 5vw;
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+}
+#legalNoticesMain * {
+  margin: 10px 0px;
+}
+#legalNoticesMain h1 {
+  font-family: "Cinzel Decorative", cursive;
+  align-self: center;
+  font-size: 35px;
+  text-align: center;
+}
+#legalNoticesMain h2 {
+  align-self: flex-start;
 }
 
 @media screen and (min-width: 1100px) {
