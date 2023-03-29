@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\AdministratorModel;
-use App\Models\AllergenModel;
 use App\Models\CustomerModel;
 use App\Models\UsersAllergenModel;
 use App\Models\UsersModel;

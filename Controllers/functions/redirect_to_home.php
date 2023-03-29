@@ -1,6 +1,6 @@
 <?php
 
-function is_user_logged()
+function redirect_to_home()
 {
     if (isset($_SESSION["auth"]) && $_SESSION["auth"] == true) {
         header('Location: /');

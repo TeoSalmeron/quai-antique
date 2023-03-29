@@ -16,13 +16,7 @@ class BookTableController extends Controller
         $allergen_model = new AllergenModel;
         $allergens = $allergen_model->findAll();
         $restaurant = $restaurant_model->find(1);
-        $restaurant_model->setNoon_service_start($restaurant["noon_service_start"])
-            ->setNoon_service_end($restaurant["noon_service_end"])
-            ->setEvening_service_start($restaurant["evening_service_start"])
-            ->setEvening_service_end($restaurant["evening_service_end"])
-            ->setDay_close($restaurant["day_close"]);
-        // Define schedule
-        $schedule = define_schedule($restaurant_model);
+        $schedule = define_schedule();
 
         // Define opening and closing hours
         $noon_service_start_form = strtotime($restaurant["noon_service_start"]);

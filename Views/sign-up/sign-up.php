@@ -82,7 +82,7 @@ require_once ROOT . '/Views/templates/nav.php';
             foreach ($allergens as $a) {
             ?>
                 <div class="form_allergies_item">
-                    <input type="checkbox" name="allergies[]" id="<?= $a["id"] ?>" value="<?= $a["id"] ?>">
+                    <input type="checkbox" name="allergies[]" id="<?= $a["id"] ?>" value="<?= $a["id"] ?>" class="allergy_item">
                     <label for="<?= $a["id"] ?>"><?= ucfirst($a["name"]) ?></label>
                 </div>
             <?php
