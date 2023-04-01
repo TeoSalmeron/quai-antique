@@ -1327,8 +1327,12 @@ footer .contact_item a:hover {
 }
 footer a {
   margin: 10px 0px;
+  color: #d29b3d;
+  text-decoration: underline;
 }
 footer p {
+  position: relative;
+  top: 10px;
   margin: 5px 0px;
 }
 

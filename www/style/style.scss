@@ -1538,9 +1538,13 @@ footer {
 
   a {
     margin: 10px 0px;
+    color: $color2;
+    text-decoration: underline;
   }
 
   p {
+    position: relative;
+    top: 10px;
     margin: 5px 0px;
   }
 }
