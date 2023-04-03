@@ -31,7 +31,8 @@ require_once ROOT . '/Views/templates/nav.php';
         <input type="email" name="email" id="email" placeholder="E-mail">
         <input type="tel" name="phone" id="phone" placeholder="Numéro de téléphone">
         <small>Format : 0102030405</small>
-        <input type="number" name="nb_guest" id="nb_guest" placeholder="Nombres de convives">
+        <input type="number" name="nb_guest" id="nb_guest" placeholder="Nombres de convives" min="1" max="15">
+        <small>Pour les réservations de plus de 15 personnes, veuillez directement appeler le restaurant</small>
         <input type="date" name="reservation_date" id="reservationDate" value="<?= $today ?>">
         <p>Souhaitez-vous réserver pour le midi ou le soir ?</p>
         <div class="prompt_box">

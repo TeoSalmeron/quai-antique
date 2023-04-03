@@ -790,7 +790,6 @@
   top: 70px;
   left: -100vw;
   width: 100%;
-  max-width: 800px;
 }
 #adminNav #adminNavList .admin_nav_item {
   height: 70px;
@@ -1354,16 +1353,36 @@ footer p {
 #profile h1 {
   font-family: "Cinzel Decorative", cursive;
 }
-#profile button {
-  padding: 10px 20px;
+#profile #deleteUser {
+  padding: 5px 10px;
   background: darkred;
   color: #fff;
   border: none;
   font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  width: 200px;
+  font-size: 16px;
+  width: 150px;
 }
-#profile button:hover {
+#profile #deleteUser:hover {
+  cursor: pointer;
+}
+#profile table,
+#profile th,
+#profile td {
+  border: 1px solid black;
+  padding: 5px;
+}
+#profile table button,
+#profile th button,
+#profile td button {
+  background: darkred;
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  font-family: "Raleway", sans-serif;
+}
+#profile table button:hover,
+#profile th button:hover,
+#profile td button:hover {
   cursor: pointer;
 }
 

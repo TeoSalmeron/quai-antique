@@ -124,22 +124,10 @@ class ReservationModel extends Model
         return $query;
     }
 
-    public function is_service_full($max_capacity, $nb_guest, $date, $service_start, $service_end)
+    public function service_total_guest($date, $service_start, $service_end)
     {
         $query = $this->request("SELECT total_guest FROM $this->table WHERE res_date = ? AND res_time BETWEEN ? AND ?", [$date, $service_start, $service_end])->fetchAll();
-        if (!$query) {
-            return false;
-        } else {
-            $total = 0;
-            foreach ($query as $q) {
-                $total += $q["total_guest"];
-            }
-            $total += $nb_guest;
-            if ($total > $max_capacity) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+        $total = $query[0]["total_guest"];
+        return $total;
     }
 }
