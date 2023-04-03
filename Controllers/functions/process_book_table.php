@@ -39,7 +39,7 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                         die();
                     } else {
                         // Check number of guests
-                        if (!isset($_POST["nb_guest"]) || $_POST["nb_guest"] == null || !is_int((int)$_POST["nb_guest"])) {
+                        if (!isset($_POST["nb_guest"]) || $_POST["nb_guest"] == null || !is_int((int)$_POST["nb_guest"]) || $_POST["nb_guest"] == 0) {
                             $_SESSION["reservation_error"] = "Le nombres de couverts n'a pas été défini ou est au mauvais format";
                             header('Location: /book-table');
                             die();
@@ -81,7 +81,7 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                         // Check if user exists
                                         $users_model = new UsersModel;
                                         $user = $users_model->findBy(["email" => $email]);
-                                        if(!$user) {
+                                        if (!$user) {
                                             // If user doesn't exist, create new Visitor
                                             $users_model->setId(uniqid("", true))
                                                 ->setEmail($email)
@@ -94,14 +94,24 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                             $visitor_model = new VisitorModel;
                                             $visitor_model->setId($user["id"]);
                                             $visitor_model->create();
+                                            // If user has allergies 
+                                            if ($allergies != null) {
+                                                $users_allergen_model = new UsersAllergenModel;
+                                                foreach ($allergies as $allergy) {
+                                                    $users_allergen_model->setUser_id($user["id"])
+                                                        ->setAllergen_id($allergy);
+                                                    $users_allergen_model->create();
+                                                }
+                                            }
                                         } else {
                                             $user = $user[0];
                                         }
-                                        // Check if user has already booked
+
+                                        // Define booking slot
                                         $reservation_model = new ReservationModel;
                                         $restaurant_model = new RestaurantModel;
                                         $restaurant = $restaurant_model->find(1);
-                                        if($slot === "noon") {
+                                        if ($slot === "noon") {
                                             $service_start = $restaurant["noon_service_start"];
                                             $service_end = $restaurant["noon_service_end"];
                                             $reservation_time = htmlspecialchars(strip_tags(trim($_POST["noon_time"])));
@@ -110,11 +120,30 @@ function process_book_table($restaurant, ReservationModel $reservation_model, $n
                                             $service_end = $restaurant["evening_service_end"];
                                             $reservation_time = htmlspecialchars(strip_tags(trim($_POST["evening_time"])));
                                         }
-                                        if(!$reservation_model->has_user_booked($user["id"], $reservation_date, $service_start, $service_end)) {
+
+                                        // Check if user has already booked
+                                        if (!$reservation_model->has_user_booked($user["id"], $reservation_date, $service_start, $service_end)) {
                                             // If user has not booked yet, check if service is full
-                                            var_dump($reservation_model->is_service_full($restaurant["max_capacity"], $nb_guest, $reservation_date, $service_start, $service_end));
+                                            if (!$reservation_model->is_service_full($restaurant["max_capacity"], $nb_guest, $reservation_date, $service_start, $service_end)) {
+                                                // If service is not full, then book reservation
+                                                $reservation_model->setRes_date($reservation_date)
+                                                    ->setRes_time($reservation_time)
+                                                    ->setBooked_by($user["id"]);
+                                                $reservation_model->create();
+                                                $_SESSION["reservation_success"] = "Votre réservation a bien été effectuée";
+                                                header('Location: /book-table');
+                                                die();
+                                            } else {
+                                                // If service is full => error
+                                                $_SESSION["reservation_error"] = "Le service est complet";
+                                                header('Location: /book-table');
+                                                die();
+                                            }
+                                        } else {
+                                            // If user has already booked => error
+                                            $_SESSION["reservation_error"] = "Vous avez déjà réservé une table à ce créneau";
+                                            header('Location: /book-table');
                                             die();
-                                            
                                         }
                                     }
                                 }
