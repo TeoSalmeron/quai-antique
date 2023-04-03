@@ -86,6 +86,14 @@ class Model extends Db
         return $this->request("DELETE FROM $this->table WHERE id = ?", [$id]);
     }
 
+    public function deleteUser(string $id)
+    {
+        $this->request("DELETE FROM reservation WHERE booked_by = ?", [$id]);
+        $this->request("DELETE FROM users_allergen WHERE user_id = ?", [$id]);
+        $this->request("DELETE FROM customer WHERE id = ?", [$id]);
+        return $this->request("DELETE FROM users WHERE id = ?", [$id]);
+    }
+
     /**
      * Create a new element into $this->table
      */

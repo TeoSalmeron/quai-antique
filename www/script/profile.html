@@ -1,0 +1,20 @@
+<script>
+    const deleteUser = document.getElementById("deleteUser")
+ 
+    deleteUser.addEventListener("click", () => {
+        if(confirm("Voulez-vous vraiment supprimer votre compte ?")) {
+            var xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function() {
+                if(this.status == 200 && this.readyState == 4) {
+                    if(this.response.error == 0) {
+                        location.reload()
+                    }
+                }
+            }
+ 
+            xhr.responseType = "json"
+            xhr.open("POST", "/profile/delete_user", true)
+            xhr.send()
+        }
+    })
+</script>

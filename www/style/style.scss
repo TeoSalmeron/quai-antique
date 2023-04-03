@@ -1,6 +1,6 @@
 // Import google fonts
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Cinzel+Decorative:wght@400;700;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+ 
 // Fonts
 $font1: "Raleway", sans-serif;
 $font2: "Bodoni Moda", serif;
@@ -9,7 +9,7 @@ $font3: "Cinzel Decorative", cursive;
 $color0: #fff;
 $color1: #00020b;
 $color2: #d29b3d;
-
+ 
 // Reset stylesheet
 * {
   margin: 0;
@@ -18,7 +18,7 @@ $color2: #d29b3d;
   list-style: none;
   text-decoration: none;
 }
-
+ 
 // Utility classes
 .container {
   width: 100%;
@@ -27,18 +27,18 @@ $color2: #d29b3d;
   flex-direction: column;
   overflow-x: hidden;
 }
-
+ 
 .visible-flex {
   display: flex !important;
 }
-
+ 
 .slide-top {
   -webkit-animation: slide-top 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite
     alternate backwards;
   animation: slide-top 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite alternate
     backwards;
 }
-
+ 
 .form_input {
   width: 100%;
   max-width: 350px;
@@ -50,18 +50,18 @@ $color2: #d29b3d;
   border-right: none;
   border-bottom: 1px solid lightgray;
   font-weight: 500;
-
+ 
   &:focus,
   &:active {
     outline: none;
   }
 }
-
+ 
 .form_box {
   padding: 15px 0px;
   width: 100%;
 }
-
+ 
 .form_buttons {
   padding-top: 25px;
   align-self: center;
@@ -85,14 +85,14 @@ $color2: #d29b3d;
   position: fixed;
   transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   z-index: 555;
-
+ 
   #toggleNav {
     height: 100%;
     width: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+ 
     button {
       background: transparent;
       padding: 11px 7px;
@@ -103,20 +103,20 @@ $color2: #d29b3d;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
+ 
       .line {
         width: 100%;
         height: 3px;
         background: $color0;
         border-radius: 15px;
       }
-
+ 
       &:hover {
         cursor: pointer;
       }
     }
   }
-
+ 
   #mainNavList {
     position: fixed;
     left: -100vw;
@@ -131,7 +131,7 @@ $color2: #d29b3d;
     transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     -webkit-box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.21);
     box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.21);
-
+ 
     button {
       background: transparent;
       border: none;
@@ -143,43 +143,43 @@ $color2: #d29b3d;
       height: 50px;
       display: flex;
       flex-direction: column;
-
+ 
       .line {
         width: 90%;
         height: 2px;
         background: $color1;
         position: relative;
       }
-
+ 
       .line1 {
         transform: rotate(-45deg);
         top: 22px;
       }
-
+ 
       .line2 {
         transform: rotate(45deg);
         top: 21px;
       }
-
+ 
       &:hover {
         cursor: pointer;
       }
     }
-
+ 
     hr {
       margin-bottom: 37.5px;
       background: $color1;
       border: 1px solid black;
       // border: 1px solid black;
     }
-
+ 
     li {
       height: 75px;
-
+ 
       &:hover {
         cursor: pointer;
       }
-
+ 
       a {
         font-family: $font1;
         text-transform: uppercase;
@@ -194,7 +194,7 @@ $color2: #d29b3d;
     }
   }
 }
-
+ 
 // Home header
 #homeHeader {
   width: 100%;
@@ -209,14 +209,14 @@ $color2: #d29b3d;
   align-items: center;
   justify-content: center;
   text-align: center;
-
+ 
   h1 {
     font-family: $font3;
     font-size: clamp(55px, 8vw, 65px);
     color: $color2;
     margin-bottom: 20px;
   }
-
+ 
   p {
     font-family: $font1;
     color: #fff;
@@ -225,7 +225,7 @@ $color2: #d29b3d;
     margin-bottom: 40px;
     max-width: 500px;
   }
-
+ 
   a {
     color: #fff;
     border: 3px solid #fff;
@@ -236,7 +236,7 @@ $color2: #d29b3d;
     text-transform: uppercase;
   }
 }
-
+ 
 // Home main section
 #homeMain {
   -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
@@ -247,7 +247,7 @@ $color2: #d29b3d;
   height: auto;
   display: flex;
   flex-direction: column;
-
+ 
   #homeMainBox1 {
     display: flex;
     flex-direction: column;
@@ -255,14 +255,14 @@ $color2: #d29b3d;
     align-items: center;
     height: auto;
     padding: 10vh 10vw;
-
+ 
     h2 {
       font-family: $font3;
       font-size: clamp(26px, 5vw, 36px);
       margin-bottom: 20px;
       text-align: center;
     }
-
+ 
     p {
       font-family: $font1;
       font-size: 18px;
@@ -270,7 +270,7 @@ $color2: #d29b3d;
       max-width: 600px;
     }
   }
-
+ 
   #homeMainBox2 {
     height: 400px;
     background: url("../img/bg2.jpg");
@@ -279,7 +279,7 @@ $color2: #d29b3d;
     display: flex;
     align-items: center;
     justify-content: center;
-
+ 
     a {
       align-self: center;
       color: #fff;
@@ -291,7 +291,7 @@ $color2: #d29b3d;
       text-transform: uppercase;
     }
   }
-
+ 
   #homeMainImages {
     width: 100%;
     display: flex;
@@ -302,25 +302,25 @@ $color2: #d29b3d;
     background: #fff;
     margin: auto;
     padding: 40px 8vw;
-
+ 
     h2 {
       font-family: $font3;
       font-size: clamp(26px, 5vw, 36px);
       text-align: center;
       margin-bottom: 40px;
     }
-
+ 
     .image_box {
       position: relative;
       height: auto;
       overflow: hidden;
-
+ 
       img {
         width: 100%;
         margin-bottom: 40px;
         max-width: 400px;
       }
-
+ 
       p {
         top: 15px;
         left: 15px;
@@ -334,7 +334,7 @@ $color2: #d29b3d;
     }
   }
 }
-
+ 
 // Sign up page
 #sign-up-header {
   width: 100%;
@@ -347,7 +347,7 @@ $color2: #d29b3d;
   align-items: center;
   justify-content: center;
   padding: 100px 8vw;
-
+ 
   h1 {
     text-align: center;
     font-family: $font3;
@@ -356,7 +356,7 @@ $color2: #d29b3d;
     margin-bottom: 20px;
     max-width: 490px;
   }
-
+ 
   p {
     font-family: $font1;
     color: #fff;
@@ -365,7 +365,7 @@ $color2: #d29b3d;
     margin-bottom: 40px;
     max-width: 500px;
   }
-
+ 
   img {
     width: 40px;
     height: 40px;
@@ -374,7 +374,7 @@ $color2: #d29b3d;
     top: 50px;
   }
 }
-
+ 
 #sign-up-main {
   width: 100%;
   margin: auto;
@@ -386,14 +386,14 @@ $color2: #d29b3d;
   flex-direction: column;
   align-items: center;
   padding: 50px 8vw;
-
+ 
   #passwordRules {
     align-self: flex-start;
     font-family: $font1;
     margin-bottom: 30px;
     font-style: italic;
   }
-
+ 
   h2 {
     font-family: $font3;
     font-size: 35px;
@@ -406,17 +406,17 @@ $color2: #d29b3d;
     margin-bottom: 20px;
     align-self: flex-start;
   }
-
+ 
   form {
     width: 100%;
     display: flex;
     flex-direction: column;
-
+ 
     .no_border {
       border-bottom: unset;
       margin-right: 40px;
     }
-
+ 
     select {
       font-size: 18px;
       color: #757575;
@@ -426,19 +426,19 @@ $color2: #d29b3d;
       border-bottom: 1px solid lightgray;
       font-family: $font1;
       font-weight: 500;
-
+ 
       &:active,
       &:focus {
         outline: none;
       }
     }
-
+ 
     small {
       color: gray;
       position: relative;
       font-family: $font1;
     }
-
+ 
     .form_box_allergies {
       display: flex;
       flex-direction: column;
@@ -456,11 +456,11 @@ $color2: #d29b3d;
         font-weight: 500;
       }
     }
-
+ 
     #form_allergies {
       display: none;
       flex-direction: column;
-
+ 
       p {
         font-family: $font1;
         color: #757575;
@@ -468,7 +468,7 @@ $color2: #d29b3d;
         font-size: 18px;
         margin-bottom: 30px;
       }
-
+ 
       .form_allergies_item {
         padding: 5px 0px;
         input {
@@ -482,9 +482,9 @@ $color2: #d29b3d;
     }
   }
 }
-
+ 
 // Sign in page
-
+ 
 #sign-in-main {
   display: flex;
   width: 100%;
@@ -495,41 +495,41 @@ $color2: #d29b3d;
   padding: 150px 8vw 100px;
   -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
-
+ 
   h1 {
     font-family: $font3;
     font-size: 35px;
     margin-bottom: 40px;
     text-align: center;
   }
-
+ 
   p {
     font-family: $font1;
     margin-bottom: 20px;
     align-self: flex-start;
   }
-
+ 
   #signInError {
     align-self: center;
     color: rgb(235, 0, 0);
   }
-
+ 
   #signInSuccess {
     color: green;
   }
-
+ 
   form {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-
+ 
     .form_box {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-
+ 
     a {
       position: relative;
       top: 40px;
@@ -541,9 +541,9 @@ $color2: #d29b3d;
     }
   }
 }
-
+ 
 // Menu page
-
+ 
 #menuHeader {
   width: 100%;
   height: 100vh;
@@ -557,21 +557,21 @@ $color2: #d29b3d;
   background: url("../img/bg4.jpg");
   background-size: cover;
   background-position: center;
-
+ 
   h1 {
     font-family: $font3;
     color: $color2;
     font-size: clamp(55px, 8vw, 65px);
     margin-bottom: 20px;
   }
-
+ 
   p {
     color: $color0;
     text-align: center;
     font-size: 18px;
   }
 }
-
+ 
 #menuMain {
   -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
@@ -583,7 +583,7 @@ $color2: #d29b3d;
   margin: auto;
   width: 100%;
 }
-
+ 
 .menuSections {
   h2 {
     font-size: 35px;
@@ -591,7 +591,7 @@ $color2: #d29b3d;
     color: $color2;
     margin: 20px 0px;
   }
-
+ 
   .menu_item {
     width: 100%;
     height: auto;
@@ -601,25 +601,25 @@ $color2: #d29b3d;
     font-family: $font1;
     font-size: 18px;
     padding: 20px 0px;
-
+ 
     .name {
       font-family: $font3;
       color: $color1;
       font-size: 24px;
       margin: 5px 0px;
     }
-
+ 
     .description {
       max-width: 400px;
       margin: 5px 0px;
     }
-
+ 
     .schedule {
       color: rgb(70, 70, 70);
       margin: 5px 0px;
     }
   }
-
+ 
   hr {
     width: 100%;
     color: $color1;
@@ -627,15 +627,15 @@ $color2: #d29b3d;
     max-width: 500px;
   }
 }
-
+ 
 // Administration confirm account
-
+ 
 #admin-verification {
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 50px 6vw;
-
+ 
   h1 {
     font-size: 45px;
     color: $color2;
@@ -643,30 +643,30 @@ $color2: #d29b3d;
     text-align: center;
     margin-bottom: 20px;
   }
-
+ 
   h2 {
     font-family: $font1;
     margin-bottom: 20px;
   }
-
+ 
   p {
     font-family: $font1;
     text-align: justify;
     margin-bottom: 20px;
   }
-
+ 
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+ 
     small {
       font-family: $font1;
       font-style: italic;
       margin-bottom: 20px;
       align-self: flex-start;
     }
-
+ 
     p {
       align-self: flex-start;
       color: red;
@@ -676,7 +676,7 @@ $color2: #d29b3d;
     }
   }
 }
-
+ 
 // Forgotten password
 #forgottenPwMain {
   width: 100%;
@@ -687,29 +687,29 @@ $color2: #d29b3d;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+ 
   h1 {
     font-family: $font3;
     text-align: center;
     margin-bottom: 40px;
     font-size: 35px;
   }
-
+ 
   p {
     text-align: justify;
     font-family: $font1;
     margin: 20px;
     max-width: 500px;
   }
-
+ 
   #forgottenPwError {
     color: red;
   }
-
+ 
   #forgottenPwSuccess {
     color: green;
   }
-
+ 
   form {
     width: 100%;
     display: flex;
@@ -717,7 +717,7 @@ $color2: #d29b3d;
     align-items: center;
   }
 }
-
+ 
 // Reset password
 #resetPwMain {
   padding: 150px 5vw;
@@ -727,25 +727,25 @@ $color2: #d29b3d;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+ 
   h1 {
     font-family: $font3;
     font-size: 35px;
     text-align: center;
     margin-bottom: 40px;
   }
-
+ 
   p {
     font-family: $font1;
     max-width: 500px;
     margin-bottom: 40px;
     text-align: justify;
   }
-
+ 
   #error {
     color: red;
   }
-
+ 
   form {
     width: 100%;
     display: flex;
@@ -753,7 +753,7 @@ $color2: #d29b3d;
     align-items: center;
   }
 }
-
+ 
 #resetPwConfirm {
   width: 100%;
   height: 100vh;
@@ -762,47 +762,49 @@ $color2: #d29b3d;
   display: none;
   flex-direction: column;
   align-items: center;
-
+ 
   h2 {
     font-size: 35px;
     font-family: $font3;
     text-align: center;
     margin-bottom: 40px;
   }
-
+ 
   p {
     font-family: $font1;
     max-width: 500px;
     margin-bottom: 40px;
     text-align: justify;
   }
-
+ 
   #pwError {
     color: red;
   }
-
+ 
   form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+ 
     input {
       margin-bottom: 20px;
     }
   }
 }
-
+ 
 // Reservation page
-
+ 
 #reservationMain {
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   width: 100%;
   max-width: 850px;
   margin: auto;
   height: auto;
   padding: 100px 5vw;
   font-family: $font1;
-
+ 
   h1 {
     font-family: $font3;
     align-self: center;
@@ -810,26 +812,26 @@ $color2: #d29b3d;
     font-size: 35px;
     margin: 40px 0px;
   }
-
+ 
   p {
     margin: 20px 0px;
     font-weight: 500;
     font-style: italic;
   }
-
+ 
   #reservationError {
     color: red;
   }
-
+ 
   #reservationSuccess {
     color: green;
   }
-
+ 
   form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
+ 
     input[type="text"],
     input[type="email"],
     input[type="tel"],
@@ -841,12 +843,12 @@ $color2: #d29b3d;
       font-family: $font1;
       margin: 20px 0px;
     }
-
+ 
     input[type="date"] {
       font-size: 16px;
       margin: 20px 0px;
     }
-
+ 
     #service_time_noon,
     #service_time_evening {
       display: none;
@@ -854,29 +856,29 @@ $color2: #d29b3d;
       justify-content: space-between;
       margin: 10px 0px;
     }
-
+ 
     small {
       font-size: 14px;
       color: rgb(81, 81, 81);
       margin-bottom: 10px;
       font-style: italic;
     }
-
+ 
     .prompt_box {
       margin: 10px 0px;
       display: flex;
       justify-content: space-between;
       width: 50px;
     }
-
+ 
     .form_allergies_box {
       display: none;
-
+ 
       .form_allergies_item {
         margin: 10px 0px;
       }
     }
-
+ 
     .form_buttons {
       button {
         transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -888,9 +890,9 @@ $color2: #d29b3d;
     }
   }
 }
-
+ 
 // Administration pannel
-
+ 
 #adminNav {
   width: 100%;
   height: 70px;
@@ -902,31 +904,31 @@ $color2: #d29b3d;
   align-items: center;
   padding: 10px 20px;
   z-index: 55;
-
+ 
   button {
     background: transparent;
     border: none;
-
+ 
     img {
       position: relative;
       width: 50px;
       filter: invert(1);
     }
   }
-
+ 
   h1 {
     color: $color0;
     font-family: $font3;
     font-size: 18px;
   }
-
+ 
   #adminNavList {
     position: absolute;
     top: 70px;
     left: -100vw;
     width: 100%;
     max-width: 800px;
-
+ 
     .admin_nav_item {
       height: 70px;
       width: 100%;
@@ -938,11 +940,11 @@ $color2: #d29b3d;
       left: -100%;
       border-top: 1px solid $color0;
       transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-
+ 
       a {
         display: block;
       }
-
+ 
       button,
       a {
         color: $color0;
@@ -950,7 +952,7 @@ $color2: #d29b3d;
         font-size: 16px;
         font-weight: 600;
         transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-
+ 
         &:hover {
           cursor: pointer;
           letter-spacing: 1px;
@@ -958,29 +960,29 @@ $color2: #d29b3d;
         }
       }
     }
-
+ 
     #adminNavItem2 {
       transition-delay: 0.1s;
     }
-
+ 
     #adminNavItem3 {
       transition-delay: 0.2s;
     }
-
+ 
     #adminNavItem4 {
       transition-delay: 0.3s;
     }
-
+ 
     #adminNavItem5 {
       transition-delay: 0.4s;
     }
-
+ 
     #adminNavItem6 {
       transition-delay: 0.5s;
     }
   }
 }
-
+ 
 #restaurantInfo,
 #manageDish,
 #manageMenu,
@@ -990,14 +992,14 @@ $color2: #d29b3d;
   min-height: 100vh;
   display: none;
   flex-direction: column;
-
+ 
   h2 {
     font-family: $font1;
     text-align: center;
     margin-bottom: 20px;
     font-size: 28px;
   }
-
+ 
   p {
     font-family: $font1;
     font-size: 16px;
@@ -1005,36 +1007,36 @@ $color2: #d29b3d;
     margin-bottom: 20px;
   }
 }
-
+ 
 #restaurantInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+ 
   fieldset {
     width: 100%;
     padding: 20px 5vw;
     border: 1px solid $color1;
     max-width: 650px;
     background: $color0;
-
+ 
     #editInfoSuccess {
       color: green;
     }
-
+ 
     #editInfoError {
       color: red;
     }
-
+ 
     .form_item {
       border-bottom: 1px solid black;
       padding: 10px 0px;
-
+ 
       h3 {
         font-family: $font1;
         margin-bottom: 20px;
       }
-
+ 
       small {
         font-size: 14px;
         font-family: $font1;
@@ -1043,12 +1045,12 @@ $color2: #d29b3d;
         margin-bottom: 20px;
         display: block;
       }
-
+ 
       p {
         color: $color1;
         font-size: 18px;
       }
-
+ 
       .edit_restaurant_info {
         padding: 5px 10px;
         font-family: $font1;
@@ -1061,12 +1063,12 @@ $color2: #d29b3d;
           cursor: pointer;
         }
       }
-
+ 
       .edit_box {
         display: none;
         flex-direction: column;
         align-items: flex-start;
-
+ 
         .edit_box_btn {
           padding: 5px 10px;
           font-family: $font1;
@@ -1081,29 +1083,29 @@ $color2: #d29b3d;
         input {
           margin: 10px 0px;
         }
-
+ 
         select {
           margin: 10px 0px;
           padding: 5px 10px;
           font-family: $font1;
         }
-
+ 
         .success {
           background: darkgreen !important;
         }
-
+ 
         .cancel {
           background: darkred !important;
         }
       }
     }
-
+ 
     .form_item_borderless {
       border-bottom: unset !important;
     }
   }
 }
-
+ 
 #manageImage {
   display: none;
   flex-direction: column;
@@ -1114,61 +1116,61 @@ $color2: #d29b3d;
     border: none;
     font-family: $font1;
     font-size: 16px;
-
+ 
     &:hover {
       cursor: pointer;
     }
   }
-
+ 
   fieldset {
     background: $color0;
     width: 100%;
     padding: 20px 5vw;
     margin-bottom: 20px;
     max-width: 850px;
-
+ 
     legend {
       font-family: $font1;
       font-size: 16px;
       font-weight: 600;
     }
-
+ 
     #imageError,
     #imageSuccess {
       font-size: 15px;
       font-weight: 500;
       text-align: start;
     }
-
+ 
     #imageError {
       color: rgb(255, 0, 0);
     }
-
+ 
     #imageSuccess {
       color: green;
     }
-
+ 
     form {
       label,
       input,
       small {
         font-family: $font1;
       }
-
+ 
       input[type="text"] {
         font-size: 16px;
         padding: 3px;
-
+ 
         &:focus,
         &:active {
           outline: none;
         }
       }
-
+ 
       label {
         margin-right: 10px;
       }
-
+ 
       .form_buttons {
         button {
           font-family: $font1;
@@ -1177,7 +1179,7 @@ $color2: #d29b3d;
       }
     }
   }
-
+ 
   #deleteImageBox {
     width: 100%;
     .image_box {
@@ -1188,25 +1190,25 @@ $color2: #d29b3d;
       margin-bottom: 20px;
       border-bottom: 1px solid $color1;
       padding-bottom: 20px;
-
+ 
       h4 {
         font-family: $font1;
         margin-bottom: 20px;
       }
-
+ 
       img {
         width: 300px;
         margin-bottom: 20px;
-
+ 
         &:hover {
           cursor: default;
         }
       }
-
+ 
       input {
         display: none;
       }
-
+ 
       button {
         font-size: 16px;
         padding: 10px;
@@ -1214,26 +1216,26 @@ $color2: #d29b3d;
         background-color: darkred;
         color: $color0;
         border: none;
-
+ 
         &:hover {
           cursor: pointer;
         }
       }
     }
   }
-
+ 
   .form_item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     height: 150px;
-
+ 
     label {
       font-weight: 600;
       font-size: 18px;
     }
-
+ 
     button {
       font-family: $font1;
       padding: 10px;
@@ -1244,7 +1246,7 @@ $color2: #d29b3d;
     }
   }
 }
-
+ 
 #manageMenu {
   display: flex;
   flex-direction: column;
@@ -1256,60 +1258,60 @@ $color2: #d29b3d;
     max-width: 750px;
     width: 100%;
     margin-bottom: 20px;
-
+ 
     #addMenuSuccess {
       color: green;
       margin-bottom: 20px;
     }
-
+ 
     #addMenuError {
       color: red;
       margin-bottom: 20px;
     }
-
+ 
     legend {
       font-weight: 600;
     }
-
+ 
     form {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       height: 100%;
     }
-
+ 
     input,
     textarea,
     button {
       font-family: $font1;
       margin-bottom: 20px;
     }
-
+ 
     input {
       padding: 5px;
       font-size: 16px;
     }
-
+ 
     input[type="number"] {
       width: 100%;
       max-width: 300px;
     }
-
+ 
     textarea {
       padding: 5px;
     }
-
+ 
     label {
       margin-bottom: 10px;
       font-weight: 500;
     }
-
+ 
     small {
       font-size: 14px;
       font-style: italic;
       margin-bottom: 20px;
     }
-
+ 
     button {
       font-size: 16px;
       padding: 10px;
@@ -1319,42 +1321,42 @@ $color2: #d29b3d;
       border: none;
       border-radius: 0px;
       font-family: $font1;
-
+ 
       &:hover {
         cursor: pointer;
       }
     }
   }
-
+ 
   #deleteMenu {
     font-family: $font1;
     padding: 20px 3vw;
     height: auto;
     max-width: 750px;
     width: 100%;
-
+ 
     legend {
       font-weight: 600;
     }
-
+ 
     #deleteMenuError {
       color: red;
     }
-
+ 
     #deleteMenuSuccess {
       color: green;
     }
-
+ 
     .form_item {
       margin: 20px 0px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+ 
       label {
         font-weight: 500;
       }
-
+ 
       button {
         font-family: $font1;
         padding: 10px;
@@ -1363,7 +1365,7 @@ $color2: #d29b3d;
         border-radius: 0px;
         font-size: 16px;
         background-color: darkred;
-
+ 
         &:hover {
           cursor: pointer;
         }
@@ -1371,49 +1373,49 @@ $color2: #d29b3d;
     }
   }
 }
-
+ 
 #manageDish {
   align-items: center;
   font-family: $font1;
-
+ 
   #addDish,
   #deleteDish {
     width: 100%;
     max-width: 850px;
     padding: 40px 3vw;
     margin-bottom: 20px;
-
+ 
     legend {
       font-weight: 600;
     }
-
+ 
     #addDishError {
       color: red;
     }
-
+ 
     #addDishSuccess {
       color: green;
     }
-
+ 
     form {
       display: flex;
       flex-direction: column;
-
+ 
       label,
       input,
       textarea,
       select {
         margin-bottom: 20px;
       }
-
+ 
       label {
         font-weight: 600;
       }
-
+ 
       select {
         max-width: 200px;
       }
-
+ 
       input,
       select,
       textarea,
@@ -1422,12 +1424,12 @@ $color2: #d29b3d;
         font-family: $font1;
         font-size: 16px;
       }
-
+ 
       input[type="number"] {
         width: 100%;
         max-width: 200px;
       }
-
+ 
       button {
         font-size: 16px;
         border: none;
@@ -1439,12 +1441,12 @@ $color2: #d29b3d;
       }
     }
   }
-
+ 
   #deleteDish {
     #deleteDishError {
       color: red;
     }
-
+ 
     #deleteDishSuccess {
       color: green;
     }
@@ -1453,20 +1455,20 @@ $color2: #d29b3d;
     .form_item {
       margin-bottom: 20px;
     }
-
+ 
     .form_item {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+ 
       label {
         margin-bottom: unset;
       }
-
+ 
       button {
         background: darkred;
-
+ 
         &:hover {
           cursor: pointer;
         }
@@ -1475,7 +1477,7 @@ $color2: #d29b3d;
   }
 }
 // Footer
-
+ 
 footer {
   width: 100%;
   background: $color1;
@@ -1493,12 +1495,12 @@ footer {
     font-size: 28px;
     margin: 40px 0px;
   }
-
+ 
   .no_margin {
     margin: 0;
     margin-top: 40px;
   }
-
+ 
   fieldset {
     width: 100%;
     text-align: center;
@@ -1509,11 +1511,11 @@ footer {
     margin-bottom: 20px;
     border: none;
   }
-
+ 
   iframe {
     max-width: 500px;
   }
-
+ 
   .contact_item {
     display: flex;
     align-items: center;
@@ -1524,24 +1526,24 @@ footer {
       margin-right: 20px;
       filter: invert(1);
     }
-
+ 
     a {
       font-size: 18px;
       color: $color0;
       text-decoration: none;
-
+ 
       &:hover {
         cursor: pointer;
       }
     }
   }
-
+ 
   a {
     margin: 10px 0px;
     color: $color2;
     text-decoration: underline;
   }
-
+ 
   p {
     position: relative;
     top: 10px;
@@ -1549,53 +1551,90 @@ footer {
   }
 }
 
-// Legal notices
+// Profile
 
+#profile {
+  min-height: 100vh;
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  padding: 150px 5vw;
+  font-family: $font1;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    margin: 10px 0px;
+  }
+
+  h1 {
+    font-family: $font3;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: darkred;
+    color: #fff;
+    border: none;
+    font-family: $font1;
+    font-size: 18px;
+    width: 200px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+ 
+// Legal notices
+ 
 #legalNoticesMain {
   width: 100%;
   padding: 150px 5vw;
   display: flex;
   flex-direction: column;
   font-family: $font1;
-
+ 
   * {
     margin: 10px 0px;
   }
-
+ 
   h1 {
     font-family: $font3;
     align-self: center;
     font-size: 35px;
     text-align: center;
   }
-
+ 
   h2 {
     align-self: flex-start;
   }
 }
-
+ 
 // Privacy policy
-
+ 
 #privacyPolicyMain {
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 150px 5vw;
   font-family: $font1;
-
+ 
   * {
     margin: 10px 0px;
   }
-
+ 
   h1 {
     font-family: $font3;
     text-align: center;
   }
-
+ 
   h3 {
     color: rgb(184, 0, 0);
   }
 }
+
 @media screen and (min-width: 1100px) {
   #menuMain,
   #homeMain,
@@ -1604,14 +1643,14 @@ footer {
     max-width: 950px;
   }
 }
-
+ 
 /* ----------------------------------------------
  * Generated by Animista on 2023-3-3 16:24:40
  * Licensed under FreeBSD License.
  * See http://animista.net/license for more info. 
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
-
+ 
 /**
  * ----------------------------------------
  * animation slide-top

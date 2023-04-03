@@ -49,6 +49,9 @@
         } else {
         ?>
             <li class="mainNavListItem">
+                <a href="/profile">Mon profil</a>
+            </li>
+            <li class="mainNavListItem">
                 <a href="/sign-out">se déconnecter</a>
             </li>
         <?php

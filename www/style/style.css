@@ -680,6 +680,7 @@
 }
 
 #reservationMain {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
   width: 100%;
   max-width: 850px;
   margin: auto;
@@ -1334,6 +1335,36 @@ footer p {
   position: relative;
   top: 10px;
   margin: 5px 0px;
+}
+
+#profile {
+  min-height: 100vh;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.21);
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  padding: 150px 5vw;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+#profile * {
+  margin: 10px 0px;
+}
+#profile h1 {
+  font-family: "Cinzel Decorative", cursive;
+}
+#profile button {
+  padding: 10px 20px;
+  background: darkred;
+  color: #fff;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  width: 200px;
+}
+#profile button:hover {
+  cursor: pointer;
 }
 
 #legalNoticesMain {
