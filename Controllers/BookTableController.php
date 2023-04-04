@@ -62,12 +62,8 @@ class BookTableController extends Controller
         $restaurant_model = new RestaurantModel;
         $restaurant = $restaurant_model->find(1);
         $reservation_model = new ReservationModel;
-        $noon_service_start = $restaurant["noon_service_start"];
-        $noon_service_end = date("H:i:s", strtotime($restaurant["noon_service_end"] . "-1 hour"));
-        $evening_service_start = $restaurant["evening_service_start"];
-        $evening_service_end = date("H:i:s", strtotime($restaurant["evening_service_end"] . "-1 hour"));
         require_once ROOT . '/Controllers/functions/process_book_table.php';
-        process_book_table($restaurant, $reservation_model, $noon_service_start, $noon_service_end, $evening_service_start, $evening_service_end);
+        process_book_table($restaurant, $reservation_model);
     }
 
     public function check_day_close()
